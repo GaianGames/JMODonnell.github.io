@@ -71,11 +71,15 @@
 }
 
 /* Canva Section */
-.collective-showcase {
+#writing-collective {
   text-align: center;
-  margin: 20px auto;
 }
 
-.collective-showcase iframe {
-  border-radius: 8px; /* Adds slight rounding */
+#writing-collective a {
+  font-weight: bold;
+  color: #d4af37;
+}
+
+#writing-collective a:hover {
+  text-decoration: underline;
 }
