@@ -46,3 +46,26 @@
   background-color: #d4af37; /* Gold accent */
   margin: 10px auto 20px auto; /* Adds space above & below */
 }
+
+
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Makes text stack below image */
+  position: relative;
+  z-index: 1;
+}
+
+.header-photo {
+  width: 150px; /* Adjust size */
+  height: 150px;
+  border-radius: 50%; /* Creates a circular image */
+  object-fit: cover;
+  margin-bottom: 15px; /* Adds space between image and text */
+}
+
+.text-container {
+  text-align: center;
+}
