@@ -1,6 +1,6 @@
 /* Testimonials Section */
 #testimonials {
-  background-color: #1e1e1e; /* Dark background for bold contrast */
+  background-color: #1e1e1e;
   color: #f1f1f1;
   padding: 60px 20px;
   text-align: center;
@@ -14,37 +14,65 @@
   margin: auto;
 }
 
+/* Card container */
 .testimonial-card {
   background-color: #2c2c2c;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 30px 25px;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-  text-align: center;
+  text-align: left;
+  position: relative;
 }
 
+/* Optional headshot */
 .testimonial-card img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
 }
 
-.testimonial-card h3 {
-  font-size: 1.2em;
+/* Name & Company */
+.testimonial-name {
+  font-size: 1.3em;
+  font-weight: bold;
   color: #d4af37; /* Gold accent */
+  text-align: center;
+  margin-bottom: 5px;
 }
 
-.testimonial-card p {
-  font-size: 1em;
-  font-style: italic;
+.testimonial-company {
+  font-size: 0.95em;
+  color: #bbb;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
+/* Fancy divider */
 .testimonial-divider {
-  width: 80px;
+  width: 60px;
   height: 3px;
-  background: linear-gradient(to right, #444, #ccc, #444);
-  margin: 0 auto;
+  background: linear-gradient(to right, #d4af37, #555, #d4af37);
   border-radius: 2px;
+  margin: 0 auto 30px;
 }
 
+/* Quote Styling */
+.testimonial-card blockquote {
+  font-style: italic;
+  font-size: 1em;
+  line-height: 1.7;
+  margin: 0;
+  color: #e0e0e0;
+}
+
+.testimonial-card blockquote p {
+  margin-bottom: 1.2em;
+  text-align: justify;
+}
+
+/* Optional long-form class for future layout variation */
+.testimonial-card.long-form {
+  grid-column: span 2;
+}
