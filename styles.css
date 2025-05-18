@@ -83,3 +83,22 @@
 #writing-collective a:hover {
   text-decoration: underline;
 }
+
+.instagram-link {
+  background-color: #d4af37; /* Gold highlight */
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.instagram-link a {
+  color: #121212; /* Dark text for contrast */
+  text-decoration: none;
+}
+
+.instagram-link a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
