@@ -39,3 +39,10 @@
   font-size: 1em;
   font-style: italic;
 }
+
+.testimonial-divider {
+  width: 80%;  /* Keeps the divider thin and proportional */
+  height: 2px; /* Thin line */
+  background-color: #d4af37; /* Gold accent */
+  margin: 10px auto 20px auto; /* Adds space above & below */
+}
