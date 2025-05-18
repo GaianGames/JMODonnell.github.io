@@ -39,3 +39,12 @@
   font-size: 1em;
   font-style: italic;
 }
+
+.testimonial-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #444, #ccc, #444);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
