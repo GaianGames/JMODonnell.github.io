@@ -141,28 +141,30 @@
 }
 
 
-/* Itch.io Section */
+/* Itch Section */
 #itch {
-  background-color: #1e1e1e;
+  background-color: #1e1e1e; /* Matches testimonials */
   padding: 60px 20px;
+  text-align: center;
 }
 
-/* Responsive Grid */
+/* Responsive Grid Layout */
 .itch-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive two-column layout */
   gap: 20px;
   max-width: 1000px;
   margin: auto;
 }
 
-/* General Card Styling */
+/* Individual Card Styling */
 .card {
   background-color: #2c2c2c;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4); /* Golden glow */
   transition: transform 0.2s ease, box-shadow 0.3s ease;
+  text-align: left;
 }
 
 .card:hover {
@@ -170,77 +172,75 @@
   box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
 }
 
-/* Featured Profile Card */
+/* Gaian Games Profile Card */
 .featured-card {
   padding: 0;
   overflow: hidden;
-  position: relative;
-  text-align: center;
   background-color: #2c2c2c;
+  border-radius: 8px;
 }
 
-/* Banner */
+/* Banner Styling */
 .featured-card .banner {
   width: 100%;
-  height: 180px;
+  height: auto;
+  border-bottom: 1px solid #ffd700;
   object-fit: cover;
-  border-bottom: 2px solid #ffd700;
 }
 
-/* Floating Avatar */
-.avatar-container {
-  position: absolute;
-  top: 130px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+/* Profile Section Inside Card */
+.profile-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 20px;
 }
 
-.avatar-large {
-  width: 100px;
-  height: 100px;
+.profile-content img.avatar {
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
-  border: 3px solid #1e1e1e;
+  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
   background-color: #1e1e1e;
 }
 
-/* Content Below Banner */
-.centered-profile h3 {
-  margin-top: 70px;
-  font-size: 1.5rem;
-  color: #ffd700;
+/* Text Beside Avatar */
+.profile-content div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.centered-profile p {
-  margin: 10px 20px;
+.profile-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: #ffd700;
+  font-size: 1.3rem;
+}
+
+.profile-content p {
+  margin: 0 0 0.5rem 0;
   color: #ccc;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
-.centered-profile .gold-link {
-  font-weight: bold;
-  display: inline-block;
-  margin: 0.5rem auto 1rem auto;
+.profile-content a {
   color: #ffd700;
-  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
 }
 
-.centered-profile .gold-link:hover {
-  text-decoration: underline;
-}
-
-/* Game Descriptions */
+/* Game Description Text */
 .game-desc {
   font-size: 0.9rem;
   color: #e0e0e0;
   margin-top: 1rem;
-  text-align: left;
   line-height: 1.5;
+  text-align: left;
 }
 
-/* Global Link Styling */
+/* General Link Styling */
 a {
   color: #ffd700;
   text-decoration: none;
