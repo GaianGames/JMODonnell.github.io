@@ -105,6 +105,18 @@
   text-align: center;
 }
 
+.collective-text h3 {
+  font-size: 1.2em;
+  color: #d4af37; /* Gold accent */
+}
+
+.collective-text h2 {
+  color: #ffd700;
+  font-size: 2em;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 .collective-image {
   width: 100%;
   max-width: 600px;
