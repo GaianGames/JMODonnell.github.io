@@ -157,38 +157,38 @@
   margin: auto;
 }
 
-/* Featured Card as Container */
-.featured-card {
+/* Cards */
+.card {
   background-color: #2c2c2c;
-  padding: 0;
-  border-radius: 12px;
+  padding: 20px;
+  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4);
-  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
+}
+
+/* Profile Styling */
+.profile-card {
   text-align: left;
 }
 
-/* Banner */
-.banner {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-bottom: 2px solid #ffd700;
-}
-
-/* Avatar + Info */
 .profile-content {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding: 20px;
+  margin-top: 1rem;
 }
 
-.avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
+.avatar-large {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
   object-fit: cover;
-  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.4);
   background-color: #1e1e1e;
 }
 
@@ -204,28 +204,20 @@
   font-size: 1rem;
 }
 
-/* Link Styling */
-.gold-link {
-  color: #ffd700;
-  font-weight: bold;
-  font-size: 0.95rem;
-  text-decoration: none;
+.banner {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #ffd700;
 }
 
-.gold-link:hover {
+/* Game Title Styling */
+.game-title a {
+  font-size: 1.3rem;
+  color: #ffd700;
   text-decoration: underline;
-}
-
-/* Game Cards Inside Container */
-.game-card {
-  padding: 20px;
-  border-top: 1px solid #3a3a3a;
-}
-
-.game-title {
-  font-size: 1.25rem;
-  color: #ffd700;
-  margin: 0 0 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
 }
 
 .game-desc {
@@ -235,14 +227,7 @@
   line-height: 1.5;
 }
 
-/* Iframe Responsiveness */
-iframe {
-  border: none;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-/* General Links */
+/* Links */
 a {
   color: #ffd700;
   text-decoration: none;
@@ -250,4 +235,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.gold-link {
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 0.5rem;
 }
