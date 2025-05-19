@@ -141,6 +141,7 @@
 }
 
 
+/* Itch Section */
 #itch {
   background-color: #1e1e1e;
   padding: 60px 20px;
@@ -209,7 +210,3 @@
   text-decoration: underline;
 }
 
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 0.5rem;
-}
