@@ -141,42 +141,25 @@
 }
 
 
-/* Itch Section */
 #itch {
   background-color: #1e1e1e;
   padding: 60px 20px;
   text-align: center;
 }
 
-/* Grid Container */
 .itch-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
 }
 
-/* Left Column for Banner and Games */
-.itch-left {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Right Column for Profile */
-.itch-right {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: flex-start;
-}
-
-/* Cards */
+/* Card styling already good */
 .card {
   background-color: #2c2c2c;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
@@ -186,68 +169,46 @@
   box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
 }
 
-/* Banner Styling */
+/* Profile Styling */
+.profile-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+/* Avatar */
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
+}
+
+/* Game Banner */
 .banner {
   width: 100%;
   border-radius: 8px;
+  margin-bottom: 1rem;
   border: 1px solid #ffd700;
 }
 
-/* Profile Card */
-.profile-card {
-  text-align: center;
-  padding: 20px;
-}
-
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.4);
-  margin-bottom: 1rem;
-}
-
-.profile-title {
-  margin: 0;
-  font-size: 1.4rem;
-  color: #ffd700;
-}
-
-.profile-desc {
-  margin: 0.5rem 0 1rem;
-  color: #ccc;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-/* Game Title Styling */
-.game-title a {
-  font-size: 1.1rem;
-  color: #ffd700;
-  text-decoration: underline;
-  margin-bottom: 0.5rem;
-  display: inline-block;
-}
-
-.game-desc {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #e0e0e0;
-  line-height: 1.5;
-}
-
-/* Links */
-a {
-  color: #ffd700;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
+/* Visit Link */
 .gold-link {
+  font-weight: bold;
+  display: inline-block;
+  color: #ffd700;
+  margin-top: 0.5rem;
+}
+
+.gold-link:hover {
+  text-decoration: underline;
+}
+
   font-weight: bold;
   display: inline-block;
   margin-top: 0.5rem;
