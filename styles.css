@@ -142,26 +142,26 @@
 
 
 /* Itch Section */
-#itch-section {
-  background-color: #1e1e1e; /* Matches testimonials */
+#itch {
+  background-color: #1e1e1e;
   padding: 60px 20px;
   text-align: center;
 }
 
 .itch-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive two-column layout */
-  gap: 20px; /* Proper spacing between cards */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
   max-width: 1000px;
-  margin: auto; /* Centers the section */
+  margin: 0 auto;
 }
 
-/* Individual Cards */
+/* Card styling already good */
 .card {
   background-color: #2c2c2c;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4); /* Keeps glow effect on individual cards */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
@@ -171,16 +171,17 @@
 }
 
 /* Profile Styling */
-.profile-card {
+.profile-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
   text-align: left;
 }
 
-.profile-content {
-  display: flex;
-  align-items: center; /* Aligns avatar and text */
-  gap: 1.5rem;
-}
-
+/* Avatar */
 .avatar {
   width: 64px;
   height: 64px;
@@ -189,7 +190,7 @@
   box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
 }
 
-/* Game Banner Styling */
+/* Game Banner */
 .banner {
   width: 100%;
   border-radius: 8px;
@@ -197,17 +198,18 @@
   border: 1px solid #ffd700;
 }
 
-/* Link Styling */
-a {
+/* Visit Link */
+.gold-link {
+  font-weight: bold;
+  display: inline-block;
   color: #ffd700;
-  text-decoration: none;
+  margin-top: 0.5rem;
 }
 
-a:hover {
+.gold-link:hover {
   text-decoration: underline;
 }
 
-.gold-link {
   font-weight: bold;
   display: inline-block;
   margin-top: 0.5rem;
