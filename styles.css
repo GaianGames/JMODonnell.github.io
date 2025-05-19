@@ -151,10 +151,25 @@
 /* Grid Container */
 .itch-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
   max-width: 1000px;
   margin: auto;
+}
+
+/* Left Column for Banner and Games */
+.itch-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right Column for Profile */
+.itch-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
 }
 
 /* Cards */
@@ -171,45 +186,39 @@
   box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
 }
 
-/* Profile Styling */
-.profile-card {
-  text-align: left;
-  grid-column: span 2;
+/* Banner Styling */
+.banner {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ffd700;
 }
 
-.profile-content {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
+/* Profile Card */
+.profile-card {
+  text-align: center;
+  padding: 20px;
 }
 
 .avatar {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 2px 6px rgba(255, 215, 0, 0.4);
+  margin-bottom: 1rem;
 }
 
 .profile-title {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #ffd700;
 }
 
 .profile-desc {
-  margin: 0.25rem 0 0.5rem;
+  margin: 0.5rem 0 1rem;
   color: #ccc;
   font-size: 1rem;
-}
-
-.banner {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  border: 1px solid #ffd700;
+  line-height: 1.4;
 }
 
 /* Game Title Styling */
