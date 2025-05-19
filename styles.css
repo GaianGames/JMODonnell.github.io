@@ -93,10 +93,13 @@
 }
 
 .collective-image {
-  max-width: 50%;
-  border-radius: 8px;
-  border: 1px solid #ffd700;
+  width: 150px; /* Adjust the size to keep it compact */
+  height: auto;
+  display: block;
+  margin: 10px auto; /* Centers the image neatly */
+  border-radius: 8px; /* Adds a subtle rounded effect */
 }
+
 
 .collective-text h2 {
   color: #ffd700;
