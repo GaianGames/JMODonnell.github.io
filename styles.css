@@ -1,3 +1,25 @@
+* Music Section */
+.music-card {
+    background-color: #2E2E2E; /* Dark grey */
+    color: gold;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 215, 0, 0.7);
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+
 /* Testimonials Section */
 #testimonials {
   background-color: #1e1e1e; /* Dark background for bold contrast */
