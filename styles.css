@@ -135,44 +135,44 @@
 }
 
 
+/* Itch Section */
 #itch-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem 0;
+  background-color: #1e1e1e; /* Matches testimonials */
+  padding: 60px 20px;
+  text-align: center;
 }
 
+.itch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive two-column layout */
+  gap: 20px; /* Proper spacing between cards */
+  max-width: 1000px;
+  margin: auto; /* Centers the section */
+}
+
+/* Individual Cards */
 .card {
-  background: #1e1e1e;
-  padding: 1.25rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.15);
+  background-color: #2c2c2c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4); /* Keeps glow effect on individual cards */
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
+
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.25);
-}
-.card h3 {
-  color: #ffd700;
-  margin-top: 0;
+  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
 }
 
-.featured-card {
-  grid-column: span 2;
-}
-
-.banner {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  border: 1px solid #ffd700;
+/* Profile Styling */
+.profile-card {
+  text-align: left;
 }
 
 .profile-content {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+  align-items: center; /* Aligns avatar and text */
+  gap: 1.5rem;
 }
 
 .avatar {
@@ -183,10 +183,20 @@
   box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
 }
 
+/* Game Banner Styling */
+.banner {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #ffd700;
+}
+
+/* Link Styling */
 a {
   color: #ffd700;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
