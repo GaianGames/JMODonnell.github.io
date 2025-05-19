@@ -93,7 +93,8 @@
 }
 
 .collective-image {
-  width: 1000px; /* Adjust the size to keep it compact */
+  width: 40%; /* Adjust size dynamically */
+  max-width: 300px; /* Prevent it from getting too large */
   height: auto;
   display: block;
   margin: 10px auto; /* Centers the image neatly */
