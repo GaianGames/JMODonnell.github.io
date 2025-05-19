@@ -199,7 +199,8 @@
       <div class="tab-container">
         <div class="tab active" data-target="youtube">YouTube</div>
         <div class="tab" data-target="pdfs">PDFs</div>
-        <div class="tab" data-target="itch">Itch Projects</div>
+        <div class="tab active" data-target="itch">Itch Projects</div>
+        <div class="tab active" data-target="music">Music</div>
       </div>
       
       <!-- YouTube Projects Tab -->
@@ -319,6 +320,21 @@
         </div>
         <!-- More PDF project cards -->
       </div>
+
+      <!-- Music Tab (Hidden by default) -->
+      <div id="Music" class="grid" style="display:none;">
+        <div class="card">
+          <div class="container music">
+          <h3>Music</h3>
+            <p>Immerse in my creative mood with personal music selections.</p>
+            <audio controls>
+        <source src="Music/Elysium Fields Final.wav" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      
       
       <!-- Itch.io Projects Tab (Hidden by default) -->
 <div id="itch" class="grid" style="display:none;">
@@ -372,18 +388,6 @@
 </section>
 
 
-  <!-- Music Section -->
-  <section id="music">
-    <div class="container music">
-      <h2>Music</h2>
-      <p>Immerse in my creative mood with personal music selections.</p>
-      <audio controls>
-        <source src="Music/Elysium Fields Final.wav" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-  </section>
-
   <!-- JavaScript for Project Tab Switching -->
   <script>
     const tabs = document.querySelectorAll('.tab');
@@ -391,6 +395,7 @@
       youtube: document.getElementById('youtube'),
       pdfs: document.getElementById('pdfs'),
       itch: document.getElementById('itch')
+      music: document.getElementById('music')
     };
 
     tabs.forEach(tab => {
