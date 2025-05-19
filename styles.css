@@ -148,47 +148,34 @@
   text-align: center;
 }
 
-/* Grid Layout */
+/* Grid Container */
 .itch-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 20px;
   max-width: 1000px;
   margin: auto;
 }
 
-/* Base Card Style */
-.card {
-  background-color: #2c2c2c;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  text-align: left;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
-}
-
-/* Gaian Games Featured Card */
+/* Featured Card as Container */
 .featured-card {
-  padding: 0;
-  overflow: hidden;
   background-color: #2c2c2c;
-  border-radius: 8px;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4);
+  overflow: hidden;
+  text-align: left;
 }
 
 /* Banner */
 .banner {
   width: 100%;
   height: auto;
-  border-bottom: 1px solid #ffd700;
   object-fit: cover;
+  border-bottom: 2px solid #ffd700;
 }
 
-/* Avatar & Info Layout */
+/* Avatar + Info */
 .profile-content {
   display: flex;
   align-items: center;
@@ -197,41 +184,62 @@
 }
 
 .avatar {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
   background-color: #1e1e1e;
 }
 
-/* Text Info */
-.profile-content h3 {
-  margin: 0 0 0.5rem 0;
+.profile-title {
+  margin: 0;
+  font-size: 1.5rem;
   color: #ffd700;
-  font-size: 1.3rem;
 }
 
-.profile-content p {
-  margin: 0 0 0.5rem 0;
+.profile-desc {
+  margin: 0.25rem 0 0.5rem;
   color: #ccc;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
-.profile-content a {
+/* Link Styling */
+.gold-link {
   color: #ffd700;
   font-weight: bold;
   font-size: 0.95rem;
-  margin-top: 0.25rem;
+  text-decoration: none;
 }
 
-/* Game Description */
+.gold-link:hover {
+  text-decoration: underline;
+}
+
+/* Game Cards Inside Container */
+.game-card {
+  padding: 20px;
+  border-top: 1px solid #3a3a3a;
+}
+
+.game-title {
+  font-size: 1.25rem;
+  color: #ffd700;
+  margin: 0 0 0.5rem;
+}
+
 .game-desc {
-  font-size: 0.9rem;
-  color: #e0e0e0;
   margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #e0e0e0;
   line-height: 1.5;
-  text-align: left;
+}
+
+/* Iframe Responsiveness */
+iframe {
+  border: none;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 /* General Links */
