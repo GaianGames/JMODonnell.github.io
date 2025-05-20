@@ -303,29 +303,40 @@
 
 /* === Elegant Itch Section - Matching Testimonials Style === */
 
+/* === Itch Section - Elegant, Compact, Banner-Focused === */
+
 #itch {
   background: #1e1e1e;
-  padding: 60px 0;
+  padding: 60px 0 40px 0;
 }
-#itch h2 {
-  color: #d4af37;
-  border-bottom: 2px solid #d4af37;
-  margin-bottom: 40px;
-  padding-bottom: 10px;
-  display: inline-block;
+
+.itch-banner-row {
+  width: 100%;
   text-align: center;
+  margin-bottom: 24px;
 }
+.itch-banner-full {
+  display: inline-block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.22);
+  object-fit: contain;
+  background: #181818;
+}
+
 .itch-intro-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
+  margin: 0 auto 28px auto;
   background: #232323;
-  border: none;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.22);
   padding: 0;
-  overflow: hidden;
+  max-width: 480px;
+  min-width: 0;
 }
 
 .itch-profile-flex {
@@ -341,17 +352,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 180px;
-  padding: 30px 20px;
+  flex: 0 0 110px;
+  padding: 24px 10px;
   border-right: 1px solid #252525;
 }
 .itch-avatar {
-  width: 120px;
-  height: 120px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
-  border: 4px solid #d4af37;
+  border: 3px solid #d4af37;
   object-fit: cover;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.16);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.13);
   background: #222;
 }
 
@@ -359,35 +370,27 @@
   flex: 1 1 0%;
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: 18px 20px;
   background: #1e1e1e;
   align-items: flex-start;
   justify-content: center;
 }
-.itch-banner {
-  width: 100%;
-  max-height: 80px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
 .itch-profile-meta {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 .itch-profile-title {
   color: #d4af37;
-  font-size: 1.5em;
+  font-size: 1.15em;
   font-weight: 700;
-  margin: 0 0 4px 0;
-  letter-spacing: 1px;
+  margin: 0 0 2px 0;
+  letter-spacing: 0.5px;
 }
 .itch-profile-bio {
   color: #f1f1f1;
-  font-size: 1.05em;
-  margin: 0 0 8px 0;
+  font-size: 1em;
+  margin: 0 0 4px 0;
 }
 .itch-profile-lead {
   color: #d4af37;
@@ -399,46 +402,42 @@
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s, color 0.2s;
-  margin-top: 4px;
+  margin-top: 2px;
+  font-size: 0.98em;
 }
 .itch-profile-link:hover {
   color: #fffbe6;
   border-bottom: 2px solid #d4af37;
 }
 
-/* Games grid styled like testimonials grid */
+/* Games Grid, Compact Cards */
 .itch-games-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
   margin-top: 0;
 }
 .itch-games-grid .card {
   background-color: #232323;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
-  padding: 26px 24px 20px 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  padding: 14px 12px 10px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: none;
-}
-.itch-game-title {
-  color: #d4af37;
-  font-size: 1.2em;
-  font-weight: 600;
-  margin-bottom: 14px;
-  text-align: center;
-  letter-spacing: 0.5px;
+  min-width: 0;
+  max-width: 340px;
+  margin: 0 auto;
 }
 .itch-game-embed {
   width: 100%;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 .itch-game-embed iframe {
   width: 100%;
-  min-height: 167px;
-  height: 167px;
+  min-height: 120px;
+  height: 120px;
   max-width: 100%;
   border: none;
   border-radius: 7px;
@@ -447,14 +446,21 @@
 }
 .itch-game-description {
   color: #e5e5e5;
-  font-size: 1em;
+  font-size: 0.98em;
   margin: 0;
   text-align: center;
-  min-height: 54px;
+  min-height: 44px;
 }
 
 /* Responsive adjustments */
-@media (max-width: 900px) {
+@media (max-width: 700px) {
+  .itch-banner-full {
+    max-width: 100vw;
+    border-radius: 10px;
+  }
+  .itch-intro-card {
+    max-width: 96vw;
+  }
   .itch-profile-flex {
     flex-direction: column;
     align-items: center;
@@ -462,30 +468,16 @@
   .itch-avatar-col {
     border-right: none;
     border-bottom: 1px solid #252525;
-    padding-bottom: 15px;
-    margin-bottom: 0;
+    padding-bottom: 10px;
     justify-content: center;
   }
   .itch-bio-col {
-    padding: 18px 12px;
+    padding: 14px 8px;
     align-items: center;
     text-align: center;
   }
-  .itch-banner {
-    margin-bottom: 12px;
-    max-height: 65px;
-  }
-}
-
-@media (max-width: 600px) {
-  .itch-intro-card {
-    padding: 0;
-  }
   .itch-games-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .itch-banner {
-    max-height: 38vw;
+    gap: 14px;
   }
 }
