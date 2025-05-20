@@ -90,12 +90,12 @@
 #about-me .about-card {
   flex-direction: column;
   gap: 24px;
-   padding: 24px;
-   align-items: flex-start;
+  padding: 24px;
+  align-items: flex-start;
 }
   
-  #about-me .about-photo img {
-    margin-bottom: 12px;
+#about-me .about-photo img {
+  margin-bottom: 12px;
 }
   
 /* Testimonials Section */
