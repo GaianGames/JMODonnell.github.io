@@ -37,6 +37,10 @@
   color: #d4af37; /* Gold accent */
 }
 
+.testimonial-card h2 {
+  text-align: center;
+}
+
 .testimonial-card p {
   font-size: 1em;
   font-style: italic;
@@ -47,6 +51,7 @@
   height: 2px; /* Thin line */
   background-color: #d4af37; /* Gold accent */
   margin: 10px auto 20px auto; /* Adds space above & below */
+  align-items: center;
 }
 
 
