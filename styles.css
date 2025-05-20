@@ -113,7 +113,13 @@
 
 .collective-text h3 {
   font-size: 1.2em;
-  color: #d4af37; /* Gold accent */
+  color: #d4af37; /* Gold accent */ 
+}
+
+.collective-text ul {
+  text-align: center;
+  font-style: italic;
+  list-style-position: inside; /* Keeps bullets aligned when centered */
 }
 
 .collective-text h2 {
