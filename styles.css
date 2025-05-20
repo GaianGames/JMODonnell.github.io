@@ -127,6 +127,8 @@
 }
 
 .signature-credit {
+  color: #d4af37 !important;
+}
   font-style: italic;
   color: #d4af37;
   margin-top: 2rem;
@@ -248,4 +250,24 @@
   font-size: 14px;
   color: #d3d3d3;
   margin-top: 8px;
+}
+
+
+
+
+#testimonials h2 {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.testimonials-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#writing-collective {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
