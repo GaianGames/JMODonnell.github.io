@@ -143,34 +143,30 @@
 
 /* Itch Section */
 #itch {
-  background-color: #1e1e1e;
+  background: url('Images/GaiusBanner.png') no-repeat center center/cover;
   padding: 60px 20px;
   text-align: center;
 }
 
 .itch-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 24px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Card styling already good */
-.card {
-  background-color: #2c2c2c;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+/* Featured Card (Studio Intro) */
+.featured-card {
+  background-color: rgba(44, 44, 44, 0.85);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+  max-width: 800px;
+  width: 100%;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
-}
-
-/* Profile Styling */
 .profile-content {
   display: flex;
   align-items: center;
@@ -181,21 +177,53 @@
   text-align: left;
 }
 
-/* Avatar */
 .avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+  width: 96px;
+  height: 96px;
+  border-radius: 12px;
   object-fit: cover;
-  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.4);
 }
 
-/* Game Banner */
-.banner {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  border: 1px solid #ffd700;
+.profile-content h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+.profile-content p {
+  margin: 0.5rem 0 0.75rem;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+/* Cards for Games */
+.game-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #2c2c2c;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  width: 320px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
+}
+
+.card h3 {
+  color: #ffd700;
+  text-decoration: underline;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Visit Link */
@@ -209,4 +237,3 @@
 .gold-link:hover {
   text-decoration: underline;
 }
-
