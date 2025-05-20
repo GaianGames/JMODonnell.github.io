@@ -162,12 +162,18 @@
 }
 
 
-.testimonials-grid .card:hover,
-.testimonial-card:hover {
-  box-shadow: 0 0 24px 10px rgba(255, 215, 0, 0.27);
+/* Only the black card glows on hover in testimonials */
+.testimonials-grid .card:hover {
+  box-shadow: 0 0 24px 10px rgba(255,215,0,0.27);
   border-color: #ffd700;
   transform: translateY(-5px) scale(1.015);
   transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
+}
+.testimonial-card,
+.testimonial-card:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4); /* default only */
+  border: none;
+  transition: none;
 }
 
 
