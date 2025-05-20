@@ -86,6 +86,12 @@
   color: #fff;
 }
 
+#about-me .about-card:hover {
+  box-shadow: 0 0 24px 10px rgba(255, 215, 0, 0.27);
+  border-color: #ffd700;
+  transform: translateY(-5px) scale(1.015);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
+}
 
 @media (max-width: 800px) {
   #about-me .about-card {
@@ -155,6 +161,14 @@
   align-items: center;
 }
 
+.testimonial-card:hover,
+.card:hover .testimonial-card {
+  box-shadow: 0 0 18px 6px rgba(255, 215, 0, 0.17), 0 3px 12px rgba(0,0,0,0.18);
+  border: 2px solid #ffd700;
+  background: #232323;
+  transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+}
+
 
 /* Header Section */
 .header-content {
@@ -176,6 +190,14 @@
 
 .text-container {
   text-align: center;
+}
+
+/* Projects Section */
+#projects .grid .card:hover {
+  box-shadow: 0 0 20px 7px rgba(255, 215, 0, 0.21);
+  border-color: #ffd700;
+  transform: translateY(-5px) scale(1.0125);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
 }
 
 /* Writing Collective Section */
@@ -258,6 +280,13 @@
   margin: 1rem auto 0; /* Centers the image */
   filter: brightness(1.3) sepia(1) saturate(2) hue-rotate(15deg); /* Subtle gold tint */
   
+}
+
+#writing-collective .card.collective-card:hover {
+  box-shadow: 0 0 24px 10px rgba(255, 215, 0, 0.28);
+  border-color: #ffd700;
+  transform: translateY(-6px) scale(1.02);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
 }
 
 
