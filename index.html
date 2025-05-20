@@ -301,26 +301,41 @@
 
 
   <!-- JavaScript for Project Tab Switching -->
-  <script>
-    const tabs = document.querySelectorAll('.tab');
-    const sections = {
-      youtube: document.getElementById('youtube'),
-      editorial: document.getElementById('editorial'),
-      itch: document.getElementById('itch'),
-      music: document.getElementById('music'),
-    };
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const sections = {
+    youtube: document.getElementById('youtube'),
+    editorial: document.getElementById('editorial'),
+    itch: document.getElementById('itch'),
+    music: document.getElementById('music'),
+  };
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        
-        Object.keys(sections).forEach(key => {
-          sections[key].style.display = key === tab.getAttribute('data-target') ? 'grid' : 'none';
-        });
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      Object.keys(sections).forEach(key => {
+        if (key === tab.getAttribute('data-target')) {
+          // Use the correct display property for each section
+          if (key === 'itch') {
+            sections[key].style.display = 'block'; // Itch section: block
+          } else {
+            sections[key].style.display = 'grid'; // Others: grid
+          }
+        } else {
+          sections[key].style.display = 'none';
+        }
       });
     });
-  </script>
+  });
+
+  // Optional: Set the initial visible section on page load
+  // (Uncomment if you want one tab to show by default)
+  // const activeTab = document.querySelector('.tab.active');
+  // if (activeTab) {
+  //   activeTab.click();
+  // }
+</script>
 
   <!-- Writing Collective Section -->
   <section id="writing-collective">
