@@ -129,7 +129,6 @@
   <!-- Navigation Menu -->
   <nav>
     <a href="#about-me">About Me</a>
-    <a href="#narrative-design">Narrative Design</a>
     <a href="#editing">Editing</a>
     <a href="#projects">Media & Projects</a>
     <a href="#testimonials">Testimonials</a>
@@ -161,41 +160,6 @@
     </div>
   </section>
 
-  <!-- Narrative Design Section -->
-  <section id="narrative-design">
-    <div class="container">
-      <h2>Narrative Design</h2>
-      <p>Explore immersive game narratives crafted for rich, interactive experiences.</p>
-      <div class="grid">
-        <div class="card">
-          <h3>Narrative Project</h3>
-          <p>Brief description with creative flair.</p>
-          <!-- Embed a YouTube trailer or animatic -->
-          <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <!-- Add more cards as needed -->
-      </div>
-    </div>
-  </section>
-
-   <!-- Editing Section -->
-  <section id="editing">
-    <div class="container">
-      <h2>Editing</h2>
-      <p>Polished and refined works that highlight precision and creative critique.</p>
-      <div class="grid">
-        <div class="card">
-          <h3>Edited Magazine</h3>
-          <p>Check out this magazine spread.</p>
-          <object data="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview" type="application/pdf" width="100%" height="600px">
-            <p>Unable to display PDF. <a href="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/view" target="_blank">View it here</a>.</p>
-            </object>
-          </a>
-        </div>
-        <!-- More cards for additional editing projects -->
-      </div>
-    </div>
-  </section>
 
   <!-- Media & Projects Section -->
   <section id="projects">
@@ -205,9 +169,9 @@
       
       <!-- Tabs for filtering different project types -->
       <div class="tab-container">
-        <div class="tab active" data-target="youtube">YouTube</div>
-        <div class="tab" data-target="pdfs">PDFs</div>
-        <div class="tab" data-target="itch">Itch Projects</div>
+        <div class="tab" data-target="youtube">YouTube</div>
+        <div class="tab" data-target="editorial">editorial</div>
+        <div class="tab active" data-target="itch">Itch Projects</div>
         <div class="tab" data-target="music">Music</div>
       </div>
       
@@ -224,13 +188,21 @@
         <!-- More YouTube project cards -->
       </div>
 
-      <!-- PDFs Tab (Hidden by default) -->
-      <div id="pdfs" class="grid" style="display:none;">
+      <!-- Editorial Tab (Hidden by default) -->
+      <div id="editorial" class="grid" style="display:none;">
         <div class="card">
           <h3>Magazine Feature</h3>
-          <a href="link-to-pdf" target="_blank">View PDF</a>
+          <p>Polished and refined works that highlight precision and creative critique.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Edited Magazine</h3>
+          <p>Check out this magazine spread.</p>
+          <object data="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview" type="application/pdf" width="100%" height="600px">
+            <p>Unable to display PDF. <a href="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/view" target="_blank">View it here</a>.</p>
+            </object>
+          </a>
         </div>
-        <!-- More PDF project cards -->
+        <!-- More cards for additional editing projects -->
       </div>
 
       <!-- Music Tab (Hidden by default) -->
