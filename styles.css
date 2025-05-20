@@ -161,13 +161,15 @@
   align-items: center;
 }
 
-.testimonial-card:hover,
-.card:hover .testimonial-card {
-  box-shadow: 0 0 18px 6px rgba(255, 215, 0, 0.17), 0 3px 12px rgba(0,0,0,0.18);
-  border: 2px solid #ffd700;
-  background: #232323;
-  transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+
+.testimonials-grid .card:hover,
+.testimonial-card:hover {
+  box-shadow: 0 0 24px 10px rgba(255, 215, 0, 0.27);
+  border-color: #ffd700;
+  transform: translateY(-5px) scale(1.015);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
 }
+
 
 
 /* Header Section */
