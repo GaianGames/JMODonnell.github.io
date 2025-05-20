@@ -303,48 +303,60 @@
 /* ===================== */
 
 
-/* Main Section Background */
+/* ----- Itch Section Advanced Styles ----- */
 #itch {
   background: #1e1e1e;
   padding: 80px 0 40px 0;
   text-align: center;
 }
 
-/* Advanced Featured Profile Card */
+/* Profile Banner and Floating Card */
 .featured-profile-advanced {
   max-width: 900px;
   margin: 0 auto 56px auto;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.07), 0 1.5px 6px rgba(0,0,0,0.18);
-  background: linear-gradient(120deg, #232526 0%, #181818 100%);
-  border: 2px solid #ffd700;
   position: relative;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding-bottom: 90px;
+  overflow: visible;
 }
-
+.profile-banner {
+  position: relative;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  overflow: visible;
+}
 .profile-banner img {
   width: 100%;
-  max-height: 220px;
+  height: 320px;
   object-fit: cover;
+  border-radius: 20px 20px 0 0;
   display: block;
-  border-bottom: 2px solid #ffd700;
   background: #191919;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
 }
-
 .profile-main {
+  position: absolute;
+  left: 50%;
+  bottom: -60px; /* overlaps lower part of banner */
+  transform: translateX(-50%);
+  width: 86%;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 32px;
-  padding: 36px 32px;
-  flex-wrap: wrap;
-  justify-content: center;
+  padding: 32px 36px;
+  border-radius: 24px;
+  background: rgba(30, 30, 30, 0.74); /* semi-transparent dark */
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 2px 6px rgba(255,215,0,0.09);
+  backdrop-filter: blur(3px);
+  border: 2px solid #ffd700;
 }
-
 .profile-avatar-area {
   flex-shrink: 0;
   text-align: center;
 }
-
 .profile-avatar {
   width: 130px;
   height: 130px;
@@ -352,38 +364,32 @@
   border: 4px solid #ffd700;
   object-fit: cover;
   box-shadow: 0 4px 20px rgba(255,215,0,0.18), 0 0.5px 3px rgba(0,0,0,0.24);
-  margin-top: -72px;
   background: #222;
 }
-
 .profile-meta {
   text-align: left;
   max-width: 540px;
 }
-
 .profile-title {
   font-size: 2em;
-  color: #d4af37;
+  color: #ffd700;
   letter-spacing: 1.5px;
   margin-bottom: 0.25em;
   margin-top: 0;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 .profile-bio {
   color: #f1f1f1;
   font-size: 1.1em;
   margin-bottom: 14px;
   line-height: 1.6;
 }
-
 .profile-highlight {
   display: inline-block;
-  color: #d4af37;
+  color: #ffd700;
   font-weight: bold;
   font-size: 1em;
 }
-
 .profile-gold-link {
   display: inline-block;
   margin-top: 8px;
@@ -394,60 +400,73 @@
   transition: color 0.2s;
   border-bottom: 2px solid transparent;
 }
-
 .profile-gold-link:hover {
   color: #fffbe6;
   border-bottom: 2px solid #ffd700;
 }
 
-/* Games Grid */
+/* Responsive: stack the floating card, shrink banner */
+@media (max-width: 900px) {
+  .profile-banner img { height: 180px; }
+  .profile-main {
+    position: static;
+    transform: none;
+    width: 98%;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 5px;
+    border-radius: 16px;
+    margin-top: -55px;
+  }
+  .featured-profile-advanced { padding-bottom: 24px; }
+}
+
+/* Itch Grid and Game Cards */
 #itch .itch-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   background: #18181b;
   padding: 48px 20px;
   border-radius: 14px;
   max-width: 1100px;
   margin: 0 auto;
 }
-
-/* Card base */
 #itch .card.game-card {
   background: linear-gradient(135deg, #232526 0%, #1e1e1e 100%);
   border: 2px solid #ffd700;
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(255, 215, 0, 0.10), 0 1.5px 6px rgba(0,0,0,0.18);
   width: 330px;
-  min-height: 330px;
+  min-height: 420px;
+  height: 420px;
+  max-width: 98vw;
   padding: 32px 24px 24px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.18s cubic-bezier(.4,1.8,.7,1), box-shadow 0.2s;
+  justify-content: flex-start;
   position: relative;
   overflow: hidden;
+  transition: transform 0.18s cubic-bezier(.4,1.8,.7,1), box-shadow 0.2s;
 }
-
 #itch .card.game-card:hover {
   transform: translateY(-7px) scale(1.02);
   box-shadow: 0 16px 40px rgba(255, 215, 0, 0.22), 0 3px 12px rgba(0,0,0,0.25);
   border-color: #ffe066;
 }
-
-/* Game Title */
 #itch .card.game-card h3 {
   font-size: 1.4em;
-  color: #d4af37;
+  color: #ffd700;
   margin: 0 0 12px 0;
   letter-spacing: 0.02em;
   position: relative;
   padding-bottom: 6px;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 #itch .card.game-card h3::after {
   content: "";
   display: block;
@@ -457,8 +476,6 @@
   border-radius: 2px;
   margin: 8px auto 0 auto;
 }
-
-/* Description */
 #itch .card.game-card .game-description {
   color: #f3e9c7;
   font-size: 1em;
@@ -467,20 +484,25 @@
   line-height: 1.6;
   min-height: 54px;
 }
-
-/* Itch.io iframe - styled to fit card */
+/* Make iframe always fill available space and keep cards even */
+.game-embed-wrapper {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
 #itch .card.game-card iframe {
+  width: 100%;
+  min-height: 167px;
+  height: 167px;
+  max-width: 100%;
   border: none;
   border-radius: 8px;
-  margin-top: auto;
-  width: 100%;
-  max-width: 100%;
-  min-height: 140px;
   background: #191919;
   box-shadow: 0 2px 8px rgba(255,215,0,0.12);
 }
 
-/* Responsive tweaks */
+/* Responsive tweaks for cards */
 @media (max-width: 1100px) {
   #itch .itch-grid {
     gap: 20px;
@@ -491,20 +513,19 @@
     max-width: 370px;
     min-width: 250px;
     padding: 24px 10px 18px 10px;
+    height: 370px;
+    min-height: 370px;
   }
-  .featured-profile-advanced {
-    margin: 0 6px 40px 6px;
-  }
-  .profile-main {
-    flex-direction: column;
-    gap: 10px;
-    padding: 24px 10px;
-  }
-  .profile-meta {
-    text-align: center;
-    max-width: 100%;
-  }
-  .profile-avatar {
-    margin-top: -65px;
-  }
+}
+
+/* Note about cover images */
+.itch-cover-note {
+  color: #ffd700;
+  margin: 18px auto 0 auto;
+  font-size: 1em;
+  max-width: 700px;
+  background: #181818;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 1px solid #d4af37;
 }
