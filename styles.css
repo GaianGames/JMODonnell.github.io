@@ -87,17 +87,25 @@
 }
 
 @media (max-width: 800px) {
-  #about-me .about-card {
-    flex-direction: column;
-    gap: 24px;
-    padding: 24px;
-    align-items: flex-start;
-  }
+#about-me .about-card {
+  flex-direction: column;
+  gap: 24px;
+   padding: 24px;
+   align-items: flex-start;
+}
+  
   #about-me .about-photo img {
     margin-bottom: 12px;
-  }
 }
 
+/* Projects Section */
+#projects .grid .card:hover {
+  box-shadow: 0 0 20px 7px rgba(255, 215, 0, 0.21);
+  border-color: #ffd700;
+  transform: translateY(-5px) scale(1.0125);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
+}
+  
 /* Testimonials Section */
 #testimonials {
   background-color: #1e1e1e; /* Dark background for bold contrast */
@@ -120,6 +128,14 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.4);
   text-align: center;
+}
+
+.testimonial-card:hover,
+.card:hover .testimonial-card {
+  box-shadow: 0 0 18px 6px rgba(255, 215, 0, 0.17), 0 3px 12px rgba(0,0,0,0.18);
+  border: 2px solid #ffd700;
+  background: #232323;
+  transition: box-shadow 0.2s, border 0.2s, background 0.2s;
 }
 
 .testimonial-card img {
@@ -181,6 +197,13 @@
   background-color: #121212;
   padding: 3rem 1.5rem;
   color: #f5f5f5;
+}
+
+#writing-collective .card.collective-card:hover {
+  box-shadow: 0 0 24px 10px rgba(255, 215, 0, 0.28);
+  border-color: #ffd700;
+  transform: translateY(-6px) scale(1.02);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
 }
 
 .collective-motto {
