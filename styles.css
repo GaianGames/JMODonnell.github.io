@@ -243,11 +243,11 @@
 /* Adjusting Itch Grid for Horizontal Layout */
 .itch-grid {
   display: flex;
-  flex-direction: row; /* Change from column to row */
-  justify-content: center; /* Centers the game cards */
-  align-items: flex-start; /* Aligns items at the top */
-  flex-wrap: wrap; /* Ensures responsiveness */
-  gap: 20px; /* Space between cards */
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch; /* Ensures all children have equal height */
+  flex-wrap: wrap;
+  gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -259,8 +259,12 @@
   border-radius: 12px;
   box-shadow: 0 6px 14px rgba(255, 215, 0, 0.5);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
-  width: 300px; /* Defines fixed width */
-  text-align: center; /* Centers text */
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;         /* Makes the card stretch to match others in the row */
+  box-sizing: border-box;
 }
 
 .card:hover {
