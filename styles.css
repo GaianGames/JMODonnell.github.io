@@ -146,6 +146,7 @@
   background: url('Images/GaiusBanner.png') no-repeat center center/cover;
   padding: 60px 20px;
   text-align: center;
+  color: #fff;
 }
 
 .itch-grid {
@@ -157,27 +158,21 @@
   margin: 0 auto;
 }
 
-/* Featured Card (Studio Intro) */
-.featured-card {
-  background-color: rgba(44, 44, 44, 0.85);
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
-  max-width: 800px;
-  width: 100%;
-}
-
-.profile-content {
+/* Studio Introduction */
+.studio-intro {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 1rem;
-  text-align: left;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
 }
 
-.avatar {
+.studio-intro .avatar {
   width: 96px;
   height: 96px;
   border-radius: 12px;
@@ -185,19 +180,30 @@
   box-shadow: 0 2px 6px rgba(255, 215, 0, 0.4);
 }
 
-.profile-content h3 {
+.studio-text h3 {
   margin: 0;
   font-size: 1.5rem;
   color: #ffd700;
 }
 
-.profile-content p {
+.studio-text p {
   margin: 0.5rem 0 0.75rem;
-  color: #ccc;
+  color: #ddd;
   font-size: 1rem;
 }
 
-/* Cards for Games */
+.studio-text .gold-link {
+  font-weight: bold;
+  display: inline-block;
+  color: #ffd700;
+  margin-top: 0.5rem;
+}
+
+.studio-text .gold-link:hover {
+  text-decoration: underline;
+}
+
+/* Game Cards */
 .game-cards {
   display: flex;
   flex-wrap: wrap;
@@ -226,14 +232,8 @@
   margin-bottom: 0.5rem;
 }
 
-/* Visit Link */
-.gold-link {
-  font-weight: bold;
-  display: inline-block;
-  color: #ffd700;
-  margin-top: 0.5rem;
-}
-
-.gold-link:hover {
-  text-decoration: underline;
+.card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
 }
