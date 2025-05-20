@@ -161,15 +161,18 @@
 }
 
 
-/* Itch Section */
+/* ===================== */
+/* Itch Section - Scoped */
+/* ===================== */
+
 #itch {
   background-color: #1e1e1e;
   padding: 80px 20px;
   text-align: center;
 }
 
-/* Profile Section */
-.featured-profile {
+/* Featured Profile inside Itch */
+#itch .featured-profile {
   max-width: 900px;
   margin: 0 auto 60px;
   text-align: center;
@@ -177,7 +180,7 @@
 }
 
 /* Banner Styling */
-.banner {
+#itch .banner {
   width: 100%;
   max-height: 280px;
   object-fit: cover;
@@ -186,12 +189,12 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.banner:hover {
+#itch .banner:hover {
   transform: scale(1.02);
 }
 
 /* Profile Container */
-.profile-container {
+#itch .profile-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,14 +203,12 @@
   flex-wrap: wrap;
 }
 
-/* Profile Text */
-.profile-text {
+#itch .profile-text {
   max-width: 600px;
   text-align: left;
 }
 
-/* Avatar */
-.avatar {
+#itch .avatar {
   width: 140px;
   height: 140px;
   border-radius: 16px;
@@ -216,17 +217,16 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.avatar:hover {
+#itch .avatar:hover {
   transform: scale(1.05);
 }
 
-/* Bio & Link Alignment */
-.bio {
+#itch .bio {
   margin-bottom: 0.75rem;
   line-height: 1.6;
 }
 
-.gold-link {
+#itch .gold-link {
   font-weight: bold;
   color: #ffd700;
   display: inline-block;
@@ -234,38 +234,70 @@
   transition: color 0.3s ease-in-out;
 }
 
-.gold-link:hover {
+#itch .gold-link:hover {
   text-decoration: underline;
   color: rgba(255, 215, 0, 0.8);
 }
 
-/* Game Grid with Nesting Fix */
-.itch-grid {
+/* Itch-specific Game Grid */
+#itch .itch-grid {
   display: flex;
-  flex-direction: column; /* Ensures hierarchy */
-  align-items: center;
-  gap: 40px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Game Cards */
-.card {
+/* Itch Game Cards (only inside #itch) */
+#itch .card,
+#itch .game-card {
   background-color: #2c2c2c;
   padding: 28px;
   border-radius: 12px;
   box-shadow: 0 6px 14px rgba(255, 215, 0, 0.5);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
-  width: 90%; /* Ensuring they fit the container */
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-.card:hover {
+#itch .card:hover,
+#itch .game-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(255, 215, 0, 0.7);
 }
 
-/* Game Descriptions */
-.card p {
+/* Styling the Game Titles with Gold Underlines */
+#itch .card h3,
+#itch .game-card h3 {
+  font-size: 1.4em;
+  color: #ffd700;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+#itch .card h3::after,
+#itch .game-card h3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ffd700;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Game Descriptions in Itch */
+#itch .card p,
+#itch .game-card p {
   font-size: 14px;
   color: #d3d3d3;
   margin-top: 8px;
