@@ -1,11 +1,11 @@
-.about-container {
+#about-me .about-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 60px 0;
 }
 
-.about-card {
+#about-me .about-card {
   display: flex;
   flex-direction: row;
   background: #181818;
@@ -18,7 +18,7 @@
   align-items: center;
 }
 
-.about-photo img {
+#about-me .about-photo img {
   width: 180px;
   height: 180px;
   object-fit: cover;
@@ -28,28 +28,28 @@
   background: #232323;
 }
 
-.about-content {
+#about-me .about-content {
   flex: 1;
 }
 
-.gold-highlight {
+#about-me .gold-highlight {
   color: #d4af37;
   letter-spacing: 2px;
 }
 
-.about-tagline {
+#about-me .about-tagline {
   font-size: 1.2em;
   color: #d4af37;
   margin-bottom: 8px;
   font-weight: bold;
 }
 
-.about-intro {
+#about-me .about-intro {
   font-size: 1.1em;
   margin-bottom: 16px;
 }
 
-.about-list {
+#about-me .about-list {
   list-style: none;
   padding: 0;
   margin: 0 0 18px 0;
@@ -58,18 +58,18 @@
   gap: 18px 32px;
 }
 
-.about-list li {
+#about-me .about-list li {
   font-size: 1em;
   display: flex;
   align-items: center;
 }
 
-.about-icon {
+#about-me .about-icon {
   margin-right: 8px;
   font-size: 1.2em;
 }
 
-.cta-btn {
+#about-me .cta-btn {
   margin-top: 10px;
   display: inline-block;
   padding: 12px 30px;
@@ -81,21 +81,21 @@
   transition: background 0.2s, color 0.2s;
 }
 
-.cta-btn:hover {
+#about-me .cta-btn:hover {
   background: #b99a2e;
   color: #fff;
 }
 
 @media (max-width: 800px) {
-.about-card {
-  flex-direction: column;
-  gap: 24px;
-  padding: 24px;
-  align-items: flex-start;
-}
-  
-.about-photo img {
-  margin-bottom: 12px;
+  #about-me .about-card {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    align-items: flex-start;
+  }
+  #about-me .about-photo img {
+    margin-bottom: 12px;
+  }
 }
 
 /* Testimonials Section */
