@@ -150,7 +150,7 @@
 /* Profile Section */
 .featured-profile {
   max-width: 900px;
-  margin: 0 auto 40px;
+  margin: 0 auto 50px;
   text-align: center;
   padding: 20px;
 }
@@ -169,8 +169,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 
 /* Profile Text */
@@ -181,18 +182,34 @@
 
 /* Avatar */
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+}
+
+/* Bio & Link Alignment */
+.bio {
+  margin-bottom: 0.5rem;
+}
+
+.gold-link {
+  font-weight: bold;
+  color: #ffd700;
+  display: block;
+  margin-top: 1rem;
+}
+
+.gold-link:hover {
+  text-decoration: underline;
 }
 
 /* Grid for Game Cards */
 .itch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+  gap: 32px; /* Increased spacing */
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -209,14 +226,4 @@
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 18px rgba(255, 215, 0, 0.7);
-}
-
-/* Visit Link */
-.gold-link {
-  font-weight: bold;
-  color: #ffd700;
-}
-
-.gold-link:hover {
-  text-decoration: underline;
 }
