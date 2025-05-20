@@ -140,96 +140,28 @@
   filter: brightness(1.3) sepia(1) saturate(2) hue-rotate(15deg); /* Subtle gold tint */
 }
 
-
 /* Itch Section */
 #itch {
   background-color: #1e1e1e;
   padding: 60px 20px;
   text-align: center;
-  color: #fff;
 }
 
-/* Grid Container */
 .itch-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Banner at Top */
-#itch .banner {
-  max-width: 800px;
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid #ffd700;
-}
-
-/* Studio Introduction */
-.studio-intro {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 24px;
-  border-radius: 12px;
-  max-width: 800px;
-  width: 100%;
-}
-
-/* Avatar */
-.studio-intro .avatar {
-  width: 96px;
-  height: 96px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.4);
-}
-
-/* Studio Text Styling */
-.studio-text h3 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #ffd700;
-}
-
-.studio-text p {
-  margin: 0.5rem 0 0.75rem;
-  color: #ddd;
-  font-size: 1rem;
-}
-
-.studio-text .gold-link {
-  font-weight: bold;
-  display: inline-block;
-  color: #ffd700;
-  margin-top: 0.5rem;
-}
-
-.studio-text .gold-link:hover {
-  text-decoration: underline;
-}
-
-/* Game Cards */
-.game-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
-}
-
-/* Individual Card */
+/* Card styling already good */
 .card {
   background-color: #2c2c2c;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
-  width: 320px;
 }
 
 .card:hover {
@@ -237,15 +169,42 @@
   box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
 }
 
-.card h3 {
-  color: #ffd700;
-  text-decoration: underline;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+/* Profile Styling */
+.profile-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  text-align: left;
 }
 
-.card p {
-  color: #ccc;
-  font-size: 0.95rem;
-  margin-top: 0.75rem;
+/* Avatar */
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
+}
+
+/* Game Banner */
+.banner {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #ffd700;
+}
+
+/* Visit Link */
+.gold-link {
+  font-weight: bold;
+  display: inline-block;
+  color: #ffd700;
+  margin-top: 0.5rem;
+}
+
+.gold-link:hover {
+  text-decoration: underline;
 }
