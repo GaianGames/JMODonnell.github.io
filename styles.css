@@ -420,11 +420,11 @@
 @media (max-width: 900px) {
   #itch.itch-grid {
     gap: 20px;
-  }
-  #itch .card.game-card {
-    width: 95vw;
-    max-width: 370px;
-    min-width: 250px;
-    padding: 24px 10px 18px 10px;
-  }
 }
+#itch .card.game-card {
+  width: 95vw;
+  max-width: 370px;
+  min-width: 250px;
+  padding: 24px 10px 18px 10px;
+}
+
