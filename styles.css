@@ -350,7 +350,7 @@
 .itch-avatar {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
+  border-radius: 12px;
   border: 5px solid #d4af37;
   object-fit: cover;
   box-shadow: 0 4px 28px rgba(0,0,0,0.25);
@@ -373,7 +373,7 @@
   box-shadow: 0 2px 18px rgba(0,0,0,0.10);
 }
 .itch-profile-title {
-  color: #ffd700;
+  color: #d4af37;
   font-size: 2em;
   font-weight: 800;
   margin-bottom: 8px;
@@ -394,7 +394,7 @@
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
 .itch-profile-link {
-  color: #ffd700;
+  color: #d4af37;
   font-weight: 600;
   text-decoration: none;
   border-bottom: 2px solid #d4af37;
@@ -430,7 +430,7 @@
   display: block;
   width: 60px;
   height: 3px;
-  background: #d4af37;
+  background: #d4af37 !important;
   margin: 10px auto 0 auto;
   border-radius: 2px;
 }
@@ -465,7 +465,7 @@
   transform: translateY(-4px) scale(1.018);
 }
 .itch-game-title {
-  color: #ffd700;
+  color: #d4af37;
   font-size: 1.3em;
   font-weight: 700;
   margin-bottom: 8px;
@@ -492,7 +492,7 @@
 .itch-card-divider {
   width: 90%;
   height: 2px;
-  background: #d4af37;
+  background: #d4af37 !important;
   border-radius: 1px;
   margin: 14px auto 14px auto;
 }
@@ -511,4 +511,58 @@
     gap: 18px;
     padding: 22px 4vw;
   }
+}
+
+/* ==== Itch Profile Redesign – Unified Color & Avatar Fix ==== */
+
+/* Avatar: square with gold border */
+.itch-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px; /* Square with slightly rounded corners */
+  border: 5px solid #d4af37;
+  object-fit: cover;
+  box-shadow: 0 4px 28px rgba(0,0,0,0.25);
+  background: #222;
+  transition: box-shadow 0.2s;
+}
+
+/* Headings, titles, lead, links, game titles, card text all #f1f1f1 */
+.itch-profile-title,
+.itch-profile-lead,
+.itch-games-heading,
+.itch-game-title,
+.itch-profile-link,
+.itch-game-description,
+.itch-games-grid .card {
+  color: #f1f1f1 !important;
+}
+
+/* Gold accents for highlights and dividers */
+.itch-profile-title,
+.itch-profile-lead,
+.itch-games-heading,
+.itch-game-title,
+.itch-profile-link,
+.itch-card-divider {
+  color: #d4af37 !important;
+}
+
+/* Divider lines gold */
+.itch-card-divider,
+.itch-games-heading:after {
+  background: #d4af37 !important;
+}
+
+/* Gold border for avatar and hover/active cards/links */
+.itch-avatar,
+.itch-games-grid .card:hover,
+.itch-profile-link,
+.itch-profile-link:hover {
+  border-color: #d4af37 !important;
+}
+
+/* Bio text stays a lighter gray for separation */
+.itch-profile-bio {
+  color: #e5e5e5 !important;
 }
