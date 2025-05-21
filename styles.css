@@ -566,3 +566,37 @@
 .itch-profile-bio {
   color: #e5e5e5 !important;
 }
+
+/* Game Thumbnail (square or 16:9, adjust as desired) */
+.itch-game-thumb {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Custom Itch.io Play Button */
+.itch-play-btn {
+  background: #d4af37;
+  color: #181818;
+  padding: 11px 40px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  text-decoration: none;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.16s;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  display: inline-block;
+}
+.itch-play-btn:hover, .itch-play-btn:focus {
+  background: #fff1b8;
+  color: #222;
+  box-shadow: 0 0 12px 2px #d4af37;
+  outline: none;
+}
