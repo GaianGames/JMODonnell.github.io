@@ -301,20 +301,12 @@
 /* Itch Section - Gold Theme & Frame Adjustments */
 /* ===================== */
 
-/* === Elegant Itch Section - Matching Testimonials Style === */
-
-/* === Itch Section - Elegant, Compact, Banner-Focused === */
-
-#itch {
-  background: #1e1e1e;
-  padding: 60px 0 40px 0;
-}
-
 .itch-banner-row {
   width: 100%;
   text-align: center;
   margin-bottom: 24px;
 }
+
 .itch-banner-full {
   display: inline-block;
   width: 100%;
@@ -332,13 +324,12 @@
   align-items: center;
   margin: 0 auto 28px auto;
   background: #232323;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.22);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.22);
   padding: 0;
-  max-width: 480px;
+  max-width: 600px;
   min-width: 0;
 }
-
 .itch-profile-flex {
   display: flex;
   flex-direction: row;
@@ -346,138 +337,178 @@
   width: 100%;
   gap: 0;
 }
-
 .itch-avatar-col {
   background: #181818;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 110px;
-  padding: 24px 10px;
-  border-right: 1px solid #252525;
+  flex: 0 0 170px;
+  padding: 40px 24px;
+  border-right: 2px solid #252525;
+  box-shadow: 0 0 24px 5px rgba(212, 175, 55, 0.09);
 }
 .itch-avatar {
-  width: 76px;
-  height: 76px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 3px solid #d4af37;
+  border: 5px solid #d4af37;
   object-fit: cover;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.13);
+  box-shadow: 0 4px 28px rgba(0,0,0,0.25);
   background: #222;
+  transition: box-shadow 0.2s;
 }
-
+.itch-avatar:hover {
+  box-shadow: 0 0 18px 6px #d4af37;
+}
 .itch-bio-col {
   flex: 1 1 0%;
   display: flex;
   flex-direction: column;
-  padding: 18px 20px;
-  background: #1e1e1e;
+  padding: 38px 32px;
+  background: #232323;
   align-items: flex-start;
   justify-content: center;
-}
-.itch-profile-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  border-radius: 0 16px 16px 0;
+  min-height: 200px;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.10);
 }
 .itch-profile-title {
-  color: #d4af37;
-  font-size: 1.15em;
-  font-weight: 700;
-  margin: 0 0 2px 0;
-  letter-spacing: 0.5px;
-}
-.itch-profile-bio {
-  color: #f1f1f1;
-  font-size: 1em;
-  margin: 0 0 4px 0;
+  color: #ffd700;
+  font-size: 2em;
+  font-weight: 800;
+  margin-bottom: 8px;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 1px;
 }
 .itch-profile-lead {
   color: #d4af37;
   font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+.itch-profile-bio {
+  color: #e5e5e5;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
 .itch-profile-link {
-  color: #d4af37;
+  color: #ffd700;
   font-weight: 600;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid #d4af37;
   transition: border-color 0.2s, color 0.2s;
-  margin-top: 2px;
-  font-size: 0.98em;
+  margin-top: 6px;
+  font-size: 1em;
 }
 .itch-profile-link:hover {
   color: #fffbe6;
-  border-bottom: 2px solid #d4af37;
+  border-bottom: 2px solid #ffd700;
+}
+/* Responsive for profile */
+@media (max-width: 700px) {
+  .itch-intro-card { max-width: 98vw; }
+  .itch-profile-flex { flex-direction: column; align-items: center; }
+  .itch-avatar-col { border-right: none; border-bottom: 2px solid #252525; padding-bottom: 14px; justify-content: center; }
+  .itch-bio-col { border-radius: 0 0 16px 16px; padding: 18px 10px; align-items: center; text-align: center; min-height: 0; }
 }
 
-/* Games Grid, Compact Cards */
+/* Games Section Heading */
+.itch-games-heading {
+  font-size: 2em;
+  color: #ffd700;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 1px;
+  position: relative;
+}
+.itch-games-heading:after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #d4af37;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Games Cards Grid */
 .itch-games-grid {
+  background: #202020;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+  padding: 32px 18px;
+  margin: 30px auto;
+  max-width: 1100px;
+  gap: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 18px;
-  margin-top: 0;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 }
 .itch-games-grid .card {
-  background-color: #232323;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
-  padding: 14px 12px 10px 12px;
+  background: #181818;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.17);
+  padding: 26px 20px 20px 20px;
+  border: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border: none;
-  min-width: 0;
-  max-width: 340px;
-  margin: 0 auto;
+  align-items: stretch;
+  position: relative;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
+}
+.itch-games-grid .card:hover {
+  box-shadow: 0 0 28px 10px rgba(255,215,0,0.18), 0 2px 14px rgba(0,0,0,0.18);
+  border: 1.5px solid #d4af37;
+  transform: translateY(-4px) scale(1.018);
+}
+.itch-game-title {
+  color: #ffd700;
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
 .itch-game-embed {
   width: 100%;
   margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.13);
 }
 .itch-game-embed iframe {
   width: 100%;
   min-height: 120px;
-  height: 120px;
+  height: 180px;
   max-width: 100%;
   border: none;
-  border-radius: 7px;
+  border-radius: 8px;
   background: #191919;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
+.itch-card-divider {
+  width: 90%;
+  height: 2px;
+  background: #d4af37;
+  border-radius: 1px;
+  margin: 14px auto 14px auto;
+}
 .itch-game-description {
   color: #e5e5e5;
-  font-size: 0.98em;
+  font-size: 1.05em;
   margin: 0;
   text-align: center;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
   min-height: 44px;
 }
-
-/* Responsive adjustments */
-@media (max-width: 700px) {
-  .itch-banner-full {
-    max-width: 100vw;
-    border-radius: 10px;
-  }
-  .itch-intro-card {
-    max-width: 96vw;
-  }
-  .itch-profile-flex {
-    flex-direction: column;
-    align-items: center;
-  }
-  .itch-avatar-col {
-    border-right: none;
-    border-bottom: 1px solid #252525;
-    padding-bottom: 10px;
-    justify-content: center;
-  }
-  .itch-bio-col {
-    padding: 14px 8px;
-    align-items: center;
-    text-align: center;
-  }
+/* Responsive for games grid */
+@media (max-width: 900px) {
   .itch-games-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 18px;
+    padding: 22px 4vw;
   }
 }
