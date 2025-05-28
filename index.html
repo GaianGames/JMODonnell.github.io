@@ -191,77 +191,93 @@
   <div class="container">
     <h2>Media & Projects</h2>
     <p>Engage with my multimedia projects including trailers, music, animatics, and interactive itch.io experiments.</p>
-
+  
+      
     <!-- Tabs for filtering different project types -->
     <div class="tab-container">
       <div class="tab" data-target="youtube">YouTube</div>
       <div class="tab" data-target="editorial">Editorial</div>
-      <div class="tab" data-target="itch">Itch Projects</div>
+      <div class="tab active" data-target="itch">Itch Projects</div>
       <div class="tab" data-target="music">Music</div>
     </div>
-
-    <!-- Wrapper for all tabbed content -->
-    <div class="tab-content-wrapper">
-
-      <!-- YouTube Projects -->
-      <div id="youtube" class="grid tab-panel" style="display: none;">
-        <div class="card">
-          <h3>Animatics & Trailers</h3>
-          <p><strong>Journey to Agaiatar Animatic Short</strong></p>
-          <iframe width="100%" height="400"
-            src="https://www.youtube.com/embed/Y5Wjfa29o9g?si=_Xd50SVSqXSweCQT"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-          </iframe>
-        </div>
-        <div class="card">
-          <h3>Animatics & Trailers</h3>
-          <p>A cinematic look at the immersive world of <strong>Soul Atlas.</strong></p>
-          <iframe width="100%" height="400"
-            src="https://www.youtube.com/embed/u3R4_7BjgV8?si=c5NWkOR0xqdpIWdM"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-          </iframe>
-        </div>
+    
+    <!-- YouTube Projects Tab -->
+    <div id="youtube" class="grid" style="display:none;">
+      <div class="card">
+        <h3>Animatics & Trailers</h3>
+        <p><strong>Journey to Agaiatar Animatic Short</strong></p>
+        <iframe width="100%" height="400" 
+                src="https://www.youtube.com/embed/Y5Wjfa29o9g?si=_Xd50SVSqXSweCQT" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+        </iframe>            
       </div>
+       <div class="card">
+        <h3>Animatics & Trailers</h3>
+          <p>A cinematic look at the immersive world of <strong>Soul Atlas.</strong></p>
+          <iframe width="560" height="315"
+                  src="https://www.youtube.com/embed/u3R4_7BjgV8?si=c5NWkOR0xqdpIWdM"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>    
+          </iframe>
+       </div>     
+    </div>
 
-      <!-- Editorial Tab -->
-      <div id="editorial" class="grid tab-panel" style="display: none;">
+    <!-- Editorial Tab (Hidden by default) -->
+    <div id="editorial" class="grid" style="display:none;">
+      <div class="card">
+        <h3>Magazine Feature</h3>
+        <p>Published work under Inspire Me Korea.</p>
+      </div>
+      <div class="grid">
         <div class="card">
           <h3>Magazine Feature</h3>
           <p>Published work under Inspire Me Korea.</p>
-          <object data="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview"
-            type="application/pdf" width="100%" height="600px">
-            <p>Unable to display PDF. <a
-                href="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/view" target="_blank">View it
-                here</a>.</p>
+          <object data="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview" 
+                  type="application/pdf" 
+                  width="100%" 
+                  height="600px">
+            <p>
+              Unable to display PDF.
+            </p>
+              <a href="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/view" target="_blank">
+                View it here
+              </a>.
           </object>
         </div>
+        <!-- More cards for additional editing projects can go here -->
       </div>
+    </div>
 
-      <!-- Music Tab -->
-      <div id="music" class="grid tab-panel" style="display: none;">
-        <div class="card">
-          <h3>J.M O'Donnell</h3>
-          <p>Title: Elysium Fields</p>
-          <p>Genre: Electronic, Atmospheric, Upbeat, Video Game Music</p>
-          <audio controls>
-            <source src="Music/Elysium Fields Final.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
+    <!-- Music Tab (Hidden by default) -->
+    <div id="music" class="grid" style="display:none;">
+      <div class="card">
+        <h3>J.M O'Donnell</h3>
+        <p>Title: Elysium Fields</p>
+        <p>Genre: Electronic, Atmospheric, Upbeat, Video Game Music</p>
+        <audio controls>
+          <source src="Music/Elysium Fields Final.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
       </div>
+    </div>
 
-      <!-- Itch Projects Tab -->
-      <div id="itch" class="tab-panel" style="display: none;">
-        <!-- Banner -->
+
+    <!-- ITCH.IO SECTION -->
+    <div id="itch">
+    
+        <!-- Banner (unchanged, keep as is) -->
         <div class="itch-banner-row">
           <img class="itch-banner-full" src="Images/GaiusBanner.png" alt="Gaius Banner">
         </div>
-
-        <!-- Profile -->
+      
+        <!-- ITCH.IO PROFILE SECTION -->
         <div class="itch-intro-card">
           <div class="itch-profile-flex">
             <div class="itch-avatar-col">
@@ -271,18 +287,17 @@
               <div class="itch-profile-title">J.M O'Donnell</div>
               <div class="itch-profile-lead">Game Developer &amp; Designer</div>
               <div class="itch-profile-bio">
-                I'm a storyteller drawn to narrative-rich games that explore human connection, the boundaries between
-                the real and the unreal, and the questions that underpin our shared experiences. I craft
-                character-driven, emotionally resonant worlds where magical realism, complex inner lives, and immersive
-                soundtracks come together to leave lasting impressions.
+                I'm a storyteller drawn to narrative-rich games that explore human connection, the boundaries between the real and the unreal, and the questions that underpin our shared experiences. I craft character-driven, emotionally resonant worlds where magical realism, complex inner lives, and immersive soundtracks come together to leave lasting impressions.
               </div>
               <a href="https://gaiangames.itch.io/" class="itch-profile-link" target="_blank">View My Itch.io</a>
             </div>
           </div>
         </div>
-
-        <!-- Games -->
+        
+        <!-- GAMES SECTION -->
         <h2 class="itch-games-heading">Games</h2>
+    
+        <!-- Games Cards Grid -->
         <div class="itch-games-grid">
           <div class="card">
             <div class="itch-game-title">Honk! Industries</div>
@@ -298,8 +313,7 @@
             </div>
             <div class="itch-card-divider"></div>
             <div class="itch-game-description">
-              Welcome to HONK! Industries, the city's most trusted clandestine answer to crime and anarchy. Here, chaos
-              is capital and absurdity reigns supreme.
+              Welcome to HONK! Industries, the city's most trusted clandestine answer to crime and anarchy. Here, chaos is capital and absurdity reigns supreme.
             </div>
           </div>
           <div class="card">
@@ -316,15 +330,13 @@
             </div>
             <div class="itch-card-divider"></div>
             <div class="itch-game-description">
-              The Lonely Cactus is a game about a lonely cactus who just wants to have some friends. Unfortunately, the
-              only people around are bubbles.
+              The Lonely Cactus is a game about a lonely cactus who just wants to have some friends.  Unfortunately, the only people around are bubbles.
             </div>
           </div>
+          <!-- Add more .card blocks for additional games -->
         </div>
-      </div>
-
-    </div> <!-- End .tab-content-wrapper -->
-  </div> <!-- End .container -->
+    </div>
+  </div>
 </section>
 
 
