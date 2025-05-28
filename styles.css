@@ -425,6 +425,7 @@
   letter-spacing: 1px;
   position: relative;
 }
+
 .itch-games-heading:after {
   content: "";
   display: block;
@@ -447,6 +448,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 }
+
 .itch-games-grid .card {
   background: #181818;
   border-radius: 12px;
@@ -459,11 +461,13 @@
   position: relative;
   transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
 }
+
 .itch-games-grid .card:hover {
   box-shadow: 0 0 28px 10px rgba(255,215,0,0.18), 0 2px 14px rgba(0,0,0,0.18);
   border: 1.5px solid #d4af37;
   transform: translateY(-4px) scale(1.018);
 }
+
 .itch-game-title {
   color: #d4af37;
   font-size: 1.3em;
@@ -472,6 +476,7 @@
   text-align: center;
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
+
 .itch-game-embed {
   width: 100%;
   margin-bottom: 10px;
@@ -479,6 +484,7 @@
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0,0,0,0.13);
 }
+
 .itch-game-embed iframe {
   width: 100%;
   min-height: 120px;
@@ -489,6 +495,7 @@
   background: #191919;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
+
 .itch-card-divider {
   width: 90%;
   height: 2px;
@@ -496,6 +503,7 @@
   border-radius: 1px;
   margin: 14px auto 14px auto;
 }
+
 .itch-game-description {
   color: #e5e5e5;
   font-size: 1.05em;
@@ -504,6 +512,7 @@
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
   min-height: 44px;
 }
+
 /* Responsive for games grid */
 @media (max-width: 900px) {
   .itch-games-grid {
@@ -595,6 +604,7 @@
   box-shadow: 0 2px 10px rgba(0,0,0,0.12);
   display: inline-block;
 }
+
 .itch-play-btn:hover, .itch-play-btn:focus {
   background: #fff1b8;
   color: #222;
