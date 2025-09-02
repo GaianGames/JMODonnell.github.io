@@ -539,32 +539,50 @@
     });
   });
   
+  / Make sure the DOM is fully loaded before running the script
+document.addEventListener('DOMContentLoaded', function() {
+  
   // ====================================
-  // TESTIMONIALS CAROUSEL
+  // TESTIMONIALS CAROUSEL (FIXED VERSION)
   // ====================================
   const testimonialsTrack = document.getElementById('testimonialsTrack');
   const prevTestimonialBtn = document.getElementById('prevTestimonial');
   const nextTestimonialBtn = document.getElementById('nextTestimonial');
   const dotsContainer = document.getElementById('carouselDots');
   
+  // Check if elements exist
+  if (!testimonialsTrack || !prevTestimonialBtn || !nextTestimonialBtn || !dotsContainer) {
+    console.error('Carousel elements not found');
+    return;
+  }
+  
   let currentTestimonial = 0;
-  const totalTestimonials = 3;
+  const totalTestimonials = document.querySelectorAll('.testimonial-slide').length;
   
   // Create dots
   for (let i = 0; i < totalTestimonials; i++) {
     const dot = document.createElement('div');
     dot.classList.add('dot');
     if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToTestimonial(i));
+    dot.addEventListener('click', function() {
+      goToTestimonial(i);
+    });
     dotsContainer.appendChild(dot);
   }
   
   const dots = document.querySelectorAll('.dot');
   
   function updateTestimonialPosition() {
-    testimonialsTrack.style.transform = `translateX(-${currentTestimonial * 100}%)`;
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentTestimonial);
+    const offset = -currentTestimonial * 100;
+    testimonialsTrack.style.transform = `translateX(${offset}%)`;
+    
+    // Update dots
+    dots.forEach(function(dot, index) {
+      if (index === currentTestimonial) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
     });
   }
   
@@ -573,21 +591,55 @@
     updateTestimonialPosition();
   }
   
-  prevTestimonialBtn.addEventListener('click', () => {
-    currentTestimonial = currentTestimonial > 0 ? currentTestimonial - 1 : totalTestimonials - 1;
+  // Previous button
+  prevTestimonialBtn.addEventListener('click', function() {
+    if (currentTestimonial > 0) {
+      currentTestimonial--;
+    } else {
+      currentTestimonial = totalTestimonials - 1;
+    }
     updateTestimonialPosition();
   });
   
-  nextTestimonialBtn.addEventListener('click', () => {
-    currentTestimonial = currentTestimonial < totalTestimonials - 1 ? currentTestimonial + 1 : 0;
+  // Next button
+  nextTestimonialBtn.addEventListener('click', function() {
+    if (currentTestimonial < totalTestimonials - 1) {
+      currentTestimonial++;
+    } else {
+      currentTestimonial = 0;
+    }
     updateTestimonialPosition();
   });
   
   // Auto-advance testimonials every 10 seconds
-  setInterval(() => {
-    currentTestimonial = currentTestimonial < totalTestimonials - 1 ? currentTestimonial + 1 : 0;
+  let autoAdvance = setInterval(function() {
+    if (currentTestimonial < totalTestimonials - 1) {
+      currentTestimonial++;
+    } else {
+      currentTestimonial = 0;
+    }
     updateTestimonialPosition();
   }, 10000);
+  
+  // Pause auto-advance when user interacts
+  [prevTestimonialBtn, nextTestimonialBtn].forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      clearInterval(autoAdvance);
+      // Restart auto-advance after 15 seconds of no interaction
+      setTimeout(function() {
+        autoAdvance = setInterval(function() {
+          if (currentTestimonial < totalTestimonials - 1) {
+            currentTestimonial++;
+          } else {
+            currentTestimonial = 0;
+          }
+          updateTestimonialPosition();
+        }, 10000);
+      }, 15000);
+    });
+  });
+  
+});
 </script>
 
   <!-- Writing Collective Section -->
@@ -729,6 +781,7 @@
 
 </body>
 </html>
+
 
 
 
