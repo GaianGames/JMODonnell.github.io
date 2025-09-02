@@ -228,42 +228,18 @@
         <!-- More cards for additional editing projects can go here -->
     </div>
 
-<!-- Music Tab (Hidden by default) -->
-<div id="music" class="grid" style="display:none;">
-  <div class="music-player-container">
-    <div class="track-info">
-      <div class="track-title">Elysium Fields</div>
-      <div class="track-artist">J.M O'Donnell</div>
-      <div class="track-genre">Electronic • Atmospheric • Video Game Music</div>
+    <!-- Music Tab (Hidden by default) -->
+    <div id="music" class="grid" style="display:none;">
+      <div class="card">
+        <h3>J.M O'Donnell</h3>
+        <p>Title: Elysium Fields</p>
+        <p>Genre: Electronic, Atmospheric, Upbeat, Video Game Music</p>
+        <audio controls>
+          <source src="Music/Elysium Fields Final.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
     </div>
-    
-    <div class="audio-visualizer">
-      <div class="bar" style="height: 20px;"></div>
-      <div class="bar" style="height: 35px;"></div>
-      <div class="bar" style="height: 45px;"></div>
-      <div class="bar" style="height: 25px;"></div>
-      <div class="bar" style="height: 55px;"></div>
-      <div class="bar" style="height: 40px;"></div>
-      <div class="bar" style="height: 30px;"></div>
-      <div class="bar" style="height: 50px;"></div>
-      <div class="bar" style="height: 35px;"></div>
-      <div class="bar" style="height: 45px;"></div>
-    </div>
-    
-    <div class="custom-audio-player">
-      <audio controls id="audio-player">
-        <source src="Music/Elysium Fields Final.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-    
-    <div class="bandcamp-link">
-      <a href="https://zeropointnatives.bandcamp.com/" target="_blank" class="bandcamp-btn">
-        Visit Bandcamp
-      </a>
-    </div>
-  </div>
-</div>
 
 
     <!-- ITCH.IO SECTION -->
@@ -450,164 +426,79 @@
 
 
 <!-- Testimonials Section -->
-<section id="testimonials">
+<section id="testimonials" style="background-color:#1e1e1e;">
   <div class="container">
     <h2>Testimonials</h2>
     <p>Hear from collaborators, clients, and peers about my work.</p>
 
-    <div class="testimonials-carousel">
-      <div class="testimonials-track" id="testimonials-track">
-        
-        <!-- Testimonial 1 -->
-        <div class="testimonial-slide">
-          <img src="Images/Jonas.jpg" alt="Jonas David" class="testimonial-avatar">
+    <!-- Testimonials Grid -->
+    <div class="testimonials-grid">
+    
+      <!-- Testimonial Card 1 -->
+      <div class="card">
+        <div class="testimonial-card">
+          <img src="Images/Jonas.jpg" alt="Jonas David">
           <h3 class="testimonial-name">Jonas David</h3>
           <p class="testimonial-company">CEO & Creative Director<br>Soul Atlas Universe LTD</p>
-          <div class="testimonial-content">
-            <blockquote>
-              <p>"John was working on our multi-media high fantasy IP <strong>Soul Atlas</strong> for about a year. He was acting in the capacity of a world-building writer. It became clear soon that John's understanding of story structure and general knowledge about the world which he managed to gain in record time were a true asset in developing our movies, games and comics."</p>
-              <p>"What most impressed me was his ability to see potential in a set of given canon variables that nobody else in the team had noticed, demonstrating not just a keen and sharp mind but also live experience that he was able to execute in his work."</p>
-              <p>"Easily one of the most talented, dedicated, professional, and unique writers I know, John is a massive asset to any project he is attached to."</p>
-            </blockquote>
-          </div>
+          <div class="testimonial-divider"></div>
+          <blockquote>
+          <p>
+            "John was working on our multi-media high fantasy IP <strong>Soul Atlas</strong> for about a year. He was acting in the capacity of a world-building writer. It became clear soon that John's understanding of story structure and general knowledge about the world which he managed to gain in record time were a true asset in developing our movies, games and comics."
+          </p>
+          <p>
+            "What most impressed me was his ability to see potential in a set of given canon variables that nobody else in the team had noticed, demonstrating not just a keen and sharp mind but also live experience that he was able to execute in his work. After his detailed and well-researched contributions to our <em>Journey to Agaiatar</em> animated story, he started to helm the development of the most significant region of Season 1 of the Soul Atlas Universe. There he developed key legacy systems such as the Honoring and the Arrill Rift."
+          </p>
+          <p>
+            "As it is difficult to find stand-out talent for creative roles, we had plenty of demand for John's capabilities in other sectors. He gave meaningful feedback on storylines for our upcoming movies and comic scripts as well as for the overall story structure of our upcoming seasons. During the process, his thinking was at all times well balanced between the principles of story structure which he knows incredibly well, and a creative sensibility allowing for new insights that were surprising and fresh."
+          </p>
+          <p>
+            "Even though John does not work with us at this point on a regular basis in favor of his current work, we always enjoy the moments when we see him return — if only for a brief project or editing session — bringing valuable feedback every single time."
+          </p>
+          <p>
+            "Easily one of the most talented, dedicated, professional, and unique writers I know, John is a massive asset to any project he is attached to. In the demand-constrained entertainment industry where quantity is an inadequate substitute for quality, bringing someone like him on board can certainly be the difference between failure and success."
+          </p>
+        </blockquote>
         </div>
+      </div>
 
-        <!-- Testimonial 2 -->
-        <div class="testimonial-slide">
-          <img src="Images/Richard" alt="Richard Naughton" class="testimonial-avatar">
+  
+      <!-- Testimonial Card 2 -->
+      <div class="card">
+        <div class="testimonial-card">
+          <img src="Images/Richard" alt="Richard Naughton">
           <h3 class="testimonial-name">Richard Naughton</h3>
           <p class="testimonial-company">CEO & Creative Director<br>Table Topple</p>
-          <div class="testimonial-content">
-            <blockquote>
-              <p>"John O'Donnell has been instrumental in helping me overcome creative writing blocks on multiple projects, enabling me to effectively communicate a vision to my team."</p>
-              <p>"His infectious excitement about the creative process, his repertoire of tools and his superb listening skills make him easy to recommend to anyone, at any stage of the creative writing process."</p>
-              <p>"John is a force multiplier - even if you are not running into trouble, he will help you squeeze every bit of potential out of your ideas."</p>
-            </blockquote>
-          </div>
+          <div class="testimonial-divider"></div>
+          <blockquote>
+            <p>"John O’Donnell has been instrumental in helping me overcome creative writing blocks on multiple projects, enabling me to effectively communicate a vision to my team."</p>
+            <p>"His infectious excitement about the creative process, his repertoire of tools and his superb listening skills make him easy to recommend to anyone, at any stage of the creative writing process."</p>
+            <p>"John is a force multiplier - even if you are not running into trouble, he will help you squeeze every bit of potential out of your ideas."</p>
+          </blockquote>
         </div>
+      </div>
 
-        <!-- Testimonial 3 -->
-        <div class="testimonial-slide">
-          <img src="Images/Tony.jpg" alt="Tony Moreno" class="testimonial-avatar">
+        <!-- Testimonial Card 3 -->
+      <div class="card">
+        <div class="testimonial-card">
+          <img src="Images/Tony.jpg" alt="Tony Moreno">
           <h3 class="testimonial-name">Tony Moreno</h3>
           <p class="testimonial-company">CEO & Creative Director<br>Black Pug Studio</p>
-          <div class="testimonial-content">
-            <blockquote>
-              <p>"John O'Donnell has been instrumental in helping me overcome creative writing blocks on multiple projects, enabling me to effectively communicate a vision to my team."</p>
-              <p>"His infectious excitement about the creative process, his repertoire of tools and his superb listening skills make him easy to recommend to anyone, at any stage of the creative writing process."</p>
-              <p>"John is a force multiplier - even if you are not running into trouble, he will help you squeeze every bit of potential out of your ideas."</p>
-            </blockquote>
-          </div>
+          <div class="testimonial-divider"></div>
+          <blockquote>
+            <p>"John O’Donnell has been instrumental in helping me overcome creative writing blocks on multiple projects, enabling me to effectively communicate a vision to my team."</p>
+            <p>"His infectious excitement about the creative process, his repertoire of tools and his superb listening skills make him easy to recommend to anyone, at any stage of the creative writing process."</p>
+            <p>"John is a force multiplier - even if you are not running into trouble, he will help you squeeze every bit of potential out of your ideas."</p>
+          </blockquote>
         </div>
-
       </div>
-    </div>
+  
 
-    <div class="carousel-controls">
-      <button class="carousel-btn" id="prev-btn">‹</button>
-      <div class="carousel-indicators">
-        <div class="indicator active" data-slide="0"></div>
-        <div class="indicator" data-slide="1"></div>
-        <div class="indicator" data-slide="2"></div>
-      </div>
-      <button class="carousel-btn" id="next-btn">›</button>
-    </div>
+    </div> <!-- end .testimonials-grid -->
 
-  </div>
+  </div> <!-- end .container -->
 </section>
 
-<script>
-// Enhanced Audio Visualizer
-const audioPlayer = document.getElementById('audio-player');
-const bars = document.querySelectorAll('.bar');
 
-if (audioPlayer) {
-  audioPlayer.addEventListener('play', () => {
-    bars.forEach((bar, index) => {
-      setInterval(() => {
-        if (!audioPlayer.paused) {
-          bar.classList.toggle('active');
-        }
-      }, 200 + index * 50);
-    });
-  });
-
-  audioPlayer.addEventListener('pause', () => {
-    bars.forEach(bar => bar.classList.remove('active'));
-  });
-}
-
-// Testimonials Carousel
-class TestimonialsCarousel {
-  constructor() {
-    this.track = document.getElementById('testimonials-track');
-    this.slides = document.querySelectorAll('.testimonial-slide');
-    this.prevBtn = document.getElementById('prev-btn');
-    this.nextBtn = document.getElementById('next-btn');
-    this.indicators = document.querySelectorAll('.indicator');
-    this.currentSlide = 0;
-    this.totalSlides = this.slides.length;
-    
-    this.init();
-  }
-  
-  init() {
-    if (!this.track || this.totalSlides === 0) return;
-    
-    // Event listeners
-    this.prevBtn?.addEventListener('click', () => this.prevSlide());
-    this.nextBtn?.addEventListener('click', () => this.nextSlide());
-    
-    this.indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => this.goToSlide(index));
-    });
-    
-    // Auto-advance every 8 seconds
-    setInterval(() => this.nextSlide(), 8000);
-    
-    this.updateCarousel();
-  }
-  
-  nextSlide() {
-    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-    this.updateCarousel();
-  }
-  
-  prevSlide() {
-    this.currentSlide = this.currentSlide === 0 ? this.totalSlides - 1 : this.currentSlide - 1;
-    this.updateCarousel();
-  }
-  
-  goToSlide(index) {
-    this.currentSlide = index;
-    this.updateCarousel();
-  }
-  
-  updateCarousel() {
-    // Move the track
-    const translateX = -this.currentSlide * 100;
-    this.track.style.transform = `translateX(${translateX}%)`;
-    
-    // Update indicators
-    this.indicators.forEach((indicator, index) => {
-      indicator.classList.toggle('active', index === this.currentSlide);
-    });
-    
-    // Update buttons
-    if (this.prevBtn) {
-      this.prevBtn.disabled = this.currentSlide === 0;
-    }
-    if (this.nextBtn) {
-      this.nextBtn.disabled = this.currentSlide === this.totalSlides - 1;
-    }
-  }
-}
-
-// Initialize carousel when page loads
-document.addEventListener('DOMContentLoaded', () => {
-  new TestimonialsCarousel();
-});
-</script>
            
   
 <footer style="text-align: center; font-size: 12px; color: #888; padding: 10px;">
@@ -618,8 +509,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-
-
 
 
 
