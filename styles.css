@@ -1138,3 +1138,94 @@ nav a:hover {
 .testimonials-grid {
   display: none !important;
 }
+
+/* ====================================== */
+/* CSS FIX - Add/Update these styles in your styles.css */
+/* ====================================== */
+
+/* FIX FOR CENTERING ISSUE */
+.testimonials-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #181818, #1e1e1e);
+  padding: 60px 20px; /* Increased padding for better centering */
+  margin: 0 auto;
+  max-width: 1000px; /* Added max-width */
+}
+
+.testimonials-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  align-items: center; /* Centers cards vertically */
+}
+
+.testimonial-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Added vertical centering */
+  padding: 0 80px; /* Increased padding to account for arrow buttons */
+}
+
+.testimonial-card {
+  background-color: #2c2c2c;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  text-align: center;
+  max-width: 700px; /* Reduced from 800px for better fit */
+  width: 90%; /* Changed from 100% to give breathing room */
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  position: relative;
+  margin: 0 auto; /* Centers the card */
+}
+
+/* Ensure arrows are properly positioned */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(212, 175, 55, 0.9);
+  color: #121212;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100; /* Increased z-index */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.carousel-nav.prev {
+  left: 15px; /* Moved slightly inward */
+}
+
+.carousel-nav.next {
+  right: 15px; /* Moved slightly inward */
+}
+
+/* Responsive adjustments */
+@media(max-width: 768px) {
+  .testimonial-slide {
+    padding: 0 50px; /* Reduced padding on mobile */
+  }
+  
+  .testimonial-card {
+    width: 95%; /* More width on mobile */
+  }
+  
+  .carousel-nav.prev {
+    left: 5px;
+  }
+  
+  .carousel-nav.next {
+    right: 5px;
+  }
+}
