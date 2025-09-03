@@ -1135,13 +1135,8 @@ nav a:hover {
 }
 
 /* ====================================== */
-/* REPLACE YOUR EXISTING TESTIMONIAL CSS WITH THIS COMPLETE FIX */
+/* COMPLETE TESTIMONIAL FIX - REPLACE YOUR TESTIMONIAL CSS WITH THIS */
 /* ====================================== */
-
-/* Remove old conflicting styles */
-.testimonials-grid {
-  display: none !important;
-}
 
 /* Main testimonials section */
 #testimonials {
@@ -1162,7 +1157,7 @@ nav a:hover {
 
 #testimonials > p {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   color: #e5e5e5;
 }
 
@@ -1172,23 +1167,54 @@ nav a:hover {
   position: relative;
 }
 
+/* Dots positioned ABOVE the carousel */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px; /* Space before carousel */
+  margin-top: 15px; /* Space after description */
+  padding: 0;
+  position: relative;
+  z-index: 50;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.3);
+  border: 2px solid #d4af37;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  background: #d4af37;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.dot:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+/* Carousel container */
 .testimonials-carousel {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
   background: linear-gradient(135deg, #181818, #1e1e1e);
-  padding: 60px 60px;
+  padding: 50px 70px; /* Adjusted padding for arrow space */
   margin: 0 auto;
   max-width: 1000px;
-  min-height: 500px; /* Fixed minimum height */
-  display: flex;
-  align-items: center;
+  min-height: auto; /* Let content determine height */
 }
 
 .testimonials-track {
   display: flex;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother transition */
-  align-items: stretch; /* Makes all cards same height */
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: stretch;
   width: 100%;
 }
 
@@ -1196,49 +1222,26 @@ nav a:hover {
   min-width: 100%;
   max-width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* This centers the card */
   align-items: center;
   padding: 0;
-  flex-shrink: 0; /* Prevents slide from shrinking */
+  flex-shrink: 0;
 }
 
 .testimonial-card {
   background-color: #2c2c2c;
-  padding: 30px;
+  padding: 35px 40px; /* More padding for better readability */
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.4);
   text-align: center;
-  width: 85%; /* Fixed width percentage */
-  max-width: 650px;
-  min-height: 350px; /* Minimum height for consistency */
-  max-height: 450px; /* Maximum height to prevent huge cards */
+  width: 90%;
+  max-width: 700px;
   border: 2px solid transparent;
   transition: all 0.3s;
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto; /* Centers the card */
   display: flex;
   flex-direction: column;
-  overflow-y: auto; /* Allow scrolling for very long testimonials */
-  overflow-x: hidden;
-}
-
-/* Custom scrollbar for testimonial cards */
-.testimonial-card::-webkit-scrollbar {
-  width: 6px;
-}
-
-.testimonial-card::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 3px;
-}
-
-.testimonial-card::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.3);
-  border-radius: 3px;
-}
-
-.testimonial-card::-webkit-scrollbar-thumb:hover {
-  background: rgba(212, 175, 55, 0.5);
 }
 
 .testimonial-card:hover {
@@ -1248,60 +1251,75 @@ nav a:hover {
 }
 
 .testimonial-card img {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto 15px auto;
   border: 3px solid #d4af37;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  flex-shrink: 0;
 }
 
 .testimonial-name {
-  font-size: 1.3em;
+  font-size: 1.4em;
   color: #d4af37;
   margin-bottom: 5px;
-  flex-shrink: 0;
 }
 
 .testimonial-company {
   color: #888;
-  margin-bottom: 15px;
-  font-size: 0.95em;
-  flex-shrink: 0;
+  margin-bottom: 20px;
+  font-size: 1em;
 }
 
+/* Restored original divider width */
 .testimonial-divider {
-  width: 60px;
+  width: 80%; /* Back to original width */
   height: 2px;
   background: linear-gradient(90deg, transparent, #d4af37, transparent);
-  margin: 10px auto 20px auto;
-  flex-shrink: 0;
+  margin: 15px auto 25px auto;
 }
 
+/* Better text spacing without forced scrolling */
 .testimonial-card blockquote {
   margin: 0;
   font-style: italic;
   color: #e5e5e5;
-  line-height: 1.6;
+  line-height: 1.8; /* Better line height */
   position: relative;
-  font-size: 0.95em;
-  flex-grow: 1;
+  font-size: 1em; /* Readable font size */
+  text-align: left;
+  max-height: 400px; /* Only scroll if really needed */
   overflow-y: auto;
   padding-right: 10px;
 }
 
 .testimonial-card blockquote p {
-  margin-bottom: 12px;
+  margin-bottom: 15px; /* Better paragraph spacing */
   text-align: left;
+  line-height: 1.7;
 }
 
 .testimonial-card blockquote p:last-child {
   margin-bottom: 0;
 }
 
-/* Navigation arrows */
+/* Custom scrollbar - only if needed */
+.testimonial-card blockquote::-webkit-scrollbar {
+  width: 6px;
+}
+
+.testimonial-card blockquote::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.testimonial-card blockquote::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 3px;
+}
+
+/* Navigation arrows - properly positioned */
 .carousel-nav {
   position: absolute;
   top: 50%;
@@ -1329,84 +1347,31 @@ nav a:hover {
 }
 
 .carousel-nav.prev {
-  left: 20px;
+  left: 15px;
 }
 
 .carousel-nav.next {
-  right: 20px;
+  right: 15px;
 }
 
-/* Dots */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 25px;
-  padding-bottom: 10px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(212, 175, 55, 0.3);
-  border: 2px solid #d4af37;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.dot.active {
-  background: #d4af37;
-  transform: scale(1.3);
-}
-
-.dot:hover {
-  background: rgba(212, 175, 55, 0.6);
-}
-
-/* For very long testimonials, add a fade at bottom if scrollable */
-.testimonial-card blockquote {
-  position: relative;
-}
-
-.testimonial-card blockquote::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 30px;
-  background: linear-gradient(transparent, #2c2c2c);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.testimonial-card.scrollable blockquote::after {
-  opacity: 1;
+/* Remove old conflicting styles */
+.testimonials-grid {
+  display: none !important;
 }
 
 /* Responsive adjustments */
 @media(max-width: 768px) {
   .testimonials-carousel {
-    padding: 40px 15px;
-    min-height: 450px;
+    padding: 40px 50px;
   }
   
   .testimonial-card {
-    width: 90%;
-    min-height: 300px;
-    max-height: 400px;
-    padding: 20px;
-  }
-  
-  .testimonial-card img {
-    width: 70px;
-    height: 70px;
+    width: 95%;
+    padding: 25px 25px;
   }
   
   .testimonial-card blockquote {
-    font-size: 0.9em;
+    font-size: 0.95em;
   }
   
   .carousel-nav {
@@ -1416,26 +1381,25 @@ nav a:hover {
   }
   
   .carousel-nav.prev {
-    left: 10px;
-  }
-  
-  .carousel-nav.next {
-    right: 10px;
-  }
-}
-
-@media(max-width: 480px) {
-  .testimonial-card {
-    width: 95%;
-    min-height: 280px;
-    max-height: 350px;
-  }
-  
-  .carousel-nav.prev {
     left: 5px;
   }
   
   .carousel-nav.next {
     right: 5px;
+  }
+}
+
+@media(max-width: 480px) {
+  .testimonials-carousel {
+    padding: 35px 40px;
+  }
+  
+  .testimonial-card {
+    padding: 20px;
+  }
+  
+  .testimonial-card img {
+    width: 70px;
+    height: 70px;
   }
 }
