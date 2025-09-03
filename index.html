@@ -447,9 +447,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // UPDATE THESE WITH YOUR ACTUAL MUSIC FILES
   const tracks = [
-    { title: 'Elysium Fields', src: 'Music/Elysium Fields Final.wav', duration: '3:45' },
-   // { title: 'Ethereal Voyage', src: 'Music/Track2.wav', duration: '4:20' },  // Update with your file
-   // { title: 'Digital Dreams', src: 'Music/Track3.wav', duration: '5:10' }   // Update with your file
+    { title: 'Elysium Fields', src: 'Music/Elysium Fields Final.wav', duration: '3:45', visible: true },
+    { title: 'Ethereal Voyage', src: 'Music/Track2.wav', duration: '4:20', visible: false },  // Update with your file
+    { title: 'Digital Dreams', src: 'Music/Track3.wav', duration: '5:10', visible: false }   // Update with your file
   ];
   
   let currentTrack = 0;
@@ -806,6 +806,7 @@ dots.forEach(function(dot) {
 
 </body>
 </html>
+
 
 
 
