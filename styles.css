@@ -1403,3 +1403,270 @@ nav a:hover {
     height: 70px;
   }
 }
+/* ====================================== */
+/* TESTIMONIAL FINAL FIXES - Add/Update these styles in your CSS */
+/* ====================================== */
+
+/* 1. REMOVE QUOTATION MARK */
+.testimonial-card blockquote::before {
+  display: none; /* Removes the quotation mark */
+}
+
+/* 2. PERMANENT STYLED SCROLLBAR FOR LONG TESTIMONIALS */
+.testimonial-card blockquote {
+  margin: 0;
+  font-style: italic;
+  color: #e5e5e5;
+  line-height: 1.8;
+  position: relative;
+  font-size: 1em;
+  text-align: left;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 15px; /* More space for scrollbar */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #d4af37 rgba(255, 255, 255, 0.1);
+}
+
+/* Custom scrollbar styling - always visible */
+.testimonial-card blockquote::-webkit-scrollbar {
+  width: 8px;
+  display: block !important;
+}
+
+.testimonial-card blockquote::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.testimonial-card blockquote::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4af37, #b99a2e);
+  border-radius: 4px;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-card blockquote::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffd700, #d4af37);
+}
+
+/* Visual indicator for scrollable content */
+.testimonial-card blockquote {
+  border-right: 2px solid rgba(212, 175, 55, 0.15);
+}
+
+/* 3. ENHANCED COMPANY NAME STYLING */
+.testimonial-company {
+  color: #d4af37;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+  font-weight: 500;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* 4. ELEGANT SUBTITLE UNDER TESTIMONIALS */
+#testimonials > p {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #888;
+  font-size: 1.1em;
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+  padding: 0 30px;
+}
+
+/* Add decorative elements to subtitle */
+#testimonials > p::before,
+#testimonials > p::after {
+  content: "—";
+  position: absolute;
+  color: #d4af37;
+  opacity: 0.5;
+  font-weight: 300;
+}
+
+#testimonials > p::before {
+  left: 0;
+}
+
+#testimonials > p::after {
+  right: 0;
+}
+
+/* Alternative: Center the subtitle with a container */
+.testimonials-container > p {
+  max-width: 600px;
+  margin: 0 auto 15px auto;
+  line-height: 1.5;
+}
+
+/* ====================================== */
+/* YOUTUBE CAROUSEL STYLES */
+/* ====================================== */
+
+#youtube {
+  display: none; /* Hidden by default, shown by tab click */
+}
+
+.youtube-carousel-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Dots for YouTube carousel */
+.youtube-dots {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  padding: 0;
+}
+
+.youtube-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.3);
+  border: 2px solid #d4af37;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.youtube-dots .dot.active {
+  background: #d4af37;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.youtube-dots .dot:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+.youtube-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #181818, #1e1e1e);
+  padding: 50px 70px;
+  margin: 0 auto;
+}
+
+.youtube-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: stretch;
+  width: 100%;
+}
+
+.youtube-slide {
+  min-width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.youtube-card {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  width: 90%;
+  max-width: 800px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  margin: 0 auto;
+}
+
+.youtube-card:hover {
+  box-shadow: 0 0 40px 15px rgba(255,215,0,0.3);
+  border-color: #ffd700;
+  transform: scale(1.02);
+}
+
+.youtube-card h3 {
+  color: #d4af37;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.youtube-card p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e5e5e5;
+}
+
+.youtube-card iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 10px;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Navigation for YouTube carousel */
+.youtube-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(212, 175, 55, 0.9);
+  color: #121212;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.youtube-nav:hover {
+  background: #ffd700;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.youtube-nav.prev {
+  left: 15px;
+}
+
+.youtube-nav.next {
+  right: 15px;
+}
+
+@media(max-width: 768px) {
+  .youtube-carousel {
+    padding: 40px 50px;
+  }
+  
+  .youtube-card iframe {
+    height: 300px;
+  }
+  
+  .youtube-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .youtube-nav.prev {
+    left: 5px;
+  }
+  
+  .youtube-nav.next {
+    right: 5px;
+  }
+}
