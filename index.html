@@ -156,7 +156,7 @@
         </h2>
         <div class="about-tagline">Writer & Worldbuilder | Narrative Designer | Editor</div>
         <p class="about-intro">
-          <strong>Story-driven projects across games, fiction, and editorial content.</strong>
+          <strong>I craft stories, shape narratives, and build worlds across games, music, and fiction.</strong>
         </p>
         <ul class="about-list">
           <li><span class="about-icon">🎮</span> Narrative Design & Game Writing</li>
@@ -292,73 +292,86 @@
 
 
     <!-- ITCH.IO SECTION -->
-    <div id="itch">
-    
-        <!-- Banner (unchanged, keep as is) -->
+      <div id="itch">
+        <!-- Banner stays exactly as is -->
         <div class="itch-banner-row">
           <img class="itch-banner-full" src="Images/GaiusBanner.png" alt="Gaius Banner">
         </div>
-      
-        <!-- ITCH.IO PROFILE SECTION -->
-        <div class="itch-intro-card">
-          <div class="itch-profile-flex">
-            <div class="itch-avatar-col">
-              <img src="Images/Gaius.png" class="itch-avatar" alt="Profile Avatar">
-            </div>
-            <div class="itch-bio-col">
-              <div class="itch-profile-title">J.M O'Donnell</div>
-              <div class="itch-profile-lead">Game Developer &amp; Designer</div>
-              <div class="itch-profile-bio">
-                I'm a storyteller drawn to narrative-rich games that explore human connection, the boundaries between the real and the unreal, and the questions that underpin our shared experiences. I craft character-driven, emotionally resonant worlds where magical realism, complex inner lives, and immersive soundtracks come together to leave lasting impressions.
-              </div>
-              <a href="https://gaiangames.itch.io/" class="itch-profile-link" target="_blank">View My Itch.io</a>
-            </div>
-          </div>
-        </div>
         
-        <!-- GAMES SECTION -->
-        <h2 class="itch-games-heading">Games</h2>
-    
-        <!-- Games Cards Grid -->
-        <div class="itch-games-grid">
-          <div class="card">
-            <div class="itch-game-title">Honk! Industries</div>
-            <div class="itch-game-embed">
-              <a href="https://gaiangames.itch.io/honk-industries" target="_blank">
-                <img src="Images/HonkIndustries.png" alt="HONK! Industries" class="itch-game-thumb">
-              </a>
-              <div style="text-align:center;margin-top:12px;">
-                <a href="https://gaiangames.itch.io/honk-industries" target="_blank" class="itch-play-btn">
-                  Play on itch.io
-                </a>
+        <!-- NEW UNIFIED CAROUSEL -->
+        <div class="itch-carousel-container">
+          <!-- Dots positioned above carousel -->
+          <div class="itch-carousel-dots" id="itchDots"></div>
+          
+          <div class="itch-unified-carousel">
+            <div class="itch-carousel-track" id="itchTrack">
+              
+              <!-- SLIDE 1: Developer Profile -->
+              <div class="itch-carousel-slide">
+                <div class="itch-profile-card">
+                  <div class="profile-content">
+                    <img src="Images/Gaius.png" class="profile-avatar" alt="Profile Avatar">
+                    <div class="profile-info">
+                      <h3 class="profile-name">J.M O'Donnell</h3>
+                      <p class="profile-title">Game Developer & Designer</p>
+                      <div class="profile-divider"></div>
+                      <p class="profile-bio">
+                        I'm a storyteller drawn to narrative-rich games that explore human connection, 
+                        the boundaries between the real and the unreal, and the questions that underpin 
+                        our shared experiences. I craft character-driven, emotionally resonant worlds 
+                        where magical realism, complex inner lives, and immersive soundtracks come 
+                        together to leave lasting impressions.
+                      </p>
+                      <a href="https://gaiangames.itch.io/" class="profile-link-btn" target="_blank">
+                        View My Itch.io Profile
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="itch-card-divider"></div>
-            <div class="itch-game-description">
-              Welcome to HONK! Industries, the city's most trusted clandestine answer to crime and anarchy. Here, chaos is capital and absurdity reigns supreme.
-            </div>
-          </div>
-          <div class="card">
-            <div class="itch-game-title">The Lonely Cactus</div>
-            <div class="itch-game-embed">
-              <a href="https://sonnyokay16.itch.io/the-lonely-cactus" target="_blank">
-                <img src="Images/Cactus.png" alt="The Lonely Cactus" class="itch-game-thumb">
-              </a>
-              <div style="text-align:center;margin-top:12px;">
-                <a href="https://sonnyokay16.itch.io/the-lonely-cactus" target="_blank" class="itch-play-btn">
-                  Play on itch.io
-                </a>
+              
+              <!-- SLIDE 2: Honk! Industries -->
+              <div class="itch-carousel-slide">
+                <div class="itch-game-card">
+                  <h3 class="game-title">Honk! Industries</h3>
+                  <img src="Images/HonkIndustries.png" alt="HONK! Industries" class="game-image">
+                  <div class="game-divider"></div>
+                  <p class="game-description">
+                    Welcome to HONK! Industries, the city's most trusted clandestine answer to 
+                    crime and anarchy. Here, chaos is capital and absurdity reigns supreme.
+                  </p>
+                  <a href="https://gaiangames.itch.io/honk-industries" target="_blank" class="game-play-btn">
+                    Play on itch.io
+                  </a>
+                </div>
               </div>
+              
+              <!-- SLIDE 3: The Lonely Cactus -->
+              <div class="itch-carousel-slide">
+                <div class="itch-game-card">
+                  <h3 class="game-title">The Lonely Cactus</h3>
+                  <img src="Images/Cactus.png" alt="The Lonely Cactus" class="game-image">
+                  <div class="game-divider"></div>
+                  <p class="game-description">
+                    The Lonely Cactus is a game about a lonely cactus who just wants to have 
+                    some friends. Unfortunately, the only people around are bubbles.
+                  </p>
+                  <a href="https://sonnyokay16.itch.io/the-lonely-cactus" target="_blank" class="game-play-btn">
+                    Play on itch.io
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Add more game slides here as needed -->
+              
             </div>
-            <div class="itch-card-divider"></div>
-            <div class="itch-game-description">
-              The Lonely Cactus is a game about a lonely cactus who just wants to have some friends.  Unfortunately, the only people around are bubbles.
-            </div>
+            
+            <!-- Navigation arrows -->
+            <button class="itch-carousel-nav prev" id="prevItch">‹</button>
+            <button class="itch-carousel-nav next" id="nextItch">›</button>
           </div>
-          <!-- Add more .card blocks for additional games -->
         </div>
-    </div>
-  </div>
+      </div>
 
 <!-- YouTube Projects Tab -->
 <div id="youtube" style="display:none;">
@@ -734,6 +747,96 @@ if (youtubeTrack && prevYoutubeBtn && nextYoutubeBtn && youtubeDotsContainer) {
 
   // NO AUTO-ROTATION for YouTube carousel either
 }
+
+  // ====================================
+// ITCH CAROUSEL JAVASCRIPT
+// Add this to your script, inside the DOMContentLoaded event listener
+// ====================================
+
+// ITCH CAROUSEL
+const itchTrack = document.getElementById('itchTrack');
+const prevItchBtn = document.getElementById('prevItch');
+const nextItchBtn = document.getElementById('nextItch');
+const itchDotsContainer = document.getElementById('itchDots');
+
+// Check if Itch carousel elements exist
+if (itchTrack && prevItchBtn && nextItchBtn && itchDotsContainer) {
+  let currentItchSlide = 0;
+  let isItchTransitioning = false;
+  const totalItchSlides = document.querySelectorAll('.itch-carousel-slide').length;
+
+  // Clear any existing dots
+  itchDotsContainer.innerHTML = '';
+
+  // Create dots for Itch carousel
+  for (let i = 0; i < totalItchSlides; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', function() {
+      if (!isItchTransitioning) {
+        goToItchSlide(i);
+      }
+    });
+    itchDotsContainer.appendChild(dot);
+  }
+
+  const itchDots = itchDotsContainer.querySelectorAll('.dot');
+
+  function updateItchPosition() {
+    if (isItchTransitioning) return;
+    
+    isItchTransitioning = true;
+    const offset = -currentItchSlide * 100;
+    itchTrack.style.transform = `translateX(${offset}%)`;
+    
+    // Update dots
+    itchDots.forEach(function(dot, index) {
+      if (index === currentItchSlide) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+    
+    // Reset transitioning flag after animation
+    setTimeout(() => {
+      isItchTransitioning = false;
+    }, 600);
+  }
+
+  function goToItchSlide(index) {
+    if (isItchTransitioning || index === currentItchSlide) return;
+    currentItchSlide = index;
+    updateItchPosition();
+  }
+
+  // Previous button for Itch
+  prevItchBtn.addEventListener('click', function() {
+    if (isItchTransitioning) return;
+    
+    if (currentItchSlide > 0) {
+      currentItchSlide--;
+    } else {
+      currentItchSlide = totalItchSlides - 1;
+    }
+    updateItchPosition();
+  });
+
+  // Next button for Itch
+  nextItchBtn.addEventListener('click', function() {
+    if (isItchTransitioning) return;
+    
+    if (currentItchSlide < totalItchSlides - 1) {
+      currentItchSlide++;
+    } else {
+      currentItchSlide = 0;
+    }
+    updateItchPosition();
+  });
+
+  // NO AUTO-ROTATION - Manual navigation only
+}
   
 });
 </script>
@@ -881,6 +984,7 @@ if (youtubeTrack && prevYoutubeBtn && nextYoutubeBtn && youtubeDotsContainer) {
 
 </body>
 </html>
+
 
 
 
