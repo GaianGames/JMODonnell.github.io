@@ -1457,27 +1457,16 @@ nav a:hover {
 
 /* 3. ENHANCED COMPANY NAME STYLING */
 .testimonial-company {
-  color: #f1f1f1;
+  background: linear-gradient(135deg, #888 0%, #a89968 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 20px;
   font-size: 0.9em;
-  font-weight: 400;
-  opacity: 0.9;
-  letter-spacing: 1px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   line-height: 1.4;
-  position: relative;
-  padding-bottom: 10px;
-}
-
-.testimonial-company::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
 }
 
 /* 4. ELEGANT SUBTITLE UNDER TESTIMONIALS */
@@ -1683,4 +1672,5 @@ nav a:hover {
     right: 5px;
   }
 }
+
 
