@@ -1457,16 +1457,16 @@ nav a:hover {
 
 /* 3. ENHANCED COMPANY NAME STYLING */
 .testimonial-company {
-  background: linear-gradient(135deg, #888 0%, #a89968 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #e5e5e5;
   margin-bottom: 20px;
   font-size: 0.9em;
   font-weight: 500;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
+  letter-spacing: 0.5px;
   line-height: 1.4;
+  background: rgba(212, 175, 55, 0.05);
+  padding: 8px 20px;
+  border-radius: 20px;
+  display: inline-block;
 }
 
 /* 4. ELEGANT SUBTITLE UNDER TESTIMONIALS */
@@ -1672,5 +1672,6 @@ nav a:hover {
     right: 5px;
   }
 }
+
 
 
