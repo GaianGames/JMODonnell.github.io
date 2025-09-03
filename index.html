@@ -398,7 +398,10 @@
 </section>
 
 
-  <script>
+<!-- REPLACE YOUR ENTIRE <script> SECTION WITH THIS -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  
   // Tab Switching
   const tabs = document.querySelectorAll('.tab');
   const sections = {
@@ -539,11 +542,8 @@
     });
   });
   
-  / Make sure the DOM is fully loaded before running the script
-document.addEventListener('DOMContentLoaded', function() {
-  
   // ====================================
-  // TESTIMONIALS CAROUSEL (FIXED VERSION)
+  // TESTIMONIALS CAROUSEL
   // ====================================
   const testimonialsTrack = document.getElementById('testimonialsTrack');
   const prevTestimonialBtn = document.getElementById('prevTestimonial');
@@ -781,6 +781,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
+
 
 
 
