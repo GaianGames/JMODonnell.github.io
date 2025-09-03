@@ -1229,3 +1229,157 @@ nav a:hover {
     right: 5px;
   }
 }
+/* ====================================== */
+/* ADD THESE CSS FIXES TO YOUR styles.css */
+/* ====================================== */
+
+/* Fix for Testimonials Section Alignment */
+#testimonials {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#testimonials h2 {
+  text-align: center;
+  margin: 0 auto 20px auto;
+  border-bottom: 2px solid #d4af37;
+  display: inline-block;
+  padding-bottom: 5px;
+  color: #f1f1f1;
+}
+
+#testimonials > p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #e5e5e5;
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 20px;
+}
+
+.testimonials-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #181818, #1e1e1e);
+  padding: 60px 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.testimonials-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  align-items: center;
+  min-height: 400px; /* Ensures consistent height */
+}
+
+.testimonial-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
+}
+
+.testimonial-card {
+  background-color: #2c2c2c;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  text-align: center;
+  max-width: 700px;
+  width: 90%;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  position: relative;
+  margin: 0 auto;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 0 40px 15px rgba(255,215,0,0.3);
+  border-color: #ffd700;
+  transform: translateY(-5px);
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(212, 175, 55, 0.9);
+  color: #121212;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.carousel-nav:hover {
+  background: #ffd700;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.carousel-nav.prev {
+  left: 15px;
+}
+
+.carousel-nav.next {
+  right: 15px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media(max-width: 768px) {
+  .testimonials-carousel {
+    padding: 40px 15px;
+  }
+  
+  .testimonial-slide {
+    padding: 0 50px;
+  }
+  
+  .testimonial-card {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .carousel-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .carousel-nav.prev {
+    left: 5px;
+  }
+  
+  .carousel-nav.next {
+    right: 5px;
+  }
+  
+  .testimonials-track {
+    min-height: auto;
+  }
+}
