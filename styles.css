@@ -5,6 +5,13 @@
   padding: 60px 0;
 }
 
+#about-me .about-divider {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, #d4af37, transparent);
+  margin: 24px 0;
+}
+
 #about-me .about-card {
   display: flex;
   flex-direction: row;
@@ -1670,6 +1677,7 @@ nav a:hover {
     right: 5px;
   }
 }
+
 
 
 
