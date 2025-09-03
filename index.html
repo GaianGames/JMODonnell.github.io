@@ -360,26 +360,54 @@
   </div>
 
 <!-- YouTube Projects Tab -->
-    <div id="youtube" class="grid" style="display:none;">
-      <div class="card youtube-card">
-        <h3>Animatics & Trailers</h3>
-        <p><strong>Journey to Agaiatar Animatic Short</strong></p>
-        <iframe width="100%" height="400" 
-                src="https://www.youtube.com/embed/Y5Wjfa29o9g?si=_Xd50SVSqXSweCQT" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-        </iframe>            
+<div id="youtube" style="display:none;">
+  <div class="youtube-carousel-container">
+    <!-- Dots positioned above carousel -->
+    <div class="youtube-dots" id="youtubeDots"></div>
+    
+    <div class="youtube-carousel">
+      <div class="youtube-track" id="youtubeTrack">
+        <!-- YouTube Slide 1 -->
+        <div class="youtube-slide">
+          <div class="youtube-card">
+            <h3>Animatics & Trailers</h3>
+            <p><strong>Journey to Agaiatar Animatic Short</strong></p>
+            <iframe width="100%" height="450" 
+                    src="https://www.youtube.com/embed/Y5Wjfa29o9g?si=_Xd50SVSqXSweCQT" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        
+        <!-- YouTube Slide 2 -->
+        <div class="youtube-slide">
+          <div class="youtube-card">
+            <h3>Animatics & Trailers</h3>
+            <p>A cinematic look at the immersive world of <strong>Soul Atlas.</strong></p>
+            <iframe width="100%" height="450" 
+                    src="https://www.youtube.com/embed/u3R4_7BjgV8?si=qaILSPL4d0giJh2Q" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        
+        <!-- Add more YouTube slides here as needed -->
       </div>
       
-       <div class="card">
-        <h3>Animatics & Trailers</h3>
-          <p>A cinematic look at the immersive world of <strong>Soul Atlas.</strong></p>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/u3R4_7BjgV8?si=qaILSPL4d0giJh2Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-       </div>     
+      <!-- Navigation buttons -->
+      <button class="youtube-nav prev" id="prevYoutube">‹</button>
+      <button class="youtube-nav next" id="nextYoutube">›</button>
     </div>
+  </div>
+</div>
   
 </section>
 
@@ -791,6 +819,7 @@ dots.forEach(function(dot) {
 
 </body>
 </html>
+
 
 
 
