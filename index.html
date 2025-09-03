@@ -556,122 +556,183 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
 // ====================================
-// REPLACE YOUR TESTIMONIALS CAROUSEL JAVASCRIPT SECTION WITH THIS
-// Find the testimonials carousel section in your script and replace it
+// TESTIMONIALS CAROUSEL - NO AUTO-ROTATION
+// Replace your testimonials carousel JavaScript with this
 // ====================================
 
-// TESTIMONIALS CAROUSEL - SMOOTH & CONTROLLED
+// TESTIMONIALS CAROUSEL - MANUAL ONLY
 const testimonialsTrack = document.getElementById('testimonialsTrack');
 const prevTestimonialBtn = document.getElementById('prevTestimonial');
 const nextTestimonialBtn = document.getElementById('nextTestimonial');
 const dotsContainer = document.getElementById('carouselDots');
 
 // Check if elements exist
-if (!testimonialsTrack || !prevTestimonialBtn || !nextTestimonialBtn || !dotsContainer) {
-  console.error('Carousel elements not found');
-  return;
-}
+if (testimonialsTrack && prevTestimonialBtn && nextTestimonialBtn && dotsContainer) {
+  let currentTestimonial = 0;
+  let isTransitioning = false;
+  const totalTestimonials = document.querySelectorAll('.testimonial-slide').length;
 
-let currentTestimonial = 0;
-let isTransitioning = false;
-const totalTestimonials = document.querySelectorAll('.testimonial-slide').length;
+  // Clear any existing dots first
+  dotsContainer.innerHTML = '';
 
-// Clear any existing dots first
-dotsContainer.innerHTML = '';
+  // Create dots
+  for (let i = 0; i < totalTestimonials; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', function() {
+      if (!isTransitioning) {
+        goToTestimonial(i);
+      }
+    });
+    dotsContainer.appendChild(dot);
+  }
 
-// Create dots
-for (let i = 0; i < totalTestimonials; i++) {
-  const dot = document.createElement('div');
-  dot.classList.add('dot');
-  if (i === 0) dot.classList.add('active');
-  dot.addEventListener('click', function() {
-    if (!isTransitioning) {
-      goToTestimonial(i);
-    }
-  });
-  dotsContainer.appendChild(dot);
-}
+  const dots = document.querySelectorAll('.dot');
 
-const dots = document.querySelectorAll('.dot');
+  function updateTestimonialPosition() {
+    if (isTransitioning) return;
+    
+    isTransitioning = true;
+    const offset = -currentTestimonial * 100;
+    testimonialsTrack.style.transform = `translateX(${offset}%)`;
+    
+    // Update dots
+    dots.forEach(function(dot, index) {
+      if (index === currentTestimonial) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+    
+    // Reset transitioning flag after animation completes
+    setTimeout(() => {
+      isTransitioning = false;
+    }, 600);
+  }
 
-function updateTestimonialPosition() {
-  if (isTransitioning) return;
-  
-  isTransitioning = true;
-  const offset = -currentTestimonial * 100;
-  testimonialsTrack.style.transform = `translateX(${offset}%)`;
-  
-  // Update dots
-  dots.forEach(function(dot, index) {
-    if (index === currentTestimonial) {
-      dot.classList.add('active');
+  function goToTestimonial(index) {
+    if (isTransitioning || index === currentTestimonial) return;
+    currentTestimonial = index;
+    updateTestimonialPosition();
+  }
+
+  // Previous button
+  prevTestimonialBtn.addEventListener('click', function() {
+    if (isTransitioning) return;
+    
+    if (currentTestimonial > 0) {
+      currentTestimonial--;
     } else {
-      dot.classList.remove('active');
+      currentTestimonial = totalTestimonials - 1;
     }
+    updateTestimonialPosition();
   });
-  
-  // Reset transitioning flag after animation completes
-  setTimeout(() => {
-    isTransitioning = false;
-  }, 600); // Match this to CSS transition duration
-}
 
-function goToTestimonial(index) {
-  if (isTransitioning || index === currentTestimonial) return;
-  currentTestimonial = index;
-  updateTestimonialPosition();
-}
-
-// Previous button with debouncing
-prevTestimonialBtn.addEventListener('click', function() {
-  if (isTransitioning) return;
-  
-  if (currentTestimonial > 0) {
-    currentTestimonial--;
-  } else {
-    currentTestimonial = totalTestimonials - 1;
-  }
-  updateTestimonialPosition();
-});
-
-// Next button with debouncing
-nextTestimonialBtn.addEventListener('click', function() {
-  if (isTransitioning) return;
-  
-  if (currentTestimonial < totalTestimonials - 1) {
-    currentTestimonial++;
-  } else {
-    currentTestimonial = 0;
-  }
-  updateTestimonialPosition();
-});
-
-// OPTIONAL: Auto-advance after 30 seconds (much longer delay)
-// To disable auto-advance completely, comment out or delete everything from here to line 110
-let autoAdvance = setInterval(function() {
-  if (!isTransitioning) {
+  // Next button
+  nextTestimonialBtn.addEventListener('click', function() {
+    if (isTransitioning) return;
+    
     if (currentTestimonial < totalTestimonials - 1) {
       currentTestimonial++;
     } else {
       currentTestimonial = 0;
     }
     updateTestimonialPosition();
+  });
+
+  // NO AUTO-ROTATION - Removed all setInterval code
+}
+
+// ====================================
+// YOUTUBE CAROUSEL
+// Add this to your script
+// ====================================
+
+const youtubeTrack = document.getElementById('youtubeTrack');
+const prevYoutubeBtn = document.getElementById('prevYoutube');
+const nextYoutubeBtn = document.getElementById('nextYoutube');
+const youtubeDotsContainer = document.getElementById('youtubeDots');
+
+// Check if YouTube carousel elements exist
+if (youtubeTrack && prevYoutubeBtn && nextYoutubeBtn && youtubeDotsContainer) {
+  let currentYoutubeSlide = 0;
+  let isYoutubeTransitioning = false;
+  const totalYoutubeSlides = document.querySelectorAll('.youtube-slide').length;
+
+  // Clear any existing dots
+  youtubeDotsContainer.innerHTML = '';
+
+  // Create dots for YouTube carousel
+  for (let i = 0; i < totalYoutubeSlides; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', function() {
+      if (!isYoutubeTransitioning) {
+        goToYoutubeSlide(i);
+      }
+    });
+    youtubeDotsContainer.appendChild(dot);
   }
-}, 30000); // 30 seconds between auto-advances (was 10 seconds before)
 
-// Stop auto-advance permanently when user interacts
-[prevTestimonialBtn, nextTestimonialBtn].forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    clearInterval(autoAdvance); // Stop auto-advance permanently after user interaction
-  });
-});
+  const youtubeDots = youtubeDotsContainer.querySelectorAll('.dot');
 
-// Also stop auto-advance if user clicks a dot
-dots.forEach(function(dot) {
-  dot.addEventListener('click', function() {
-    clearInterval(autoAdvance); // Stop auto-advance permanently
+  function updateYoutubePosition() {
+    if (isYoutubeTransitioning) return;
+    
+    isYoutubeTransitioning = true;
+    const offset = -currentYoutubeSlide * 100;
+    youtubeTrack.style.transform = `translateX(${offset}%)`;
+    
+    // Update dots
+    youtubeDots.forEach(function(dot, index) {
+      if (index === currentYoutubeSlide) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+    
+    // Reset transitioning flag
+    setTimeout(() => {
+      isYoutubeTransitioning = false;
+    }, 600);
+  }
+
+  function goToYoutubeSlide(index) {
+    if (isYoutubeTransitioning || index === currentYoutubeSlide) return;
+    currentYoutubeSlide = index;
+    updateYoutubePosition();
+  }
+
+  // Previous button for YouTube
+  prevYoutubeBtn.addEventListener('click', function() {
+    if (isYoutubeTransitioning) return;
+    
+    if (currentYoutubeSlide > 0) {
+      currentYoutubeSlide--;
+    } else {
+      currentYoutubeSlide = totalYoutubeSlides - 1;
+    }
+    updateYoutubePosition();
   });
-});
+
+  // Next button for YouTube
+  nextYoutubeBtn.addEventListener('click', function() {
+    if (isYoutubeTransitioning) return;
+    
+    if (currentYoutubeSlide < totalYoutubeSlides - 1) {
+      currentYoutubeSlide++;
+    } else {
+      currentYoutubeSlide = 0;
+    }
+    updateYoutubePosition();
+  });
+
+  // NO AUTO-ROTATION for YouTube carousel either
+}
   
 });
 </script>
@@ -819,6 +880,7 @@ dots.forEach(function(dot) {
 
 </body>
 </html>
+
 
 
 
