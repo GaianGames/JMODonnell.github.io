@@ -543,10 +543,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
 // ====================================
-// REPLACE JUST THE TESTIMONIALS CAROUSEL SECTION OF YOUR JAVASCRIPT WITH THIS
+// REPLACE YOUR TESTIMONIALS CAROUSEL JAVASCRIPT SECTION WITH THIS
+// Find the testimonials carousel section in your script and replace it
 // ====================================
 
-// TESTIMONIALS CAROUSEL - SMOOTH VERSION
+// TESTIMONIALS CAROUSEL - SMOOTH & CONTROLLED
 const testimonialsTrack = document.getElementById('testimonialsTrack');
 const prevTestimonialBtn = document.getElementById('prevTestimonial');
 const nextTestimonialBtn = document.getElementById('nextTestimonial');
@@ -559,7 +560,7 @@ if (!testimonialsTrack || !prevTestimonialBtn || !nextTestimonialBtn || !dotsCon
 }
 
 let currentTestimonial = 0;
-let isTransitioning = false; // Prevent multiple rapid clicks
+let isTransitioning = false;
 const totalTestimonials = document.querySelectorAll('.testimonial-slide').length;
 
 // Clear any existing dots first
@@ -599,16 +600,16 @@ function updateTestimonialPosition() {
   // Reset transitioning flag after animation completes
   setTimeout(() => {
     isTransitioning = false;
-  }, 500); // Match this to CSS transition duration
+  }, 600); // Match this to CSS transition duration
 }
 
 function goToTestimonial(index) {
-  if (isTransitioning) return;
+  if (isTransitioning || index === currentTestimonial) return;
   currentTestimonial = index;
   updateTestimonialPosition();
 }
 
-// Previous button
+// Previous button with debouncing
 prevTestimonialBtn.addEventListener('click', function() {
   if (isTransitioning) return;
   
@@ -620,7 +621,7 @@ prevTestimonialBtn.addEventListener('click', function() {
   updateTestimonialPosition();
 });
 
-// Next button
+// Next button with debouncing
 nextTestimonialBtn.addEventListener('click', function() {
   if (isTransitioning) return;
   
@@ -632,7 +633,8 @@ nextTestimonialBtn.addEventListener('click', function() {
   updateTestimonialPosition();
 });
 
-// Auto-advance testimonials every 10 seconds
+// OPTIONAL: Auto-advance after 30 seconds (much longer delay)
+// To disable auto-advance completely, comment out or delete everything from here to line 110
 let autoAdvance = setInterval(function() {
   if (!isTransitioning) {
     if (currentTestimonial < totalTestimonials - 1) {
@@ -642,37 +644,21 @@ let autoAdvance = setInterval(function() {
     }
     updateTestimonialPosition();
   }
-}, 10000);
+}, 30000); // 30 seconds between auto-advances (was 10 seconds before)
 
-// Pause auto-advance when user interacts
+// Stop auto-advance permanently when user interacts
 [prevTestimonialBtn, nextTestimonialBtn].forEach(function(btn) {
   btn.addEventListener('click', function() {
-    clearInterval(autoAdvance);
-    // Restart auto-advance after 15 seconds of no interaction
-    setTimeout(function() {
-      autoAdvance = setInterval(function() {
-        if (!isTransitioning) {
-          if (currentTestimonial < totalTestimonials - 1) {
-            currentTestimonial++;
-          } else {
-            currentTestimonial = 0;
-          }
-          updateTestimonialPosition();
-        }
-      }, 10000);
-    }, 15000);
+    clearInterval(autoAdvance); // Stop auto-advance permanently after user interaction
   });
 });
 
-// Optional: Check if any cards need scroll indicators
-setTimeout(() => {
-  document.querySelectorAll('.testimonial-card').forEach(card => {
-    const blockquote = card.querySelector('blockquote');
-    if (blockquote && blockquote.scrollHeight > blockquote.clientHeight) {
-      card.classList.add('scrollable');
-    }
+// Also stop auto-advance if user clicks a dot
+dots.forEach(function(dot) {
+  dot.addEventListener('click', function() {
+    clearInterval(autoAdvance); // Stop auto-advance permanently
   });
-}, 100);
+});
   
 });
 </script>
@@ -729,11 +715,18 @@ setTimeout(() => {
 
 
 
-<!-- Testimonials Section -->
+<!-- ====================================== -->
+<!-- REPLACE YOUR TESTIMONIALS SECTION HTML WITH THIS -->
+<!-- The key change is moving carousel-dots ABOVE the testimonials-carousel div -->
+<!-- ====================================== -->
+
 <section id="testimonials" style="background-color:#1e1e1e;">
   <div class="testimonials-container">
     <h2>Testimonials</h2>
     <p>Hear from collaborators, clients, and peers about my work.</p>
+    
+    <!-- DOTS NOW POSITIONED HERE - ABOVE THE CAROUSEL -->
+    <div class="carousel-dots" id="carouselDots"></div>
     
     <div class="testimonials-carousel">
       <div class="testimonials-track" id="testimonialsTrack">
@@ -798,9 +791,6 @@ setTimeout(() => {
       <!-- Navigation buttons -->
       <button class="carousel-nav prev" id="prevTestimonial">‹</button>
       <button class="carousel-nav next" id="nextTestimonial">›</button>
-      
-      <!-- Dots indicator -->
-      <div class="carousel-dots" id="carouselDots"></div>
     </div>
   </div>
 </section>
@@ -816,6 +806,7 @@ setTimeout(() => {
 
 </body>
 </html>
+
 
 
 
