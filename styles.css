@@ -1,3 +1,21 @@
+/* ==================== */
+/* CSS CUSTOM PROPERTIES FOR CONSISTENCY */
+/* ==================== */
+:root {
+  --gold-primary: #d4af37;
+  --gold-hover: #ffd700;
+  --gold-muted: #b99a2e;
+  --dark-primary: #181818;
+  --dark-secondary: #1e1e1e;
+  --dark-card: #2c2c2c;
+  --text-light: #f1f1f1;
+  --text-muted: #888;
+  --transition-speed: 0.3s;
+}
+
+/* ==================== */
+/* ABOUT ME SECTION */
+/* ==================== */
 #about-me .about-container {
   display: flex;
   justify-content: center;
@@ -8,21 +26,22 @@
 #about-me .about-divider {
   border: 0;
   height: 2px;
-  background: linear-gradient(to right, #d4af37, transparent);
+  background: linear-gradient(to right, var(--gold-primary), transparent);
   margin: 24px 0;
 }
 
 #about-me .about-card {
   display: flex;
   flex-direction: row;
-  background: #181818;
-  border-left: 8px solid #d4af37;
+  background: var(--dark-primary);
+  border-left: 8px solid var(--gold-primary);
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.4);
   padding: 40px;
   max-width: 900px;
   gap: 40px;
   align-items: center;
+  transition: all var(--transition-speed);
 }
 
 #about-me .about-photo img {
@@ -30,7 +49,7 @@
   height: 180px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #d4af37;
+  border: 4px solid var(--gold-primary);
   box-shadow: 0 4px 20px rgba(0,0,0,0.6);
   background: #232323;
 }
@@ -40,13 +59,13 @@
 }
 
 #about-me .gold-highlight {
-  color: #d4af37;
+  color: var(--gold-primary);
   letter-spacing: 2px;
 }
 
 #about-me .about-tagline {
   font-size: 1.2em;
-  color: #d4af37;
+  color: var(--gold-primary);
   margin-bottom: 8px;
   font-weight: bold;
 }
@@ -80,8 +99,8 @@
   margin-top: 10px;
   display: inline-block;
   padding: 12px 30px;
-  background: #d4af37;
-  color: #181818;
+  background: var(--gold-primary);
+  color: var(--dark-primary);
   border-radius: 24px;
   font-weight: bold;
   text-decoration: none;
@@ -89,15 +108,14 @@
 }
 
 #about-me .cta-btn:hover {
-  background: #b99a2e;
+  background: var(--gold-muted);
   color: #fff;
 }
 
 #about-me .about-card:hover {
   box-shadow: 0 0 24px 10px rgba(255, 215, 0, 0.27);
-  border-color: #ffd700;
+  border-color: var(--gold-hover);
   transform: translateY(-5px) scale(1.015);
-  transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
 }
 
 @media (max-width: 800px) {
@@ -112,110 +130,276 @@
     margin-bottom: 12px;
   }
 }
-  
-/* Testimonials Section */
+
+/* ==================== */
+/* TESTIMONIALS SECTION */
+/* ==================== */
 #testimonials {
-  background-color: #1e1e1e; /* Dark background for bold contrast */
-  color: #f1f1f1;
+  background-color: var(--dark-secondary);
+  color: var(--text-light);
   padding: 60px 20px;
   text-align: center;
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+#testimonials h2 {
+  text-align: center;
+  margin: 0 auto 20px auto;
+  border-bottom: 2px solid var(--gold-primary);
+  display: inline-block;
+  padding-bottom: 5px;
+  color: var(--text-light);
+}
+
+#testimonials > p {
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  font-size: 1.1em;
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+  padding: 0 30px;
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  padding: 0;
+  position: relative;
+  z-index: 50;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.3);
+  border: 2px solid var(--gold-primary);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+}
+
+.dot.active {
+  background: var(--gold-primary);
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.dot:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+.testimonials-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--dark-primary), var(--dark-secondary));
+  padding: 50px 70px;
+  margin: 0 auto;
   max-width: 1000px;
-  margin: auto;
+  min-height: auto;
+}
+
+.testimonials-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: stretch;
+  width: 100%;
+}
+
+.testimonial-slide {
+  min-width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .testimonial-card {
-  background-color: #2c2c2c;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  background-color: var(--dark-card);
+  padding: 35px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
   text-align: center;
+  width: 90%;
+  max-width: 700px;
+  border: 2px solid transparent;
+  transition: all var(--transition-speed);
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 0 40px 15px rgba(255,215,0,0.3);
+  border-color: var(--gold-hover);
+  transform: scale(1.02);
 }
 
 .testimonial-card img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin: 0 auto 15px auto;
+  border: 3px solid var(--gold-primary);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.testimonial-card h3 {
-  font-size: 1.2em;
-  color: #d4af37; /* Gold accent */
+.testimonial-name {
+  font-size: 1.4em;
+  color: var(--gold-primary);
+  margin-bottom: 5px;
 }
 
-.testimonial-card h2 {
-  text-align: center;
-}
-
-.testimonial-card p {
-  font-size: 1em;
-  font-style: italic;
-  text-align: center;
+.testimonial-company {
+  color: #b8a980;
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  opacity: 0.95;
 }
 
 .testimonial-divider {
-  width: 80%;  /* Keeps the divider thin and proportional */
-  height: 2px; /* Thin line */
-  background-color: #d4af37; /* Gold accent */
-  margin: 10px auto 20px auto; /* Adds space above & below */
-  align-items: center;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  margin: 15px auto 25px auto;
 }
 
-
-/* Only the black card glows on hover in testimonials */
-.testimonials-grid .card:hover {
-  box-shadow: 0 0 24px 10px rgba(255,215,0,0.27);
-  border-color: #ffd700;
-  transform: translateY(-5px) scale(1.015);
-  transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
+.testimonial-card blockquote {
+  margin: 0;
+  font-style: italic;
+  color: #e5e5e5;
+  line-height: 1.8;
+  position: relative;
+  font-size: 1em;
+  text-align: left;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-primary) rgba(255, 255, 255, 0.1);
+  border-right: 2px solid rgba(212, 175, 55, 0.15);
 }
-.testimonial-card,
-.testimonial-card:hover {
-  box-shadow: 0 4px 6px rgba(0,0,0,0.4); /* default only */
+
+.testimonial-card blockquote::-webkit-scrollbar {
+  width: 8px;
+  display: block !important;
+}
+
+.testimonial-card blockquote::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.testimonial-card blockquote::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-primary), var(--gold-muted));
+  border-radius: 4px;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-card blockquote::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--gold-hover), var(--gold-primary));
+}
+
+.testimonial-card blockquote p {
+  margin-bottom: 15px;
+  text-align: left;
+  line-height: 1.7;
+}
+
+.testimonial-card blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(212, 175, 55, 0.9);
+  color: #121212;
   border: none;
-  transition: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
+.carousel-nav:hover {
+  background: var(--gold-hover);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
 
+.carousel-nav.prev {
+  left: 15px;
+}
 
-/* Header Section */
+.carousel-nav.next {
+  right: 15px;
+}
+
+/* ==================== */
+/* HEADER SECTION */
+/* ==================== */
 .header-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; /* Makes text stack below image */
+  flex-direction: column;
   position: relative;
   z-index: 1;
 }
 
 .header-photo {
-  width: 150px; /* Adjust size */
+  width: 150px;
   height: 150px;
-  border-radius: 50%; /* Creates a circular image */
+  border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px; /* Adds space between image and text */
+  margin-bottom: 15px;
 }
 
 .text-container {
   text-align: center;
 }
 
-/* Projects Section */
+/* ==================== */
+/* PROJECTS SECTION */
+/* ==================== */
 #projects .grid .card:hover {
   box-shadow: 0 0 20px 7px rgba(255, 215, 0, 0.21);
-  border-color: #ffd700;
+  border-color: var(--gold-hover);
   transform: translateY(-5px) scale(1.0125);
   transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
 }
 
-/* Writing Collective Section */
+/* ==================== */
+/* WRITING COLLECTIVE SECTION */
+/* ==================== */
 #writing-collective {
   background-color: #121212;
   padding: 3rem 1.5rem;
@@ -225,7 +409,7 @@
 .collective-motto {
   font-size: 1.1em;
   font-style: italic;
-  color: #d4af37;
+  color: var(--gold-primary);
   margin-top: -0.5rem;
   margin-bottom: 2rem;
   text-align: left;
@@ -233,8 +417,8 @@
 
 .collective-subheading {
   font-size: 1.4em;
-  color: #d4af37;
-  border-bottom: 2px solid #d4af37;
+  color: var(--gold-primary);
+  border-bottom: 2px solid var(--gold-primary);
   display: inline-block;
   padding-bottom: 0.3rem;
   margin-bottom: 1rem;
@@ -250,17 +434,17 @@
 
 .collective-text h3 {
   font-size: 1.2em;
-  color: #d4af37; /* Gold accent */ 
+  color: var(--gold-primary);
 }
 
 .collective-text ul {
   text-align: center;
   font-style: italic;
-  list-style-position: inside; /* Keeps bullets aligned when centered */
+  list-style-position: inside;
 }
 
 .collective-text h2 {
-  color: #ffd700;
+  color: var(--gold-hover);
   font-size: 2em;
   margin-bottom: 1rem;
   text-align: center;
@@ -275,39 +459,35 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+/* FIXED: Corrected signature-credit CSS */
 .signature-credit {
-  color: #d4af37 !important;
-}
+  color: var(--gold-primary) !important;
   font-style: italic;
-  color: #d4af37;
   margin-top: 2rem;
   text-align: center;
 }
 
-/* Centering Signature Image */
 .signature-container {
-  text-align: center !important;   /* Ensures the image stays centered */ 
+  text-align: center !important;
 }
 
 .signature-container .signature {
   display: block;
   max-width: 250px;
-  margin: 1rem auto 0; /* Centers the image */
-  filter: brightness(1.3) sepia(1) saturate(2) hue-rotate(15deg); /* Subtle gold tint */
-  
+  margin: 1rem auto 0;
+  filter: brightness(1.3) sepia(1) saturate(2) hue-rotate(15deg);
 }
 
 #writing-collective .card.collective-card:hover {
   box-shadow: 0 0 24px 10px rgba(255, 215, 0, 0.28);
-  border-color: #ffd700;
+  border-color: var(--gold-hover);
   transform: translateY(-6px) scale(1.02);
   transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
 }
 
-/* ===================== */
-/* Itch Section - Gold Theme & Frame Adjustments */
-/* ===================== */
-
+/* ==================== */
+/* ITCH CAROUSEL SECTION */
+/* ==================== */
 .itch-banner-row {
   width: 100%;
   text-align: center;
@@ -322,322 +502,299 @@
   border-radius: 14px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.22);
   object-fit: contain;
-  background: #181818;
+  background: var(--dark-primary);
 }
 
-.itch-intro-card {
+.itch-carousel-container {
+  max-width: 1000px;
+  margin: 30px auto 0 auto;
+  position: relative;
+}
+
+.itch-carousel-dots {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto 28px auto;
-  background: #232323;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.22);
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  margin-top: 15px;
   padding: 0;
-  max-width: 600px;
-  min-width: 0;
+  position: relative;
+  z-index: 50;
 }
-.itch-profile-flex {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  width: 100%;
-  gap: 0;
+
+.itch-carousel-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.3);
+  border: 2px solid var(--gold-primary);
+  cursor: pointer;
+  transition: all var(--transition-speed);
 }
-.itch-avatar-col {
-  background: #181818;
+
+.itch-carousel-dots .dot.active {
+  background: var(--gold-primary);
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.itch-carousel-dots .dot:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+.itch-unified-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--dark-primary), var(--dark-secondary));
+  padding: 50px 70px;
+  margin: 0 auto;
+  min-height: 500px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex: 0 0 170px;
-  padding: 40px 24px;
-  border-right: 2px solid #252525;
-  box-shadow: 0 0 24px 5px rgba(212, 175, 55, 0.09);
 }
-.itch-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
-  border: 5px solid #d4af37;
-  object-fit: cover;
-  box-shadow: 0 4px 28px rgba(0,0,0,0.25);
-  background: #222;
-  transition: box-shadow 0.2s;
-}
-.itch-avatar:hover {
-  box-shadow: 0 0 18px 6px #d4af37;
-}
-.itch-bio-col {
-  flex: 1 1 0%;
+
+.itch-carousel-track {
   display: flex;
-  flex-direction: column;
-  padding: 38px 32px;
-  background: #232323;
-  align-items: flex-start;
-  justify-content: center;
-  border-radius: 0 16px 16px 0;
-  min-height: 200px;
-  box-shadow: 0 2px 18px rgba(0,0,0,0.10);
-}
-.itch-profile-title {
-  color: #d4af37;
-  font-size: 2em;
-  font-weight: 800;
-  margin-bottom: 8px;
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-  letter-spacing: 1px;
-}
-.itch-profile-lead {
-  color: #d4af37;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-bottom: 8px;
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-}
-.itch-profile-bio {
-  color: #e5e5e5;
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-}
-.itch-profile-link {
-  color: #d4af37;
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 2px solid #d4af37;
-  transition: border-color 0.2s, color 0.2s;
-  margin-top: 6px;
-  font-size: 1em;
-}
-.itch-profile-link:hover {
-  color: #fffbe6;
-  border-bottom: 2px solid #ffd700;
-}
-/* Responsive for profile */
-@media (max-width: 700px) {
-  .itch-intro-card { max-width: 98vw; }
-  .itch-profile-flex { flex-direction: column; align-items: center; }
-  .itch-avatar-col { border-right: none; border-bottom: 2px solid #252525; padding-bottom: 14px; justify-content: center; }
-  .itch-bio-col { border-radius: 0 0 16px 16px; padding: 18px 10px; align-items: center; text-align: center; min-height: 0; }
-}
-
-/* Games Section Heading */
-.itch-games-heading {
-  font-size: 2em;
-  color: #ffd700;
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-  margin-bottom: 10px;
-  text-align: center;
-  font-weight: 800;
-  letter-spacing: 1px;
-  position: relative;
-}
-
-.itch-games-heading:after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #d4af37 !important;
-  margin: 10px auto 0 auto;
-  border-radius: 2px;
-}
-
-/* Games Cards Grid */
-.itch-games-grid {
-  background: #202020;
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
-  padding: 32px 18px;
-  margin: 30px auto;
-  max-width: 1100px;
-  gap: 30px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-}
-
-.itch-games-grid .card {
-  background: #181818;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.17);
-  padding: 26px 20px 20px 20px;
-  border: none;
-  display: flex;
-  flex-direction: column;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   align-items: stretch;
-  position: relative;
-  transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
-}
-
-.itch-games-grid .card:hover {
-  box-shadow: 0 0 28px 10px rgba(255,215,0,0.18), 0 2px 14px rgba(0,0,0,0.18);
-  border: 1.5px solid #d4af37;
-  transform: translateY(-4px) scale(1.018);
-}
-
-.itch-game-title {
-  color: #d4af37;
-  font-size: 1.3em;
-  font-weight: 700;
-  margin-bottom: 8px;
-  text-align: center;
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-}
-
-.itch-game-embed {
   width: 100%;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.13);
 }
 
-.itch-game-embed iframe {
-  width: 100%;
-  min-height: 120px;
-  height: 180px;
+.itch-carousel-slide {
+  min-width: 100%;
   max-width: 100%;
-  border: none;
-  border-radius: 8px;
-  background: #191919;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  flex-shrink: 0;
 }
 
-.itch-card-divider {
+.itch-profile-card {
+  background-color: var(--dark-card);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
   width: 90%;
-  height: 2px;
-  background: #d4af37 !important;
-  border-radius: 1px;
-  margin: 14px auto 14px auto;
-}
-
-.itch-game-description {
-  color: #e5e5e5;
-  font-size: 1.05em;
-  margin: 0;
-  text-align: center;
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-  min-height: 44px;
-}
-
-/* Responsive for games grid */
-@media (max-width: 900px) {
-  .itch-games-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 22px 4vw;
-  }
-}
-
-/* ==== Itch Profile Redesign – Unified Color & Avatar Fix ==== */
-
-/* Avatar: square with gold border */
-.itch-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px; /* Square with slightly rounded corners */
-  border: 5px solid #d4af37;
-  object-fit: cover;
-  box-shadow: 0 4px 28px rgba(0,0,0,0.25);
-  background: #222;
-  transition: box-shadow 0.2s;
-}
-
-/* Headings, titles, lead, links, game titles, card text all #f1f1f1 */
-.itch-profile-title,
-.itch-profile-lead,
-.itch-games-heading,
-.itch-game-title,
-.itch-profile-link,
-.itch-game-description,
-.itch-games-grid .card {
-  color: #f1f1f1 !important;
-}
-
-/* Gold accents for highlights and dividers */
-.itch-profile-title,
-.itch-profile-lead,
-.itch-games-heading,
-.itch-game-title,
-.itch-profile-link,
-.itch-card-divider {
-  color: #d4af37 !important;
-}
-
-/* Divider lines gold */
-.itch-card-divider,
-.itch-games-heading:after {
-  background: #d4af37 !important;
-}
-
-/* Gold border for avatar and hover/active cards/links */
-.itch-avatar,
-.itch-games-grid .card:hover,
-.itch-profile-link,
-.itch-profile-link:hover {
-  border-color: #d4af37 !important;
-}
-
-/* Bio text stays a lighter gray for separation */
-.itch-profile-bio {
-  color: #e5e5e5 !important;
-}
-
-/* Game Thumbnail (square or 16:9, adjust as desired) */
-.itch-game-thumb {
-  width: 100%;
-  max-width: 500px;
-  height: 220px;       /* or whatever height fits your design */
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-  display: block;
+  max-width: 700px;
+  border: 2px solid transparent;
+  transition: all var(--transition-speed);
   margin: 0 auto;
 }
 
-/* Custom Itch.io Play Button */
-.itch-play-btn {
-  background: #d4af37;
-  color: #181818;
-  padding: 11px 40px;
-  border-radius: 8px;
+.itch-profile-card:hover {
+  box-shadow: 0 0 40px 15px rgba(255,215,0,0.3);
+  border-color: var(--gold-hover);
+  transform: scale(1.02);
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  border: 4px solid var(--gold-primary);
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  width: 100%;
+}
+
+.profile-name {
+  color: var(--gold-primary);
+  font-size: 2em;
   font-weight: 700;
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.profile-title {
+  color: var(--text-light);
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  opacity: 0.9;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.profile-divider {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  margin: 15px auto 25px auto;
+}
+
+.profile-bio {
+  color: #e5e5e5;
+  font-size: 1.05em;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  font-style: italic;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-link-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-muted));
+  color: #121212;
+  padding: 12px 35px;
+  border-radius: 25px;
+  font-weight: bold;
   text-decoration: none;
+  transition: all var(--transition-speed);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  font-size: 1.05em;
+}
+
+.profile-link-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, var(--gold-hover), var(--gold-primary));
+}
+
+.itch-game-card {
+  background-color: var(--dark-card);
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  width: 90%;
+  max-width: 700px;
+  border: 2px solid transparent;
+  transition: all var(--transition-speed);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.itch-game-card:hover {
+  box-shadow: 0 0 40px 15px rgba(255,215,0,0.3);
+  border-color: var(--gold-hover);
+  transform: scale(1.02);
+}
+
+.game-title {
+  color: var(--gold-primary);
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+.game-image {
+  width: 100%;
+  max-width: 500px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  margin-bottom: 25px;
+}
+
+.game-divider {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  margin: 0 auto 25px auto;
+}
+
+.game-description {
+  color: #e5e5e5;
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  font-style: italic;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-play-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-muted));
+  color: #121212;
+  padding: 14px 40px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all var(--transition-speed);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
   font-size: 1.1em;
   letter-spacing: 0.5px;
-  transition: background 0.18s, color 0.18s, box-shadow 0.16s;
+}
+
+.game-play-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, var(--gold-hover), var(--gold-primary));
+}
+
+.itch-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(212, 175, 55, 0.9);
+  color: #121212;
   border: none;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
-  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.itch-play-btn:hover, .itch-play-btn:focus {
-  background: #fff1b8;
-  color: #222;
-  box-shadow: 0 0 12px 2px #d4af37;
-  outline: none;
+.itch-carousel-nav:hover {
+  background: var(--gold-hover);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.itch-carousel-nav.prev {
+  left: 15px;
+}
+
+.itch-carousel-nav.next {
+  right: 15px;
+}
+
+.itch-intro-card,
+.itch-games-grid {
+  display: none !important;
 }
 
 /* ==================== */
-/* ADD THESE STYLES TO YOUR styles.css FILE */
+/* ENHANCED NAVIGATION */
 /* ==================== */
-
-/* Enhanced Navigation Hover Effects */
 nav a {
   transition: color 0.3s, transform 0.2s;
 }
 
 nav a:hover {
-  color: #ffd700;
+  color: var(--gold-hover);
   transform: translateY(-2px);
   text-decoration: none;
 }
 
-/* Enhanced Tab Styling */
 .tab {
   transition: all 0.3s;
-  color: #f1f1f1;
+  color: var(--text-light);
 }
 
 .tab:hover {
@@ -646,7 +803,7 @@ nav a:hover {
 }
 
 /* ==================== */
-/* ENHANCED MUSIC PLAYER */
+/* MUSIC PLAYER */
 /* ==================== */
 #music {
   display: none;
@@ -664,7 +821,7 @@ nav a:hover {
 }
 
 .music-header h3 {
-  color: #d4af37;
+  color: var(--gold-primary);
   font-size: 2em;
   margin-bottom: 10px;
   font-weight: 700;
@@ -676,7 +833,7 @@ nav a:hover {
   align-items: center;
   gap: 10px;
   padding: 10px 20px;
-  background: linear-gradient(135deg, #d4af37, #b99a2e);
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-muted));
   color: #121212;
   border-radius: 25px;
   font-weight: bold;
@@ -691,8 +848,8 @@ nav a:hover {
 }
 
 .music-player {
-  background: linear-gradient(135deg, #1e1e1e, #181818);
-  border: 2px solid #d4af37;
+  background: linear-gradient(135deg, var(--dark-secondary), var(--dark-primary));
+  border: 2px solid var(--gold-primary);
   border-radius: 20px;
   padding: 30px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(212, 175, 55, 0.2);
@@ -716,6 +873,11 @@ nav a:hover {
   50% { transform: translate(-20%, -20%) scale(1.1); }
 }
 
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .track-info {
   display: flex;
   align-items: center;
@@ -728,7 +890,7 @@ nav a:hover {
 .album-art {
   width: 120px;
   height: 120px;
-  background: linear-gradient(135deg, #d4af37, #b99a2e);
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-muted));
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -743,11 +905,6 @@ nav a:hover {
   animation-play-state: running;
 }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .album-art::after {
   content: '♪';
   font-size: 50px;
@@ -760,14 +917,14 @@ nav a:hover {
 
 .track-title {
   font-size: 1.6em;
-  color: #d4af37;
+  color: var(--gold-primary);
   margin-bottom: 5px;
   font-weight: 700;
 }
 
 .artist-name {
   font-size: 1.1em;
-  color: #888;
+  color: var(--text-muted);
   margin-bottom: 10px;
 }
 
@@ -775,10 +932,10 @@ nav a:hover {
   display: inline-block;
   padding: 4px 12px;
   background: rgba(212, 175, 55, 0.1);
-  border: 1px solid #d4af37;
+  border: 1px solid var(--gold-primary);
   border-radius: 15px;
   font-size: 0.9em;
-  color: #d4af37;
+  color: var(--gold-primary);
 }
 
 .progress-container {
@@ -799,7 +956,7 @@ nav a:hover {
 
 .progress {
   height: 100%;
-  background: linear-gradient(90deg, #d4af37, #ffd700);
+  background: linear-gradient(90deg, var(--gold-primary), var(--gold-hover));
   border-radius: 10px;
   width: 0%;
   transition: width 0.1s;
@@ -811,7 +968,7 @@ nav a:hover {
   justify-content: space-between;
   margin-top: 8px;
   font-size: 0.9em;
-  color: #888;
+  color: var(--text-muted);
 }
 
 .controls {
@@ -825,7 +982,7 @@ nav a:hover {
 
 .control-btn {
   background: rgba(212, 175, 55, 0.1);
-  border: 2px solid #d4af37;
+  border: 2px solid var(--gold-primary);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -834,7 +991,7 @@ nav a:hover {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s;
-  color: #d4af37;
+  color: var(--gold-primary);
   font-size: 18px;
 }
 
@@ -842,7 +999,7 @@ nav a:hover {
   width: 70px;
   height: 70px;
   font-size: 24px;
-  background: linear-gradient(135deg, #d4af37, #b99a2e);
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-muted));
   color: #121212;
   box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
 }
@@ -880,7 +1037,7 @@ nav a:hover {
   appearance: none;
   width: 16px;
   height: 16px;
-  background: #d4af37;
+  background: var(--gold-primary);
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(212, 175, 55, 0.5);
@@ -889,7 +1046,7 @@ nav a:hover {
 .volume-slider::-moz-range-thumb {
   width: 16px;
   height: 16px;
-  background: #d4af37;
+  background: var(--gold-primary);
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(212, 175, 55, 0.5);
@@ -902,7 +1059,7 @@ nav a:hover {
 }
 
 .playlist-title {
-  color: #d4af37;
+  color: var(--gold-primary);
   font-size: 1.2em;
   margin-bottom: 15px;
   font-weight: 600;
@@ -922,17 +1079,17 @@ nav a:hover {
 
 .playlist-item:hover {
   background: rgba(212, 175, 55, 0.1);
-  border-color: #d4af37;
+  border-color: var(--gold-primary);
   transform: translateX(5px);
 }
 
 .playlist-item.active {
   background: rgba(212, 175, 55, 0.2);
-  border-color: #d4af37;
+  border-color: var(--gold-primary);
 }
 
 .playlist-number {
-  color: #888;
+  color: var(--text-muted);
   margin-right: 15px;
   font-size: 0.9em;
 }
@@ -942,581 +1099,21 @@ nav a:hover {
 }
 
 .playlist-track-title {
-  color: #f1f1f1;
+  color: var(--text-light);
   font-weight: 500;
 }
 
 .playlist-track-duration {
-  color: #888;
+  color: var(--text-muted);
   font-size: 0.9em;
   margin-left: auto;
 }
 
-/* ========================= */
-/* ENHANCED TESTIMONIALS */
-/* ========================= */
-.testimonials-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.testimonials-carousel {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #181818, #1e1e1e);
-  padding: 40px 20px;
-}
-
-.testimonials-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.testimonial-slide {
-  min-width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0 40px;
-}
-
-.testimonial-card {
-  background-color: #2c2c2c;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-  text-align: center;
-  max-width: 800px;
-  width: 100%;
-  border: 2px solid transparent;
-  transition: all 0.3s;
-  position: relative;
-}
-
-.testimonial-card:hover {
-  box-shadow: 0 0 40px 15px rgba(255,215,0,0.3);
-  border-color: #ffd700;
-  transform: translateY(-5px);
-}
-
-.testimonial-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid #d4af37;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.testimonial-name {
-  font-size: 1.4em;
-  color: #d4af37;
-  margin-bottom: 5px;
-}
-
-.testimonial-company {
-  color: #888;
-  margin-bottom: 20px;
-  font-size: 1em;
-}
-
-.testimonial-divider {
-  width: 80%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
-  margin: 15px auto 25px auto;
-}
-
-.testimonial-card blockquote {
-  margin: 0;
-  font-style: italic;
-  color: #e5e5e5;
-  line-height: 1.8;
-  position: relative;
-}
-
-.testimonial-card blockquote::before {
-  content: '"';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  font-size: 60px;
-  color: rgba(212, 175, 55, 0.2);
-  font-family: Georgia, serif;
-}
-
-.carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(212, 175, 55, 0.9);
-  color: #121212;
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.carousel-nav:hover {
-  background: #ffd700;
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
-}
-
-.carousel-nav.prev {
-  left: 20px;
-}
-
-.carousel-nav.next {
-  right: 20px;
-}
-
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(212, 175, 55, 0.3);
-  border: 2px solid #d4af37;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.dot.active {
-  background: #d4af37;
-  transform: scale(1.3);
-}
-
-.dot:hover {
-  background: rgba(212, 175, 55, 0.6);
-}
-
-/* Responsive adjustments */
-@media(max-width: 768px) {
-  .carousel-nav {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-  
-  .carousel-nav.prev {
-    left: 10px;
-  }
-  
-  .carousel-nav.next {
-    right: 10px;
-  }
-  
-  .testimonial-slide {
-    padding: 0 60px;
-  }
-  
-  .playlist {
-    display: none;
-  }
-  
-  .track-info {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .album-art {
-    margin: 0 auto;
-  }
-}
-
-/* ====================================== */
-/* COMPLETE TESTIMONIAL FIX - REPLACE YOUR TESTIMONIAL CSS WITH THIS */
-/* ====================================== */
-
-/* Main testimonials section */
-#testimonials {
-  background-color: #1e1e1e;
-  color: #f1f1f1;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-#testimonials h2 {
-  text-align: center;
-  margin: 0 auto 20px auto;
-  border-bottom: 2px solid #d4af37;
-  display: inline-block;
-  padding-bottom: 5px;
-  color: #f1f1f1;
-}
-
-#testimonials > p {
-  text-align: center;
-  margin-bottom: 10px;
-  color: #e5e5e5;
-}
-
-.testimonials-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* Dots positioned ABOVE the carousel */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 25px; /* Space before carousel */
-  margin-top: 15px; /* Space after description */
-  padding: 0;
-  position: relative;
-  z-index: 50;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(212, 175, 55, 0.3);
-  border: 2px solid #d4af37;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.dot.active {
-  background: #d4af37;
-  transform: scale(1.3);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
-}
-
-.dot:hover {
-  background: rgba(212, 175, 55, 0.6);
-}
-
-/* Carousel container */
-.testimonials-carousel {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #181818, #1e1e1e);
-  padding: 50px 70px; /* Adjusted padding for arrow space */
-  margin: 0 auto;
-  max-width: 1000px;
-  min-height: auto; /* Let content determine height */
-}
-
-.testimonials-track {
-  display: flex;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  align-items: stretch;
-  width: 100%;
-}
-
-.testimonial-slide {
-  min-width: 100%;
-  max-width: 100%;
-  display: flex;
-  justify-content: center; /* This centers the card */
-  align-items: center;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-.testimonial-card {
-  background-color: #2c2c2c;
-  padding: 35px 40px; /* More padding for better readability */
-  border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-  text-align: center;
-  width: 90%;
-  max-width: 700px;
-  border: 2px solid transparent;
-  transition: all 0.3s;
-  position: relative;
-  margin: 0 auto; /* Centers the card */
-  display: flex;
-  flex-direction: column;
-}
-
-.testimonial-card:hover {
-  box-shadow: 0 0 40px 15px rgba(255,215,0,0.3);
-  border-color: #ffd700;
-  transform: scale(1.02);
-}
-
-.testimonial-card img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 15px auto;
-  border: 3px solid #d4af37;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.testimonial-name {
-  font-size: 1.4em;
-  color: #d4af37;
-  margin-bottom: 5px;
-}
-
-.testimonial-company {
-  color: #888;
-  margin-bottom: 20px;
-  font-size: 1em;
-}
-
-/* Restored original divider width */
-.testimonial-divider {
-  width: 80%; /* Back to original width */
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
-  margin: 15px auto 25px auto;
-}
-
-/* Better text spacing without forced scrolling */
-.testimonial-card blockquote {
-  margin: 0;
-  font-style: italic;
-  color: #e5e5e5;
-  line-height: 1.8; /* Better line height */
-  position: relative;
-  font-size: 1em; /* Readable font size */
-  text-align: left;
-  max-height: 400px; /* Only scroll if really needed */
-  overflow-y: auto;
-  padding-right: 10px;
-}
-
-.testimonial-card blockquote p {
-  margin-bottom: 15px; /* Better paragraph spacing */
-  text-align: left;
-  line-height: 1.7;
-}
-
-.testimonial-card blockquote p:last-child {
-  margin-bottom: 0;
-}
-
-/* Custom scrollbar - only if needed */
-.testimonial-card blockquote::-webkit-scrollbar {
-  width: 6px;
-}
-
-.testimonial-card blockquote::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 3px;
-}
-
-.testimonial-card blockquote::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.3);
-  border-radius: 3px;
-}
-
-/* Navigation arrows - properly positioned */
-.carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(212, 175, 55, 0.9);
-  color: #121212;
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.carousel-nav:hover {
-  background: #ffd700;
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
-}
-
-.carousel-nav.prev {
-  left: 15px;
-}
-
-.carousel-nav.next {
-  right: 15px;
-}
-
-/* Remove old conflicting styles */
-.testimonials-grid {
-  display: none !important;
-}
-
-/* Responsive adjustments */
-@media(max-width: 768px) {
-  .testimonials-carousel {
-    padding: 40px 50px;
-  }
-  
-  .testimonial-card {
-    width: 95%;
-    padding: 25px 25px;
-  }
-  
-  .testimonial-card blockquote {
-    font-size: 0.95em;
-  }
-  
-  .carousel-nav {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-  
-  .carousel-nav.prev {
-    left: 5px;
-  }
-  
-  .carousel-nav.next {
-    right: 5px;
-  }
-}
-
-@media(max-width: 480px) {
-  .testimonials-carousel {
-    padding: 35px 40px;
-  }
-  
-  .testimonial-card {
-    padding: 20px;
-  }
-  
-  .testimonial-card img {
-    width: 70px;
-    height: 70px;
-  }
-}
-/* ====================================== */
-/* TESTIMONIAL FINAL FIXES - Add/Update these styles in your CSS */
-/* ====================================== */
-
-/* 1. REMOVE QUOTATION MARK */
-.testimonial-card blockquote::before {
-  display: none; /* Removes the quotation mark */
-}
-
-/* 2. PERMANENT STYLED SCROLLBAR FOR LONG TESTIMONIALS */
-.testimonial-card blockquote {
-  margin: 0;
-  font-style: italic;
-  color: #e5e5e5;
-  line-height: 1.8;
-  position: relative;
-  font-size: 1em;
-  text-align: left;
-  max-height: 400px;
-  overflow-y: auto;
-  padding-right: 15px; /* More space for scrollbar */
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #d4af37 rgba(255, 255, 255, 0.1);
-}
-
-/* Custom scrollbar styling - always visible */
-.testimonial-card blockquote::-webkit-scrollbar {
-  width: 8px;
-  display: block !important;
-}
-
-.testimonial-card blockquote::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.testimonial-card blockquote::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #d4af37, #b99a2e);
-  border-radius: 4px;
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-}
-
-.testimonial-card blockquote::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #ffd700, #d4af37);
-}
-
-/* Visual indicator for scrollable content */
-.testimonial-card blockquote {
-  border-right: 2px solid rgba(212, 175, 55, 0.15);
-}
-
-/* 3. ENHANCED COMPANY NAME STYLING */
-.testimonial-company {
-  color: #b8a980; /* Muted gold-grey color */
-  margin-bottom: 20px;
-  font-size: 0.9em;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  line-height: 1.4;
-  opacity: 0.95;
-}
-
-/* 4. ELEGANT SUBTITLE UNDER TESTIMONIALS */
-#testimonials > p {
-  text-align: center;
-  margin-bottom: 10px;
-  color: #888;
-  font-size: 1.1em;
-  font-style: italic;
-  position: relative;
-  display: inline-block;
-  padding: 0 30px;
-}
-
-/* Add decorative elements to subtitle */
-#testimonials > p::before,
-#testimonials > p::after {
-  content: "—";
-  position: absolute;
-  color: #d4af37;
-  opacity: 0.5;
-  font-weight: 300;
-}
-
-#testimonials > p::before {
-  left: 0;
-}
-
-#testimonials > p::after {
-  right: 0;
-}
-
-/* Alternative: Center the subtitle with a container */
-.testimonials-container > p {
-  max-width: 600px;
-  margin: 0 auto 15px auto;
-  line-height: 1.5;
-}
-
-/* ====================================== */
-/* YOUTUBE CAROUSEL STYLES */
-/* ====================================== */
-
+/* ==================== */
+/* YOUTUBE CAROUSEL */
+/* ==================== */
 #youtube {
-  display: none; /* Hidden by default, shown by tab click */
+  display: none;
 }
 
 .youtube-carousel-container {
@@ -1525,7 +1122,6 @@ nav a:hover {
   position: relative;
 }
 
-/* Dots for YouTube carousel */
 .youtube-dots {
   display: flex;
   justify-content: center;
@@ -1540,13 +1136,13 @@ nav a:hover {
   height: 12px;
   border-radius: 50%;
   background: rgba(212, 175, 55, 0.3);
-  border: 2px solid #d4af37;
+  border: 2px solid var(--gold-primary);
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .youtube-dots .dot.active {
-  background: #d4af37;
+  background: var(--gold-primary);
   transform: scale(1.3);
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
@@ -1559,7 +1155,7 @@ nav a:hover {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  background: linear-gradient(135deg, #181818, #1e1e1e);
+  background: linear-gradient(135deg, var(--dark-primary), var(--dark-secondary));
   padding: 50px 70px;
   margin: 0 auto;
 }
@@ -1582,7 +1178,7 @@ nav a:hover {
 }
 
 .youtube-card {
-  background-color: #1e1e1e;
+  background-color: var(--dark-secondary);
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.4);
@@ -1595,12 +1191,12 @@ nav a:hover {
 
 .youtube-card:hover {
   box-shadow: 0 0 40px 15px rgba(255,215,0,0.3);
-  border-color: #ffd700;
+  border-color: var(--gold-hover);
   transform: scale(1.02);
 }
 
 .youtube-card h3 {
-  color: #d4af37;
+  color: var(--gold-primary);
   margin-bottom: 15px;
   text-align: center;
   font-size: 1.4em;
@@ -1619,7 +1215,6 @@ nav a:hover {
   border: 2px solid rgba(212, 175, 55, 0.2);
 }
 
-/* Navigation for YouTube carousel */
 .youtube-nav {
   position: absolute;
   top: 50%;
@@ -1641,7 +1236,7 @@ nav a:hover {
 }
 
 .youtube-nav:hover {
-  background: #ffd700;
+  background: var(--gold-hover);
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
 }
@@ -1654,7 +1249,43 @@ nav a:hover {
   right: 15px;
 }
 
+/* ==================== */
+/* RESPONSIVE STYLES */
+/* ==================== */
 @media(max-width: 768px) {
+  .testimonials-carousel {
+    padding: 40px 50px;
+  }
+  
+  .testimonial-card {
+    width: 95%;
+    padding: 25px 25px;
+  }
+  
+  .testimonial-card blockquote {
+    font-size: 0.95em;
+  }
+  
+  .carousel-nav,
+  .youtube-nav,
+  .itch-carousel-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .carousel-nav.prev,
+  .youtube-nav.prev,
+  .itch-carousel-nav.prev {
+    left: 5px;
+  }
+  
+  .carousel-nav.next,
+  .youtube-nav.next,
+  .itch-carousel-nav.next {
+    right: 5px;
+  }
+  
   .youtube-carousel {
     padding: 40px 50px;
   }
@@ -1663,310 +1294,6 @@ nav a:hover {
     height: 300px;
   }
   
-  .youtube-nav {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-  
-  .youtube-nav.prev {
-    left: 5px;
-  }
-  
-  .youtube-nav.next {
-    right: 5px;
-  }
-  
-/* ====================================== */
-/* ITCH UNIFIED CAROUSEL STYLES */
-/* Add these to your styles.css file */
-/* ====================================== */
-
-/* Keep existing banner styles as they are */
-
-/* Carousel Container */
-.itch-carousel-container {
-  max-width: 1000px;
-  margin: 30px auto 0 auto;
-  position: relative;
-}
-
-/* Dots styling - matching testimonials */
-.itch-carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 25px;
-  margin-top: 15px;
-  padding: 0;
-  position: relative;
-  z-index: 50;
-}
-
-.itch-carousel-dots .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(212, 175, 55, 0.3);
-  border: 2px solid #d4af37;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.itch-carousel-dots .dot.active {
-  background: #d4af37;
-  transform: scale(1.3);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
-}
-
-.itch-carousel-dots .dot:hover {
-  background: rgba(212, 175, 55, 0.6);
-}
-
-/* Main Carousel */
-.itch-unified-carousel {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #181818, #1e1e1e);
-  padding: 50px 70px;
-  margin: 0 auto;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-}
-
-.itch-carousel-track {
-  display: flex;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  align-items: stretch;
-  width: 100%;
-}
-
-.itch-carousel-slide {
-  min-width: 100%;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-/* PROFILE CARD STYLES (First Slide) */
-.itch-profile-card {
-  background-color: #2c2c2c;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-  width: 90%;
-  max-width: 700px;
-  border: 2px solid transparent;
-  transition: all 0.3s;
-  margin: 0 auto;
-}
-
-.itch-profile-card:hover {
-  box-shadow: 0 0 40px 15px rgba(255,215,0,0.3);
-  border-color: #ffd700;
-  transform: scale(1.02);
-}
-
-.profile-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.profile-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
-  border: 4px solid #d4af37;
-  object-fit: cover;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  margin-bottom: 20px;
-}
-
-.profile-info {
-  width: 100%;
-}
-
-.profile-name {
-  color: #d4af37;
-  font-size: 2em;
-  font-weight: 700;
-  margin-bottom: 8px;
-  letter-spacing: 0.5px;
-}
-
-.profile-title {
-  color: #f1f1f1;
-  font-size: 1.1em;
-  margin-bottom: 15px;
-  opacity: 0.9;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-}
-
-.profile-divider {
-  width: 80%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
-  margin: 15px auto 25px auto;
-}
-
-.profile-bio {
-  color: #e5e5e5;
-  font-size: 1.05em;
-  line-height: 1.7;
-  margin-bottom: 30px;
-  font-style: italic;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.profile-link-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #d4af37, #b99a2e);
-  color: #121212;
-  padding: 12px 35px;
-  border-radius: 25px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-  font-size: 1.05em;
-}
-
-.profile-link-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
-  background: linear-gradient(135deg, #ffd700, #d4af37);
-}
-
-/* GAME CARD STYLES (Subsequent Slides) */
-.itch-game-card {
-  background-color: #2c2c2c;
-  padding: 35px;
-  border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-  width: 90%;
-  max-width: 700px;
-  border: 2px solid transparent;
-  transition: all 0.3s;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.itch-game-card:hover {
-  box-shadow: 0 0 40px 15px rgba(255,215,0,0.3);
-  border-color: #ffd700;
-  transform: scale(1.02);
-}
-
-.game-title {
-  color: #d4af37;
-  font-size: 1.8em;
-  font-weight: 700;
-  margin-bottom: 25px;
-  letter-spacing: 0.5px;
-}
-
-.game-image {
-  width: 100%;
-  max-width: 500px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  border: 2px solid rgba(212, 175, 55, 0.2);
-  margin-bottom: 25px;
-}
-
-.game-divider {
-  width: 80%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
-  margin: 0 auto 25px auto;
-}
-
-.game-description {
-  color: #e5e5e5;
-  font-size: 1.1em;
-  line-height: 1.7;
-  margin-bottom: 30px;
-  font-style: italic;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.game-play-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #d4af37, #b99a2e);
-  color: #121212;
-  padding: 14px 40px;
-  border-radius: 25px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-  font-size: 1.1em;
-  letter-spacing: 0.5px;
-}
-
-.game-play-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
-  background: linear-gradient(135deg, #ffd700, #d4af37);
-}
-
-/* Navigation Arrows */
-.itch-carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(212, 175, 55, 0.9);
-  color: #121212;
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.itch-carousel-nav:hover {
-  background: #ffd700;
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
-}
-
-.itch-carousel-nav.prev {
-  left: 15px;
-}
-
-.itch-carousel-nav.next {
-  right: 15px;
-}
-
-/* Remove old itch styles that conflict */
-.itch-intro-card,
-.itch-games-grid {
-  display: none !important;
-}
-
-/* Responsive */
-@media(max-width: 768px) {
   .itch-unified-carousel {
     padding: 40px 50px;
     min-height: 450px;
@@ -1987,26 +1314,70 @@ nav a:hover {
     height: 200px;
   }
   
-  .itch-carousel-nav {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
+  .playlist {
+    display: none;
   }
   
-  .itch-carousel-nav.prev {
-    left: 5px;
+  .track-info {
+    flex-direction: column;
+    text-align: center;
   }
   
-  .itch-carousel-nav.next {
-    right: 5px;
+  .album-art {
+    margin: 0 auto;
   }
 }
+
+@media(max-width: 480px) {
+  .testimonials-carousel {
+    padding: 35px 40px;
+  }
   
+  .testimonial-card {
+    padding: 20px;
+  }
+  
+  .testimonial-card img {
+    width: 70px;
+    height: 70px;
+  }
 }
 
+@media (max-width: 700px) {
+  .itch-intro-card { 
+    max-width: 98vw; 
+  }
+  
+  .itch-profile-flex { 
+    flex-direction: column; 
+    align-items: center; 
+  }
+  
+  .itch-avatar-col { 
+    border-right: none; 
+    border-bottom: 2px solid #252525; 
+    padding-bottom: 14px; 
+    justify-content: center; 
+  }
+  
+  .itch-bio-col { 
+    border-radius: 0 0 16px 16px; 
+    padding: 18px 10px; 
+    align-items: center; 
+    text-align: center; 
+    min-height: 0; 
+  }
+}
 
+@media (max-width: 900px) {
+  .itch-games-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 22px 4vw;
+  }
+}
 
-
-
-
-
+/* Hide old testimonials grid if it exists */
+.testimonials-grid {
+  display: none !important;
+}
