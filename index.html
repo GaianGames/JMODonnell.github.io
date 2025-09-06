@@ -204,40 +204,90 @@
     
 
     <!-- Editorial Tab (Hidden by default) -->
-    <div id="editorial" class="grid" style="display:none;">
-      <div class="card">
-          <h3>Magazine Feature</h3>
-          <p>A Guide to South Korea's Thriving Music Scene</p>
-          <object data="https://drive.google.com/file/d/1iM7bk5YpftJVKg1hq2mKUd3YoQTS1yja/preview" 
-                  type="application/pdf" 
-                  width="100%" 
-                  height="600px">
-            <p>
-              Unable to display PDF.
-            </p>
-              <a href="https://drive.google.com/file/d/1iM7bk5YpftJVKg1hq2mKUd3YoQTS1yja/view" target="_blank">
-                View it here
-              </a>.
-          </object>
-        </div>
-        <div class="card">
-          <h3>Magazine Feature</h3>
-          <p>The Coffee Aficionado's Guide to Seoul.</p>
-          <object data="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview" 
-                  type="application/pdf" 
-                  width="100%" 
-                  height="600px">
-            <p>
-              Unable to display PDF.
-            </p>
-              <a href="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/view" target="_blank">
-                View it here
-              </a>.
-          </object>
-        </div>
-        <!-- More cards for additional editing projects can go here -->
-    </div>
+  <!-- ====================================== -->
+<!-- REPLACE YOUR EDITORIAL SECTION WITH THIS -->
+<!-- Find <div id="editorial" class="grid" style="display:none;"> and replace with this -->
+<!-- ====================================== -->
 
+<div id="editorial" style="display:none;">
+  <div class="editorial-container">
+    <div class="editorial-header">
+      <h3>Published Works</h3>
+      <p class="editorial-subtitle">— Featured articles and magazine contributions —</p>
+    </div>
+    
+    <div class="magazine-rack">
+      <!-- Publication 1 -->
+      <div class="publication-card" data-pdf="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview">
+        <div class="publication-cover">
+          <img src="Images/magazine-cover-1.jpg" alt="Inspire Me Korea Feature" class="cover-image">
+          <!-- If you don't have cover images, use a placeholder or screenshot of the PDF first page -->
+          <div class="cover-overlay">
+            <span class="view-label">Click to Read</span>
+          </div>
+        </div>
+        <div class="publication-info">
+          <h4 class="publication-title">Cultural Insights</h4>
+          <p class="publication-magazine">Inspire Me Korea</p>
+          <p class="publication-date">2023 Issue</p>
+        </div>
+        <div class="publication-hover-content">
+          <p class="publication-excerpt">
+            An exploration of contemporary Korean culture through the lens of traditional values and modern innovation.
+          </p>
+          <button class="read-btn" onclick="openPDFModal('https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview')">
+            Read Full Article
+          </button>
+        </div>
+      </div>
+      
+      <!-- Publication 2 -->
+      <div class="publication-card" data-pdf="https://drive.google.com/file/d/YOUR_PDF_ID/preview">
+        <div class="publication-cover">
+          <img src="Images/magazine-cover-2.jpg" alt="Magazine Feature" class="cover-image">
+          <div class="cover-overlay">
+            <span class="view-label">Click to Read</span>
+          </div>
+        </div>
+        <div class="publication-info">
+          <h4 class="publication-title">Feature Article</h4>
+          <p class="publication-magazine">Inspire Me Korea</p>
+          <p class="publication-date">2023 Issue</p>
+        </div>
+        <div class="publication-hover-content">
+          <p class="publication-excerpt">
+            Discovering the intersection of tradition and modernity in Seoul's evolving cultural landscape.
+          </p>
+          <button class="read-btn" onclick="openPDFModal('https://drive.google.com/file/d/YOUR_PDF_ID/preview')">
+            Read Full Article
+          </button>
+        </div>
+      </div>
+      
+      <!-- Add more publications as needed -->
+      
+    </div>
+  </div>
+</div>
+
+<!-- PDF Modal Viewer -->
+<div id="pdfModal" class="pdf-modal">
+  <div class="pdf-modal-content">
+    <div class="pdf-modal-header">
+      <h3 id="pdfTitle">Article Viewer</h3>
+      <button class="close-modal" onclick="closePDFModal()">×</button>
+    </div>
+    <div class="pdf-viewer-container">
+      <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+    </div>
+    <div class="pdf-modal-footer">
+      <a id="pdfExternalLink" href="" target="_blank" class="external-link-btn">
+        Open in New Tab ↗
+      </a>
+    </div>
+  </div>
+</div>
+    
     <!-- Music Tab (Hidden by default) -->
 <div id="music" style="display:none;">
   <div class="music-player-container">
@@ -577,6 +627,101 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // ====================================
+// EDITORIAL PDF MODAL JAVASCRIPT
+// Add this to your script
+// ====================================
+
+// PDF Modal Functions
+function openPDFModal(pdfUrl) {
+  const modal = document.getElementById('pdfModal');
+  const viewer = document.getElementById('pdfViewer');
+  const externalLink = document.getElementById('pdfExternalLink');
+  
+  // Set the PDF URL
+  viewer.src = pdfUrl;
+  
+  // Set external link (convert preview URL to view URL if needed)
+  const viewUrl = pdfUrl.replace('/preview', '/view');
+  externalLink.href = viewUrl;
+  
+  // Show modal
+  modal.classList.add('active');
+  
+  // Prevent body scroll when modal is open
+  document.body.style.overflow = 'hidden';
+}
+
+function closePDFModal() {
+  const modal = document.getElementById('pdfModal');
+  const viewer = document.getElementById('pdfViewer');
+  
+  // Hide modal
+  modal.classList.remove('active');
+  
+  // Clear iframe source
+  viewer.src = '';
+  
+  // Restore body scroll
+  document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('pdfModal');
+  
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closePDFModal();
+      }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closePDFModal();
+      }
+    });
+  }
+  
+  // Alternative: Add click handlers to all publication cards
+  const publicationCards = document.querySelectorAll('.publication-card');
+  publicationCards.forEach(card => {
+    const readBtn = card.querySelector('.read-btn');
+    if (readBtn) {
+      // Prevent card click when clicking the button
+      readBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    }
+    
+    // Optional: Make entire card clickable (not just the button)
+    card.addEventListener('click', function() {
+      const pdfUrl = this.dataset.pdf;
+      if (pdfUrl && !event.target.classList.contains('read-btn')) {
+        openPDFModal(pdfUrl);
+      }
+    });
+  });
+});
+
+// Optional: Add loading indicator for PDFs
+function addPDFLoadingIndicator() {
+  const viewer = document.getElementById('pdfViewer');
+  if (viewer) {
+    viewer.addEventListener('load', function() {
+      // Remove loading class when PDF loads
+      this.classList.remove('loading');
+    });
+    
+    viewer.addEventListener('loadstart', function() {
+      // Add loading class when PDF starts loading
+      this.classList.add('loading');
+    });
+  }
+}
   
 // ====================================
 // TESTIMONIALS CAROUSEL - NO AUTO-ROTATION
@@ -978,6 +1123,7 @@ if (itchTrack && prevItchBtn && nextItchBtn && itchDotsContainer) {
 
 </body>
 </html>
+
 
 
 
