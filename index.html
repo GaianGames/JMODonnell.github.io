@@ -877,8 +877,7 @@ function closePDFModal() {
   }
 }
 
-// Attach click handlers to all View Article buttons
-document.addEventListener('DOMContentLoaded', function() {
+
   // Attach to all view PDF buttons
   const viewPdfButtons = document.querySelectorAll('.view-pdf-btn');
   viewPdfButtons.forEach(button => {
@@ -1184,8 +1183,31 @@ if (itchTrack && prevItchBtn && nextItchBtn && itchDotsContainer) {
 });
 </script>
 
+<!-- PDF Modal - ADD THIS RIGHT HERE, BEFORE </body> -->
+<div id="pdfModal" class="pdf-modal">
+  <div class="pdf-modal-content">
+    <div class="pdf-modal-header">
+      <h3 id="pdfTitle">Article Viewer</h3>
+      <button class="close-modal" id="closePdfBtn">×</button>
+    </div>
+    <div class="pdf-viewer-container">
+      <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+    </div>
+    <div class="pdf-modal-footer">
+      <a id="pdfExternalLink" href="" target="_blank" class="external-link-btn">
+        Open in New Tab ↗
+      </a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
+  
+
+</body>
+</html>
+
 
 
 
