@@ -1862,26 +1862,15 @@ header p {
   text-shadow: 0 2px 15px rgba(212, 175, 55, 0.5);
 }
 
-/* Main Section Heading */
 #writing-collective h2 {
   text-align: center;
-  color: #ffd700;
-  font-size: 2.2em;
-  font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Collective Motto - Fixed spacing */
-.collective-motto {
-  font-size: 1.2em;
-  font-style: italic;
-  color: #d4af37;
-  margin-top: 0.5rem;  /* Changed from -1rem */
-  margin-bottom: 2.5rem;
-  text-align: center;
-  letter-spacing: 1px;
-  font-weight: 500;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}/* Writing Collective Section - UPDATED FOR HARMONY */
+#writing-collective {
+  background-color: #121212;
+  padding: 3rem 1.5rem;
+  color: #f5f5f5;
 }
 
 /* Enhanced Card Styling */
@@ -1894,14 +1883,75 @@ header p {
   transition: all 0.3s ease;
 }
 
-/* Improved Hover Effect */
+/* Improved Hover Effect - Matching Other Cards */
 #writing-collective .collective-card:hover {
   box-shadow: 0 0 24px 10px rgba(255, 215, 0, 0.27);
   border-left-color: #ffd700;
   transform: translateY(-5px) scale(1.015);
 }
 
-/* Banner Image */
+/* Collective Motto - More Prominent */
+.collective-motto {
+  font-size: 1.2em;
+  font-style: italic;
+  color: #d4af37;
+  margin-top: -1rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* Subheading Consistency */
+.collective-subheading {
+  font-size: 1.5em;
+  color: #d4af37;
+  border-bottom: 3px solid #d4af37;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Text Hierarchy Improvements */
+.collective-text p {
+  font-size: 1.05em;
+  font-style: normal;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  text-align: left;
+  color: #e5e5e5;
+}
+
+.collective-text strong {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.collective-text h3 {
+  font-size: 1.3em;
+  color: #d4af37;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.collective-text ul {
+  text-align: left;
+  font-style: normal;
+  list-style-position: inside;
+  color: #e5e5e5;
+}
+
+.collective-text h2 {
+  color: #ffd700;
+  font-size: 2.2em;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Enhanced Image Treatment */
 .collective-image {
   width: 100%;
   max-width: 600px;
@@ -1913,58 +1963,7 @@ header p {
   display: block;
 }
 
-/* Text Container - CENTERED */
-.collective-text {
-  text-align: center;
-}
-
-/* Subheading - CENTERED */
-.collective-subheading {
-  font-size: 1.5em;
-  color: #d4af37;
-  border-bottom: 3px solid #d4af37;
-  display: inline-block;
-  padding-bottom: 0.4rem;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-align: center;
-}
-
-/* Paragraphs - CENTERED */
-.collective-text p {
-  font-size: 1.05em;
-  font-style: normal;
-  line-height: 1.8;
-  margin-bottom: 1.2rem;
-  text-align: center;  /* Changed from left */
-  color: #e5e5e5;
-}
-
-/* Bold/Strong Text */
-.collective-text strong {
-  color: #d4af37;
-  font-weight: 600;
-}
-
-/* H3 Headers - CENTERED */
-.collective-text h3 {
-  font-size: 1.3em;
-  color: #d4af37;
-  font-weight: 600;
-  margin-top: 2rem;
-  text-align: center;  /* Added */
-}
-
-/* Lists - CENTERED */
-.collective-text ul {
-  text-align: center;  /* Changed from left */
-  font-style: normal;
-  list-style-position: inside;
-  color: #e5e5e5;
-}
-
-/* Signature Credit */
+/* Signature Credit - Better Styling */
 .signature-credit {
   color: #d4af37 !important;
   font-style: italic;
@@ -1975,13 +1974,12 @@ header p {
   letter-spacing: 0.5px;
 }
 
-/* Signature Image Container */
+/* Enhanced Signature Image */
 .signature-container {
   text-align: center !important;
   margin-top: 1.5rem;
 }
 
-/* Signature Image */
 .signature-container .signature {
   display: block;
   max-width: 200px;
