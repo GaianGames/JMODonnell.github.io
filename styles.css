@@ -1862,27 +1862,28 @@ header p {
   text-shadow: 0 2px 15px rgba(212, 175, 55, 0.5);
 }
 
-/* Main Section Heading - WHITE and CENTERED */
+/* Main Section Heading - WHITE and CENTERED with double underline */
 #writing-collective h2 {
   color: #f1f1f1;  /* White to match other headers */
   font-size: 2.2em;
   font-weight: 700;
   text-align: center;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
+  margin: 2.5rem auto 1.5rem auto;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  display: block;  /* Ensures block-level centering */
+  border-bottom: 2px solid #d4af37;  /* Longer underline */
 }
 
-/* Gold underline centered under h2 */
+/* Gold underline centered under h2 - creates double effect */
 #writing-collective h2::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -2px;  /* Positioned right on the border */
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;
-  height: 2px;
+  width: 40%;  /* Shorter centered line */
+  height: 3px;  /* Slightly thicker */
   background-color: #d4af37;
 }
 
@@ -2009,3 +2010,4 @@ header p {
   opacity: 1;
   filter: brightness(1.4) sepia(1) saturate(2) hue-rotate(15deg);
 }
+
