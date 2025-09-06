@@ -204,10 +204,6 @@
     
 
     <!-- Editorial Tab (Hidden by default) -->
-  <!-- ====================================== -->
-<!-- REPLACE YOUR EDITORIAL SECTION WITH THIS -->
-<!-- Find <div id="editorial" class="grid" style="display:none;"> and replace with this -->
-<!-- ====================================== -->
 
 <div id="editorial" style="display:none;">
   <div class="editorial-container">
@@ -218,10 +214,10 @@
     
     <div class="magazine-rack">
       <!-- Publication 1 -->
-      <div class="publication-card" data-pdf="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview">
+      <div class="publication-card">
         <div class="publication-cover">
+          <!-- Use a screenshot of your PDF's first page as the cover image -->
           <img src="Images/magazine-cover-1.jpg" alt="Inspire Me Korea Feature" class="cover-image">
-          <!-- If you don't have cover images, use a placeholder or screenshot of the PDF first page -->
           <div class="cover-overlay">
             <span class="view-label">Click to Read</span>
           </div>
@@ -230,19 +226,17 @@
           <h4 class="publication-title">Cultural Insights</h4>
           <p class="publication-magazine">Inspire Me Korea</p>
           <p class="publication-date">2023 Issue</p>
-        </div>
-        <div class="publication-hover-content">
           <p class="publication-excerpt">
-            An exploration of contemporary Korean culture through the lens of traditional values and modern innovation.
+            An exploration of contemporary Korean culture through the lens of traditional values.
           </p>
           <button class="read-btn" onclick="openPDFModal('https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview')">
-            Read Full Article
+            Read Article
           </button>
         </div>
       </div>
       
       <!-- Publication 2 -->
-      <div class="publication-card" data-pdf="https://drive.google.com/file/d/YOUR_PDF_ID/preview">
+      <div class="publication-card">
         <div class="publication-cover">
           <img src="Images/magazine-cover-2.jpg" alt="Magazine Feature" class="cover-image">
           <div class="cover-overlay">
@@ -253,40 +247,21 @@
           <h4 class="publication-title">Feature Article</h4>
           <p class="publication-magazine">Inspire Me Korea</p>
           <p class="publication-date">2023 Issue</p>
-        </div>
-        <div class="publication-hover-content">
           <p class="publication-excerpt">
-            Discovering the intersection of tradition and modernity in Seoul's evolving cultural landscape.
+            Discovering the intersection of tradition and modernity in Seoul's cultural landscape.
           </p>
-          <button class="read-btn" onclick="openPDFModal('https://drive.google.com/file/d/YOUR_PDF_ID/preview')">
-            Read Full Article
+          <button class="read-btn" onclick="openPDFModal('https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview')">
+            Read Article
           </button>
         </div>
       </div>
       
       <!-- Add more publications as needed -->
-      
     </div>
   </div>
 </div>
 
-<!-- PDF Modal Viewer -->
-<div id="pdfModal" class="pdf-modal">
-  <div class="pdf-modal-content">
-    <div class="pdf-modal-header">
-      <h3 id="pdfTitle">Article Viewer</h3>
-      <button class="close-modal" onclick="closePDFModal()">×</button>
-    </div>
-    <div class="pdf-viewer-container">
-      <iframe id="pdfViewer" src="" frameborder="0"></iframe>
-    </div>
-    <div class="pdf-modal-footer">
-      <a id="pdfExternalLink" href="" target="_blank" class="external-link-btn">
-        Open in New Tab ↗
-      </a>
-    </div>
-  </div>
-</div>
+
     
     <!-- Music Tab (Hidden by default) -->
 <div id="music" style="display:none;">
@@ -485,6 +460,134 @@
 </section>
 
 
+
+  <!-- Writing Collective Section -->
+  <section id="writing-collective">
+      <div class="container">   
+          <h2>The Galway Writing Collective</h2>
+          
+          <p class="collective-motto">Crafting Stories | Building Worlds | Elevating Voices.</p> 
+    
+        
+        <div class="grid">
+          <div class="card collective-card">
+            <!-- Image for the Collective -->
+          <img src="Images/GWCBanner.png" alt="Galway Writing Collective Logo" class="collective-image">
+          
+            <div class="collective-text">
+            <h3 class="collective-subheading">Founding the Collective</h3>
+            <p>
+          When I arrived in Galway in 2019, a prose collective didn't exist, and I suffered under the common belief that writing is something that has to be done in isolation. However, I wanted to change this, and when I couldn't find a collective, I decided to form one.
+            </p>
+            <p>
+              The Galway Writing Collective was born out of a desire to give a space to prose writers and to develop a sense of community. I wanted to help foster a sense of connection and nurture the arts in Galway while bringing people together.
+            </p>
+  
+            <p>
+              Through dedication and strategic vision, I have successfully 
+              <strong>nurtured and supported writers of various levels</strong> by leading a 
+              <strong>weekly prose workshop</strong> designed to foster growth and creativity. 
+              I <strong>crafted a brand</strong> that has garnered <strong>widespread recognition</strong>, 
+              building a public following that includes <strong>literary journals, publishers, and authors</strong>. 
+              My expertise in event management is showcased in my ability to 
+              <strong>facilitate four monthly events</strong>, seamlessly liaising with venues 
+              and overseeing all aspects of coordination. Additionally, I established and led 
+              <strong>Galway’s only regular technical editing workshop</strong>, providing a valuable 
+              resource for writers seeking to refine their craft.
+            </p>
+
+  
+            <p>
+              The group is now on hiatus, but discussions are underway to return in a more sustainable way.
+            </p>
+  
+            <p class="signature-credit">J.M O'Donnell, Founder of The Galway Writing Collective.</p>
+              <div class="signature-container">
+                  <img src="Images/Sign1.png" alt="Signature" class="signature" style="max-width: 150px; filter: brightness(1.5);">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- ====================================== -->
+<!-- REPLACE YOUR TESTIMONIALS SECTION HTML WITH THIS -->
+<!-- The key change is moving carousel-dots ABOVE the testimonials-carousel div -->
+<!-- ====================================== -->
+
+<section id="testimonials" style="background-color:#1e1e1e;">
+  <div class="testimonials-container">
+    <h2>Testimonials</h2>
+    <p>Hear from collaborators, clients, and peers about my work.</p>
+    
+    <!-- DOTS NOW POSITIONED HERE - ABOVE THE CAROUSEL -->
+    <div class="carousel-dots" id="carouselDots"></div>
+    
+    <div class="testimonials-carousel">
+      <div class="testimonials-track" id="testimonialsTrack">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <img src="Images/Jonas.jpg" alt="Jonas David">
+            <h3 class="testimonial-name">Jonas David</h3>
+            <p class="testimonial-company">CEO & Creative Director<br>Soul Atlas Universe LTD</p>
+            <div class="testimonial-divider"></div>
+            <blockquote>
+              <p>
+                "John worked on our multi-media high fantasy IP <strong>Soul Atlas</strong> for about a year. He served as a world-building writer and editor, developing large-scale systems and concepts that shaped the core of the Soul Atlas Universe. It quickly became clear that John's command of story structure and his rapid understanding of the Soul Atlas Universe, which he gained in record time, made him an invaluable asset to the development of our movies, games, and graphic novels."
+              </p>
+              <p>
+                "What most impressed me was his ability to see potential in the existing canon that nobody else in the team had noticed, demonstrating not just a keen and sharp mind but also a depth in knowledge and practical experience that he executed on effectively in his work. After his detailed and well-researched contributions to our <em>Journey to Agaiatar</em> animated story, he started to helm the development of the most significant region of Season 1 of the Soul Atlas Universe. There he developed key legacy systems such as the Honoring and the Arrill Rift."
+              </p>
+              <p>
+                "As it is difficult to find stand-out talent for creative roles, we sought out John's capabilities in other creative sectors of Atlas. He provided critical insights and revisions on storylines for our upcoming movies and comic scripts, and provided critical insights on the overall story structure of our upcoming seasons. Throughout, he demonstrated a masterful and well-balanced approach between the principles of story structure, and a creative sensibility that brought a fresh and surprising approach to our world and workflow."
+              </p>
+              <p>
+                "Even though John is not currently with us full-time, we always value the occasions when he returns — if only for a brief narrative consultation or editorial overview — bringing valuable feedback every single time."
+              </p>
+              <p>
+                "Easily one of the most talented, dedicated, professional, and unique writers I know, John is a massive asset to any project he joins. In an industry where quantity is no substitute for quality, having someone like John on board can truly be the difference between failure and success."
+              </p>
+            </blockquote>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <img src="Images/Richard" alt="Richard Naughton">
+            <h3 class="testimonial-name">Richard Naughton</h3>
+            <p class="testimonial-company">CEO & Creative Director<br>Table Topple</p>
+            <div class="testimonial-divider"></div>
+            <blockquote>
+              <p>"John O'Donnell has been instrumental in helping me overcome creative writing blocks on multiple projects, enabling me to effectively communicate a vision to my team."</p>
+              <p>"His infectious excitement about the creative process, his repertoire of tools and his superb listening skills make him easy to recommend to anyone, at any stage of the creative writing process."</p>
+              <p>"John is a force multiplier - even if you are not running into trouble, he will help you squeeze every bit of potential out of your ideas."</p>
+            </blockquote>
+          </div>
+        </div>
+     
+      
+      <!-- Navigation buttons -->
+      <button class="carousel-nav prev" id="prevTestimonial">‹</button>
+      <button class="carousel-nav next" id="nextTestimonial">›</button>
+    </div>
+  </div>
+</section>
+
+
+           
+  
+<footer style="text-align: center; font-size: 12px; color: #888; padding: 10px;">
+  <a href="https://www.vecteezy.com/free-photos/gold-marble" style="color: #888; text-decoration: none;">
+    Gold Marble Stock photos by Vecteezy
+  </a>
+</footer>
+
+  
 <!-- REPLACE YOUR ENTIRE <script> SECTION WITH THIS -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -995,134 +1098,9 @@ if (itchTrack && prevItchBtn && nextItchBtn && itchDotsContainer) {
 });
 </script>
 
-  <!-- Writing Collective Section -->
-  <section id="writing-collective">
-      <div class="container">   
-          <h2>The Galway Writing Collective</h2>
-          
-          <p class="collective-motto">Crafting Stories | Building Worlds | Elevating Voices.</p> 
-    
-        
-        <div class="grid">
-          <div class="card collective-card">
-            <!-- Image for the Collective -->
-          <img src="Images/GWCBanner.png" alt="Galway Writing Collective Logo" class="collective-image">
-          
-            <div class="collective-text">
-            <h3 class="collective-subheading">Founding the Collective</h3>
-            <p>
-          When I arrived in Galway in 2019, a prose collective didn't exist, and I suffered under the common belief that writing is something that has to be done in isolation. However, I wanted to change this, and when I couldn't find a collective, I decided to form one.
-            </p>
-            <p>
-              The Galway Writing Collective was born out of a desire to give a space to prose writers and to develop a sense of community. I wanted to help foster a sense of connection and nurture the arts in Galway while bringing people together.
-            </p>
-  
-            <p>
-              Through dedication and strategic vision, I have successfully 
-              <strong>nurtured and supported writers of various levels</strong> by leading a 
-              <strong>weekly prose workshop</strong> designed to foster growth and creativity. 
-              I <strong>crafted a brand</strong> that has garnered <strong>widespread recognition</strong>, 
-              building a public following that includes <strong>literary journals, publishers, and authors</strong>. 
-              My expertise in event management is showcased in my ability to 
-              <strong>facilitate four monthly events</strong>, seamlessly liaising with venues 
-              and overseeing all aspects of coordination. Additionally, I established and led 
-              <strong>Galway’s only regular technical editing workshop</strong>, providing a valuable 
-              resource for writers seeking to refine their craft.
-            </p>
-
-  
-            <p>
-              The group is now on hiatus, but discussions are underway to return in a more sustainable way.
-            </p>
-  
-            <p class="signature-credit">J.M O'Donnell, Founder of The Galway Writing Collective.</p>
-              <div class="signature-container">
-                  <img src="Images/Sign1.png" alt="Signature" class="signature" style="max-width: 150px; filter: brightness(1.5);">
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-<!-- ====================================== -->
-<!-- REPLACE YOUR TESTIMONIALS SECTION HTML WITH THIS -->
-<!-- The key change is moving carousel-dots ABOVE the testimonials-carousel div -->
-<!-- ====================================== -->
-
-<section id="testimonials" style="background-color:#1e1e1e;">
-  <div class="testimonials-container">
-    <h2>Testimonials</h2>
-    <p>Hear from collaborators, clients, and peers about my work.</p>
-    
-    <!-- DOTS NOW POSITIONED HERE - ABOVE THE CAROUSEL -->
-    <div class="carousel-dots" id="carouselDots"></div>
-    
-    <div class="testimonials-carousel">
-      <div class="testimonials-track" id="testimonialsTrack">
-        <!-- Testimonial 1 -->
-        <div class="testimonial-slide">
-          <div class="testimonial-card">
-            <img src="Images/Jonas.jpg" alt="Jonas David">
-            <h3 class="testimonial-name">Jonas David</h3>
-            <p class="testimonial-company">CEO & Creative Director<br>Soul Atlas Universe LTD</p>
-            <div class="testimonial-divider"></div>
-            <blockquote>
-              <p>
-                "John worked on our multi-media high fantasy IP <strong>Soul Atlas</strong> for about a year. He served as a world-building writer and editor, developing large-scale systems and concepts that shaped the core of the Soul Atlas Universe. It quickly became clear that John's command of story structure and his rapid understanding of the Soul Atlas Universe, which he gained in record time, made him an invaluable asset to the development of our movies, games, and graphic novels."
-              </p>
-              <p>
-                "What most impressed me was his ability to see potential in the existing canon that nobody else in the team had noticed, demonstrating not just a keen and sharp mind but also a depth in knowledge and practical experience that he executed on effectively in his work. After his detailed and well-researched contributions to our <em>Journey to Agaiatar</em> animated story, he started to helm the development of the most significant region of Season 1 of the Soul Atlas Universe. There he developed key legacy systems such as the Honoring and the Arrill Rift."
-              </p>
-              <p>
-                "As it is difficult to find stand-out talent for creative roles, we sought out John's capabilities in other creative sectors of Atlas. He provided critical insights and revisions on storylines for our upcoming movies and comic scripts, and provided critical insights on the overall story structure of our upcoming seasons. Throughout, he demonstrated a masterful and well-balanced approach between the principles of story structure, and a creative sensibility that brought a fresh and surprising approach to our world and workflow."
-              </p>
-              <p>
-                "Even though John is not currently with us full-time, we always value the occasions when he returns — if only for a brief narrative consultation or editorial overview — bringing valuable feedback every single time."
-              </p>
-              <p>
-                "Easily one of the most talented, dedicated, professional, and unique writers I know, John is a massive asset to any project he joins. In an industry where quantity is no substitute for quality, having someone like John on board can truly be the difference between failure and success."
-              </p>
-            </blockquote>
-          </div>
-        </div>
-        
-        <!-- Testimonial 2 -->
-        <div class="testimonial-slide">
-          <div class="testimonial-card">
-            <img src="Images/Richard" alt="Richard Naughton">
-            <h3 class="testimonial-name">Richard Naughton</h3>
-            <p class="testimonial-company">CEO & Creative Director<br>Table Topple</p>
-            <div class="testimonial-divider"></div>
-            <blockquote>
-              <p>"John O'Donnell has been instrumental in helping me overcome creative writing blocks on multiple projects, enabling me to effectively communicate a vision to my team."</p>
-              <p>"His infectious excitement about the creative process, his repertoire of tools and his superb listening skills make him easy to recommend to anyone, at any stage of the creative writing process."</p>
-              <p>"John is a force multiplier - even if you are not running into trouble, he will help you squeeze every bit of potential out of your ideas."</p>
-            </blockquote>
-          </div>
-        </div>
-     
-      
-      <!-- Navigation buttons -->
-      <button class="carousel-nav prev" id="prevTestimonial">‹</button>
-      <button class="carousel-nav next" id="nextTestimonial">›</button>
-    </div>
-  </div>
-</section>
-
-
-           
-  
-<footer style="text-align: center; font-size: 12px; color: #888; padding: 10px;">
-  <a href="https://www.vecteezy.com/free-photos/gold-marble" style="color: #888; text-decoration: none;">
-    Gold Marble Stock photos by Vecteezy
-  </a>
-</footer>
-
 </body>
 </html>
+
 
 
 
