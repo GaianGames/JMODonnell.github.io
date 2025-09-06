@@ -1383,9 +1383,14 @@ nav a:hover {
 }
 
 /* ====================================== */
-/* EDITORIAL MAGAZINE RACK STYLES */
-/* Add these to your styles.css file */
+/* EDITORIAL CLEAN REDESIGN - REPLACE PREVIOUS EDITORIAL STYLES WITH THIS */
 /* ====================================== */
+
+#editorial {
+  display: none; /* Hidden by default, shown by tab */
+  overflow: hidden; /* Prevent overflow into next section */
+  position: relative;
+}
 
 .editorial-container {
   max-width: 1200px;
@@ -1395,7 +1400,7 @@ nav a:hover {
 
 .editorial-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .editorial-header h3 {
@@ -1431,53 +1436,56 @@ nav a:hover {
   right: 0;
 }
 
-/* Magazine Rack Grid */
+/* Clean Grid Layout */
 .magazine-rack {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  perspective: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px; /* Ensure space before next section */
 }
 
-/* Publication Cards */
+/* Clean Publication Cards - No 3D Effect */
 .publication-card {
   position: relative;
   background: linear-gradient(135deg, #1e1e1e, #181818);
   border-radius: 12px;
-  padding: 20px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
+  overflow: hidden; /* Keep content contained */
+  transition: all 0.3s ease;
   cursor: pointer;
   border: 2px solid transparent;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
 }
 
 .publication-card:hover {
-  transform: translateY(-10px) rotateY(-5deg);
-  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
+  transform: translateY(-5px); /* Simple lift, no rotation */
+  box-shadow: 0 0 30px 10px rgba(212, 175, 55, 0.2);
   border-color: #d4af37;
 }
 
-/* Cover Section */
+/* Cover Section - Cleaner Design */
 .publication-cover {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 250px;
   background: #2c2c2c;
-  border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
 }
 
 .cover-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s;
 }
 
-/* If no cover image, create a styled placeholder */
+.publication-card:hover .cover-image {
+  transform: scale(1.05);
+}
+
+/* Placeholder if no image */
 .publication-cover:not(:has(.cover-image)) {
   background: linear-gradient(135deg, #2c2c2c, #383838);
   display: flex;
@@ -1487,21 +1495,22 @@ nav a:hover {
 
 .publication-cover:not(:has(.cover-image))::after {
   content: "📄";
-  font-size: 60px;
+  font-size: 50px;
   opacity: 0.3;
 }
 
+/* Cover Overlay - Simplified */
 .cover-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.9) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%);
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 20px;
+  padding: 15px;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -1513,15 +1522,19 @@ nav a:hover {
 .view-label {
   color: #d4af37;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* Publication Info */
+/* Publication Info - Contained within card */
 .publication-info {
+  padding: 20px;
   text-align: center;
-  margin-bottom: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .publication-title {
@@ -1544,34 +1557,21 @@ nav a:hover {
   color: #888;
   font-size: 0.9em;
   font-style: italic;
+  margin-bottom: 15px;
 }
 
-/* Hover Content */
-.publication-hover-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(180deg, rgba(24,24,24,0.95) 0%, rgba(24,24,24,0.98) 100%);
-  padding: 25px;
-  border-radius: 0 0 12px 12px;
-  transform: translateY(100%);
-  transition: transform 0.3s;
-  border-top: 2px solid #d4af37;
-}
-
-.publication-card:hover .publication-hover-content {
-  transform: translateY(0);
-}
-
+/* Excerpt - Always visible */
 .publication-excerpt {
   color: #e5e5e5;
   font-size: 0.95em;
-  line-height: 1.6;
+  line-height: 1.5;
   margin-bottom: 20px;
   font-style: italic;
+  padding: 15px 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
+/* Read Button - Always visible */
 .read-btn {
   background: linear-gradient(135deg, #d4af37, #b99a2e);
   color: #121212;
@@ -1581,8 +1581,8 @@ nav a:hover {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s;
-  width: 100%;
   font-size: 1em;
+  align-self: center;
 }
 
 .read-btn:hover {
@@ -1591,7 +1591,7 @@ nav a:hover {
   box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
 }
 
-/* PDF Modal Styles */
+/* PDF Modal - Keep as is, it works well */
 .pdf-modal {
   display: none;
   position: fixed;
@@ -1712,11 +1712,7 @@ nav a:hover {
 @media (max-width: 768px) {
   .magazine-rack {
     grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .publication-card:hover {
-    transform: translateY(-5px) rotateY(0);
+    gap: 20px;
   }
   
   .pdf-modal-content {
