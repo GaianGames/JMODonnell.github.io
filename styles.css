@@ -1785,4 +1785,58 @@ nav a:hover {
   .editorial-nav.next {
     right: 5px;
   }
+  
 }
+
+/* Header Section Updates - Add/Replace in your CSS */
+header {
+  background: url('Images/H1.jpeg') no-repeat center center/cover;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  /* Subtle color adjustment to harmonize with gold theme */
+  filter: sepia(25%) saturate(1.2);
+}
+
+header::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Stronger overlay with subtle gold tint */
+  background: linear-gradient(
+    rgba(18, 18, 18, 0.75),
+    rgba(18, 18, 18, 0.65) 40%,
+    rgba(30, 24, 10, 0.7) 70%,
+    rgba(18, 18, 18, 0.8)
+  );
+  mix-blend-mode: multiply;
+}
+
+header h1, header p {
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+header h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.3em;
+  color: #d4af37;
+  font-weight: 500;
+}
+
+/* Header photo with gold accent border */
+.header-photo {
+  border: 4px solid #d4af37;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6), 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
