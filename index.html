@@ -205,61 +205,88 @@
 
     <!-- Editorial Tab (Hidden by default) -->
 
+<!-- ====================================== -->
+<!-- REPLACE YOUR EDITORIAL SECTION WITH THIS HORIZONTAL CAROUSEL -->
+<!-- ====================================== -->
+
 <div id="editorial" style="display:none;">
-  <div class="editorial-container">
+  <div class="editorial-carousel-container">
     <div class="editorial-header">
       <h3>Published Works</h3>
       <p class="editorial-subtitle">— Featured articles and magazine contributions —</p>
     </div>
     
-    <div class="magazine-rack">
-      <!-- Publication 1 -->
-      <div class="publication-card">
-        <div class="publication-cover">
-          <!-- Use a screenshot of your PDF's first page as the cover image -->
-          <img src="Images/cafe" alt="Inspire Me Korea Feature" class="cover-image">
-          <div class="cover-overlay">
-            <span class="view-label">Click to Read</span>
+    <!-- Dots above carousel -->
+    <div class="editorial-dots" id="editorialDots"></div>
+    
+    <!-- Horizontal Carousel -->
+    <div class="editorial-carousel">
+      <div class="editorial-track" id="editorialTrack">
+        
+        <!-- Publication Slide 1 -->
+        <div class="editorial-slide">
+          <div class="editorial-pub-card">
+            <div class="pub-content-wrapper">
+              <div class="pub-preview">
+                <!-- If you have a cover image, use it. Otherwise, this creates a styled preview -->
+                <img src="Images/magazine-cover-1.jpg" alt="Inspire Me Korea Feature" class="pub-cover-img">
+                <!-- If no image, remove img tag and it will show PDF icon -->
+              </div>
+              <div class="pub-details">
+                <h4 class="pub-title">Cultural Insights</h4>
+                <p class="pub-magazine">Inspire Me Korea</p>
+                <p class="pub-date">2023 Issue</p>
+                <div class="pub-divider"></div>
+                <p class="pub-excerpt">
+                  An exploration of contemporary Korean culture through the lens of traditional values 
+                  and modern innovation. This feature examines the dynamic interplay between Seoul's 
+                  rapid modernization and its deep-rooted cultural heritage.
+                </p>
+                <button class="view-pdf-btn" data-pdf="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview">
+                  View Article
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="publication-info">
-          <h4 class="publication-title">Cultural Insights</h4>
-          <p class="publication-magazine">Inspire Me Korea</p>
-          <p class="publication-date">2023 Issue</p>
-          <p class="publication-excerpt">
-            The Cafe Aficionado's Guide to Seoul.
-          </p>
-          <button class="read-btn" onclick="openPDFModal('https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/view')">
-            Read Article
-          </button>
-        </div>
-      </div>
-      
-      <!-- Publication 2 -->
-      <div class="publication-card">
-        <div class="publication-cover">
-          <img src="Images/kpop.png" alt="Magazine Feature" class="cover-image">
-          <div class="cover-overlay">
-            <span class="view-label">Click to Read</span>
+        
+        <!-- Publication Slide 2 -->
+        <div class="editorial-slide">
+          <div class="editorial-pub-card">
+            <div class="pub-content-wrapper">
+              <div class="pub-preview">
+                <img src="Images/magazine-cover-2.jpg" alt="Magazine Feature" class="pub-cover-img">
+              </div>
+              <div class="pub-details">
+                <h4 class="pub-title">Feature Article</h4>
+                <p class="pub-magazine">Inspire Me Korea</p>
+                <p class="pub-date">2023 Issue</p>
+                <div class="pub-divider"></div>
+                <p class="pub-excerpt">
+                  Discovering the intersection of tradition and modernity in Seoul's evolving cultural 
+                  landscape. A deep dive into how contemporary Korean society balances preservation 
+                  with progress.
+                </p>
+                <button class="view-pdf-btn" data-pdf="https://drive.google.com/file/d/1nbLS0eVukHPrJKzOXMxUZUkrJGcWK3Kp/preview">
+                  View Article
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="publication-info">
-          <h4 class="publication-title">Feature Article</h4>
-          <p class="publication-magazine">Inspire Me Korea</p>
-          <p class="publication-date">2023 Issue</p>
-          <p class="publication-excerpt">
-            Exploring Beyond K-POP: A Deep Dive Into Seoul's Modern Music Scene.
-          </p>
-          <button class="read-btn" onclick="openPDFModal('https://drive.google.com/file/d/1iM7bk5YpftJVKg1hq2mKUd3YoQTS1yja/view')">
-            Read Article
-          </button>
-        </div>
+        
+        <!-- Add more publication slides as needed -->
+        
       </div>
       
-      <!-- Add more publications as needed -->
+      <!-- Navigation arrows -->
+      <button class="editorial-nav prev" id="prevEditorial">‹</button>
+      <button class="editorial-nav next" id="nextEditorial">›</button>
     </div>
   </div>
 </div>
+
+
 
 
     
@@ -731,100 +758,163 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // ====================================
-// EDITORIAL PDF MODAL JAVASCRIPT
-// Add this to your script
+// ====================================
+// EDITORIAL CAROUSEL & PDF MODAL JAVASCRIPT
+// Add this to your script inside DOMContentLoaded
 // ====================================
 
-// PDF Modal Functions
-function openPDFModal(pdfUrl) {
-  const modal = document.getElementById('pdfModal');
-  const viewer = document.getElementById('pdfViewer');
-  const externalLink = document.getElementById('pdfExternalLink');
-  
-  // Set the PDF URL
-  viewer.src = pdfUrl;
-  
-  // Set external link (convert preview URL to view URL if needed)
-  const viewUrl = pdfUrl.replace('/preview', '/view');
-  externalLink.href = viewUrl;
-  
-  // Show modal
-  modal.classList.add('active');
-  
-  // Prevent body scroll when modal is open
-  document.body.style.overflow = 'hidden';
-}
+// EDITORIAL CAROUSEL
+const editorialTrack = document.getElementById('editorialTrack');
+const prevEditorialBtn = document.getElementById('prevEditorial');
+const nextEditorialBtn = document.getElementById('nextEditorial');
+const editorialDotsContainer = document.getElementById('editorialDots');
 
-function closePDFModal() {
-  const modal = document.getElementById('pdfModal');
-  const viewer = document.getElementById('pdfViewer');
-  
-  // Hide modal
-  modal.classList.remove('active');
-  
-  // Clear iframe source
-  viewer.src = '';
-  
-  // Restore body scroll
-  document.body.style.overflow = 'auto';
-}
+if (editorialTrack && prevEditorialBtn && nextEditorialBtn && editorialDotsContainer) {
+  let currentEditorialSlide = 0;
+  let isEditorialTransitioning = false;
+  const totalEditorialSlides = document.querySelectorAll('.editorial-slide').length;
 
-// Close modal when clicking outside
-document.addEventListener('DOMContentLoaded', function() {
-  const modal = document.getElementById('pdfModal');
+  // Clear and create dots
+  editorialDotsContainer.innerHTML = '';
   
-  if (modal) {
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) {
-        closePDFModal();
+  for (let i = 0; i < totalEditorialSlides; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', function() {
+      if (!isEditorialTransitioning) {
+        goToEditorialSlide(i);
       }
     });
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closePDFModal();
-      }
-    });
+    editorialDotsContainer.appendChild(dot);
   }
-  
-  // Alternative: Add click handlers to all publication cards
-  const publicationCards = document.querySelectorAll('.publication-card');
-  publicationCards.forEach(card => {
-    const readBtn = card.querySelector('.read-btn');
-    if (readBtn) {
-      // Prevent card click when clicking the button
-      readBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-      });
-    }
+
+  const editorialDots = editorialDotsContainer.querySelectorAll('.dot');
+
+  function updateEditorialPosition() {
+    if (isEditorialTransitioning) return;
     
-    // Optional: Make entire card clickable (not just the button)
-    card.addEventListener('click', function() {
-      const pdfUrl = this.dataset.pdf;
-      if (pdfUrl && !event.target.classList.contains('read-btn')) {
+    isEditorialTransitioning = true;
+    const offset = -currentEditorialSlide * 100;
+    editorialTrack.style.transform = `translateX(${offset}%)`;
+    
+    // Update dots
+    editorialDots.forEach(function(dot, index) {
+      if (index === currentEditorialSlide) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+    
+    setTimeout(() => {
+      isEditorialTransitioning = false;
+    }, 600);
+  }
+
+  function goToEditorialSlide(index) {
+    if (isEditorialTransitioning || index === currentEditorialSlide) return;
+    currentEditorialSlide = index;
+    updateEditorialPosition();
+  }
+
+  // Previous button
+  prevEditorialBtn.addEventListener('click', function() {
+    if (isEditorialTransitioning) return;
+    
+    if (currentEditorialSlide > 0) {
+      currentEditorialSlide--;
+    } else {
+      currentEditorialSlide = totalEditorialSlides - 1;
+    }
+    updateEditorialPosition();
+  });
+
+  // Next button
+  nextEditorialBtn.addEventListener('click', function() {
+    if (isEditorialTransitioning) return;
+    
+    if (currentEditorialSlide < totalEditorialSlides - 1) {
+      currentEditorialSlide++;
+    } else {
+      currentEditorialSlide = 0;
+    }
+    updateEditorialPosition();
+  });
+}
+
+// PDF MODAL FUNCTIONALITY
+const pdfModal = document.getElementById('pdfModal');
+const pdfViewer = document.getElementById('pdfViewer');
+const pdfExternalLink = document.getElementById('pdfExternalLink');
+const closePdfBtn = document.getElementById('closePdfBtn');
+
+// Function to open PDF modal
+function openPDFModal(pdfUrl) {
+  if (pdfModal && pdfViewer && pdfExternalLink) {
+    // Set the PDF URL in iframe
+    pdfViewer.src = pdfUrl;
+    
+    // Set external link (convert preview to view URL)
+    const viewUrl = pdfUrl.replace('/preview', '/view');
+    pdfExternalLink.href = viewUrl;
+    
+    // Show modal
+    pdfModal.classList.add('active');
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Function to close PDF modal
+function closePDFModal() {
+  if (pdfModal && pdfViewer) {
+    // Hide modal
+    pdfModal.classList.remove('active');
+    
+    // Clear iframe
+    pdfViewer.src = '';
+    
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+  }
+}
+
+// Attach click handlers to all View Article buttons
+document.addEventListener('DOMContentLoaded', function() {
+  // Attach to all view PDF buttons
+  const viewPdfButtons = document.querySelectorAll('.view-pdf-btn');
+  viewPdfButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const pdfUrl = this.getAttribute('data-pdf');
+      if (pdfUrl) {
         openPDFModal(pdfUrl);
       }
     });
   });
-});
-
-// Optional: Add loading indicator for PDFs
-function addPDFLoadingIndicator() {
-  const viewer = document.getElementById('pdfViewer');
-  if (viewer) {
-    viewer.addEventListener('load', function() {
-      // Remove loading class when PDF loads
-      this.classList.remove('loading');
-    });
-    
-    viewer.addEventListener('loadstart', function() {
-      // Add loading class when PDF starts loading
-      this.classList.add('loading');
+  
+  // Close button handler
+  if (closePdfBtn) {
+    closePdfBtn.addEventListener('click', closePDFModal);
+  }
+  
+  // Click outside modal to close
+  if (pdfModal) {
+    pdfModal.addEventListener('click', function(e) {
+      if (e.target === pdfModal) {
+        closePDFModal();
+      }
     });
   }
-}
+  
+  // Escape key to close modal
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && pdfModal && pdfModal.classList.contains('active')) {
+      closePDFModal();
+    }
+  });
+});
   
 // ====================================
 // TESTIMONIALS CAROUSEL - NO AUTO-ROTATION
@@ -1100,6 +1190,7 @@ if (itchTrack && prevItchBtn && nextItchBtn && itchDotsContainer) {
 
 </body>
 </html>
+
 
 
 
